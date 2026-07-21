@@ -22,7 +22,7 @@ export const profileContent = {
     de: {
       headline: "Prozessoptimierung • Program Management • Generative AI • Healthcare Automation",
       oneLiner:
-        "Prozessoptimierer & Program Manager mit 20+ Jahren Automobilindustrie, Serienanläufen und globalen Werksstrukturen. Seit 2024 verstärkt fokussiert auf Generative AI, Healthcare Automation, Datenanalyse, KI-gestützte Prozessoptimierung und Telemedizin-Workflows. Fundierte Kenntnisse in Python, MySQL, RAG-Architekturen, KI-Automatisierung (Lokale-LLM, Lokale-Agenten) und Healthcare-Operations.",
+        "Prozessoptimierer & Program Manager mit 20+ Jahren Automobilindustrie, Serienanläufen und globalen Werksstrukturen. Seit 2024 verstärkt fokussiert auf Generative AI, Healthcare Automation, Datenanalyse, KI-gestützte Prozessoptimierung und Telemedizin-Workflows. Betrieb einer eigenen On-Premise-LLM-Infrastruktur auf heterogenem Multi-GPU-Verbund: zwei produktive RAG-Systeme mit rund 42.000 embeddeten Chunks (COBOL-Legacy-Korpus und Dokumenten-/Mail-Wissensbasis), 130.000+ geroutete Requests und 463 Mio. verarbeitete Input-Token in 14 Tagen. Fundierte Kenntnisse in Python/FastAPI, PostgreSQL mit pgvector, Hybrid-Retrieval und Reranking, GPU-Lastmanagement sowie Dokumenten-KI (OCR/Vision-LLM).",
       keywords: [
         "Prozessoptimierung",
         "Program Management",
@@ -40,7 +40,7 @@ export const profileContent = {
     en: {
       headline: "Process Optimization • Program Management • Generative AI • Healthcare Automation",
       oneLiner:
-        "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Solid expertise in Python, MySQL, RAG architectures, AI automation (local LLM, local agents) and healthcare operations.",
+        "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Operates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster: two production RAG systems with around 42,000 embedded chunks (COBOL legacy corpus and a document/mail knowledge base), 130,000+ routed requests and 463M processed input tokens in 14 days. Solid expertise in Python/FastAPI, PostgreSQL with pgvector, hybrid retrieval and reranking, GPU load management and document AI (OCR/vision LLM).",
       keywords: [
         "process optimization",
         "program management",

@@ -1,7 +1,7 @@
 # Dipl.-Ing. Michael Schiffer, MBA — Profile
 
 ## Summary
-Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Solid expertise in Python, MySQL, RAG architectures, AI automation (local LLM, local agents) and healthcare operations.
+Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Operates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster: two production RAG systems with around 42,000 embedded chunks (COBOL legacy corpus and a document/mail knowledge base), 130,000+ routed requests and 463M processed input tokens in 14 days. Solid expertise in Python/FastAPI, PostgreSQL with pgvector, hybrid retrieval and reranking, GPU load management and document AI (OCR/vision LLM).
 
 ## Core Domains
 - Automotive & Manufacturing Operations: serial launches, global plants, scrap reduction, supplier development, relocations, cost-down
@@ -9,15 +9,17 @@ Process optimizer & Program Manager with 20+ years in automotive industry, produ
 - AI / Data / Workflow Engineering: RAG + vector DBs, LLM workflows, Python+SQL pipelines, local LLMs (Ollama/LM Studio), n8n
 
 ## Skills
-- os: Windows (bis 11) (proficient), Linux (basic)
+- os: Windows (bis 11) (proficient), Linux (good)
 - office: MS Excel (advanced), MS Project (advanced), MS PowerPoint (proficient), MS Word (proficient)
 - cad: OnShape (proficient), AutoCAD 3D (proficient), CATIA V5 (basic)
 - pdm: Sherpa (basic), Matrix One (basic)
 - mrp: SAP (basic)
 - pm_tools: MS Project (advanced), DotProject (basic), eGroup (proficient), eRoom (proficient), BugZilla (proficient)
-- databases: MySQL (basic), Postgres (basic), Access (basic), Lotus 1-2-3 (basic)
-- programming: Python (proficient), C# (basic), Visual Basic (basic), VB.NET (basic), Pascal (basic), C (basic)
+- databases: MySQL (basic), PostgreSQL mit pgvector (very good), Postgres (very good), Alembic / Schema-Migrationen (good), Access (basic), Lotus 1-2-3 (basic)
+- programming: Python (very good), C# (basic), Visual Basic (basic), VB.NET (basic), Pascal (basic), C (basic)
 - ai_automation: N8N (proficient), Ollama & LM Studio (lokale KI) (proficient), Claude Code / Codex (proficient), GPT-OS:20B / Qwen etc. (proficient), Lokale Telefonagenten / Local Phone Agents (proficient)
+- llm_infrastructure: LLM-Serving (llama.cpp, vLLM, ollama, TEI) (very good), Multi-GPU-Betrieb & GPU-Lastmanagement (very good), RAG & Hybrid Retrieval (Vektor + BM25, RRF) (very good), Embeddings & Cross-Encoder-Reranking (bge-m3, Cohere) (very good), Azure OpenAI / EU-gehostete Cloud-Modelle (good), Azure Document Intelligence (good), Quantisierung & Modellauswahl (Qwen MoE, Gemma, MedGemma) (good), OCR & Vision-LLM (PaddleOCR, DeepSeek-OCR, Qwen-VL) (very good), LLM-Evaluation & Benchmarking (Ground-Truth-Harness) (good)
+- backend: FastAPI (async, SSE, WebSockets) (very good), SQLAlchemy async / asyncpg (good), React + TypeScript (SPA, Live-Monitoring) (good), Docker / Docker Compose (very good), Caddy Reverse Proxy & Security-Hardening (good), GitHub Actions CI / Container Registry (good), Kubernetes (Deployment-Manifeste) (basic)
 
 ## Experience
 - 2010-01–present: The Implementers GmbH — Principal Consultant / Managing Director
@@ -34,9 +36,18 @@ Process optimizer & Program Manager with 20+ years in automotive industry, produ
 - 1997-01–1998-01: UB Dr. Hans Schiffer — Backoffice Assistant – Management Consulting
 
 ## Projects
+- Mobile Recorder App + AI Editing Pipeline 2025-09–present: Mobile recorder web app (https://the-implementers.de/Recorder/) with topic-based AI pipeline: speech to structured text to automatic routing to EHR/notes/project DB. Versatile: letters, medical histories, team meetings, site surveys, handovers.
+- Ollama-Stallwatch — Hang Detection & REST API for Local LLM Inference 2026-04–present: Public GitHub project (MIT) for detecting ghost hangs in Ollama LLM inference. 4 collector services, SQLite backend, REST API, dashboard. Real impact: OCR pipeline 97.8% success rate (vs 75-80% naive), hang recovery 140x faster. https://github.com/tiubde-michael/ollama-stallwatch
+- GPU Load Management for a Heterogeneous LLM Cluster 2026-06–present: Central routing engine for 4 heterogeneous GPU nodes and 8+ model endpoints. Capability-based routing, tenant priorities, preemption. 130,000+ routed requests in 14 days, zero-downtime shadow-mode migration.
+- OpenAI-Compatible API Gateway with External Customer Integration 2026-06–present: OpenAI-compatible /v1 gateway (chat/embeddings/rerank) with token scopes and live rate limits, serving an external customer K8s cluster. 338,000 requests and 463M input tokens in 14 days.
+- Commissioning & Tuning of an NVIDIA GB10 (ARM64) LLM Server 2026-07–present: Brought an NVIDIA GB10 (ARM64) into production as an LLM server: diagnosed vLLM instability, migrated to llama.cpp with context split. ~193 tok/s at 0 errors, 429 backpressure strategy.
+- RAG Knowledge Platform for Legacy COBOL Systems — Lead Architect (Mittelständischer Softwarehersteller (über Generalunternehmer, AT)) 2026-04–present: Lead architect of an on-premise RAG knowledge platform for a COBOL codebase of several million LOC. 17,279 chunks with dual embeddings, 3,697 graph edges, hybrid RRF retrieval across 5 paths with mandatory citation. Recall@10 raised from 61 % to over 83 %; model benchmark across 7 candidates as a hardware decision basis.
+- E-Mail Automation and Archive with RAG Assistant 2026-03–present: IMAP automation with rule engine, full-text archive and attachment routing into the OCR pipeline. Second RAG system with 24,500+ embedded chunks in pgvector for an internal assistant.
+- TI-Flows Stack — Custom Workflow Automation Platform 2026-01–present: TI-Flows Stack: Self-hosted workflow automation replacing n8n. 20+ workflows, 30 frontend pages, 7-layer security, LLM pipeline, depot analysis. ~24,000 LOC Python/React.
 - Invoice API — Medical Billing System 2025-12–2026-02: Billing system for medical providers with ZUGFeRD-compliant invoice generation and OpenEMR integration.
-- Intelligent Document Recognition & Automated Bank Reconciliation 2025-08–present: AI-powered document recognition and automated matching to bank transactions. Multi-model OCR pipeline, ML-based document separation, web UI.
-- Concept for Performance Documentation in Pain Therapy 2026-02–2026-02: Concept for digital performance documentation in pain therapy.
+- Intelligent Document Recognition & Automated Bank Reconciliation 2025-08–present: On-prem OCR pipeline replacing Azure: 10,871 pages, 97.8% success, extraction 33%→86% vs Azure. 5-layer multi-LLM stack (PaddleOCR, qwen-vl, qwen3.5, mistral-nemo). Incl. bank matching and DATEV export.
+- HRV Analysis Pipeline — Automated Heart Rate Variability Assessment (Praxis für Schmerztherapie & TCM, Baden-Baden) 2026-01–2026-02: Automated HRV analysis from long-term ECG: R-peak detection, artifact correction, PNS/SNS trends, 3-page PDF report. Docker.
+- Pain Therapy Documentation System (schmerz_dok) 2026-02–present: Clinical documentation system: OPS tracking, traffic light system, bed occupancy, audit trail. FastAPI + React + PostgreSQL.
 - VIVO PainCare — AI-powered Clinical Pain Assessment and Admission Justification (Praxis für Schmerztherapie & TCM, Baden-Baden) 2025-09–2026-03: Clinical decision support system: automated pain questionnaire evaluation with 20-factor traffic-light scoring and AI-powered admission justification.
 - Clinical Documentation — AI-powered Transcription and Documentation Pipeline 2025-08–2026-02: AI pipeline for automated medical documentation from physician-patient conversations. Self-hosted LLM, speaker diarization, OpenEMR integration.
 - Supplier Management suspension parts (KTM) 2023-05–2024-11: Supplier development for forged parts with turning/milling incl. changes, launches and claims management.
@@ -61,16 +72,17 @@ Process optimizer & Program Manager with 20+ years in automotive industry, produ
 - 1988-06–1991-06: High School Diploma (Abitur) Focus on Mathematics and Physics, Ernst-Moritz-Arndt-Gymnasium der Stadt Bonn (3,2)
 
 ## Certifications
+- Agentic AI with LangChain and LangGraph — Coursera (IBM Skills Network) (2026-04)
 - Introduction to Deep Learning & Neural Networks with Keras (IBM) — IBM / Coursera (2026-01)
-- Vector Databases for RAG — IBM / Coursera (2025-05)
-- Build Intelligent Agents using DeepSeek & N8N — Board Infinity / Coursera (2025-05)
+- Vector Databases for RAG — IBM / Coursera (2025-10)
+- Build Intelligent Agents using DeepSeek & N8N — Board Infinity / Coursera (2025-07)
 - MySQL for Data Engineering — Duke University / Coursera (2025-05)
-- Python for Everybody (Specialization, 5 courses) — University of Michigan / Coursera (2025-03)
-- Google AI Essentials (Specialization, 5 courses) — Google / Coursera (2025-12)
+- Python for Everybody (Specialization, 5 courses) — University of Michigan / Coursera (2025-04)
+- Google AI Essentials (Specialization, 5 courses) — Google / Coursera (2026-01)
 - Google Prompting Essentials (Specialization, 4 courses) — Google / Coursera (2025-12)
 - Introduction to AI (Google) — Google / Coursera (2025-12)
 - Introduction to OpenAI Codex — Scrimba / Coursera (2026-01)
-- Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 courses) — Coursera (2025-10)
+- Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 courses) — Coursera (2025-11)
 - Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way — Toyota Boshoku (2025-10)
 - Value Stream Engineering (4 days) — Fraunhofer IAO, Stuttgart (2012-10)
 - Design and Process FMEA (5 days) — Gabor Kulsar / Magna Steyr (2013-11)

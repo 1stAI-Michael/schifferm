@@ -25,6 +25,22 @@
   ],
   "certifications": [
     {
+      "id": 59,
+      "name_de": "Agentic AI with LangChain and LangGraph",
+      "name_en": "Agentic AI with LangChain and LangGraph",
+      "issuer": "Coursera (IBM Skills Network)",
+      "category": "ai_data",
+      "date_from": "2026-04",
+      "date_to": null,
+      "description_de": "IN BEARBEITUNG — Agentic AI Architekturen (Reflection, Reflexion, ReAct), Memory, Iteration, Multi-Agent Orchestrierung mit LangChain und LangGraph.",
+      "description_en": "IN PROGRESS — Agentic AI architectures (Reflection, Reflexion, ReAct), memory, iteration, multi-agent orchestration with LangChain and LangGraph.",
+      "pdf_path": null,
+      "sort_order": 0,
+      "updated_at": "2026-04-22 11:24:29",
+      "credential_url": "PLATZHALTER: nach Abschluss Coursera Verify-URL eintragen",
+      "skills_acquired": "LangChain, LangGraph, Agentic AI, Multi-Agent Systems, ReAct, Reflection, Reflexion, Agent Orchestration, LLM Memory, Conditional Logic"
+    },
+    {
       "id": 1,
       "name_de": "Introduction to Deep Learning & Neural Networks with Keras (IBM)",
       "name_en": "Introduction to Deep Learning & Neural Networks with Keras (IBM)",
@@ -36,7 +52,9 @@
       "description_en": "Online course: Introduction to Deep Learning and Neural Networks with Keras. Instructor: Alex Aklson, Ph.D., Data Scientist IBM. Completed 24 Jan 2026.",
       "pdf_path": "certificates/2026-01_IBM Deep Learning with PyTorch, Keras and Tensorflow.pdf",
       "sort_order": 5,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": "https://www.coursera.org/account/accomplishments/verify/5YQQD7P6ALVJ",
+      "skills_acquired": "Deep Learning, Neural Networks, Keras, TensorFlow, Machine Learning, Backpropagation, CNN, RNN, Model Training"
     },
     {
       "id": 42,
@@ -44,13 +62,15 @@
       "name_en": "Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 courses)",
       "issuer": "Coursera",
       "category": "ai_healthcare",
-      "date_from": "2025-10",
+      "date_from": "2025-11",
       "date_to": "2025-11",
       "description_de": "Specialization mit 9 Kursen: Introduction to Generative AI in Healthcare, GenAI for Healthcare Automation, Improving Diagnostic Accuracy with GenAI, Operations Management in Healthcare, GenAI for Clinical Documentation, GenAI for Healthcare Ethics, GenAI for Healthcare: Transforming Personalized Care, GenAI for Telemedicine Data Security, Project Management in Healthcare: Tools and Tactics. Abgeschlossen am 27.11.2025.",
       "description_en": "Specialization with 9 courses: Introduction to Generative AI in Healthcare, GenAI for Healthcare Automation, Improving Diagnostic Accuracy with GenAI, Operations Management in Healthcare, GenAI for Clinical Documentation, GenAI for Healthcare Ethics, GenAI for Healthcare: Transforming Personalized Care, GenAI for Telemedicine Data Security, Project Management in Healthcare: Tools and Tactics. Completed 27 Nov 2025.",
-      "pdf_path": "certificates/2025-10_Generative AI-Powered Solutions for Modern Healthcare (Speci.pdf",
+      "pdf_path": "certificates/2025-11_Generative AI-Powered Solutions for Modern Healthcare.pdf",
       "sort_order": 10,
-      "updated_at": "2026-03-18 13:21:53"
+      "updated_at": "2026-03-18 13:21:53",
+      "credential_url": "https://www.coursera.org/account/accomplishments/specialization/HCASHFBZR0NE",
+      "skills_acquired": "Generative AI, Large Language Models, Healthcare IT, RAG, Clinical Decision Support, Prompt Engineering, AI Ethics, Medical Workflows, Patient Data Processing"
     },
     {
       "id": 12,
@@ -58,13 +78,15 @@
       "name_en": "Vector Databases for RAG",
       "issuer": "IBM / Coursera",
       "category": "ai_data",
-      "date_from": "2025-05",
+      "date_from": "2025-10",
       "date_to": "2025-08",
       "description_de": "Online-Kurs: Einführung in Vektor-Datenbanken für Retrieval Augmented Generation (RAG). Instructors: Wojciech Fulmyk (PhD Candidate, IBM) und Rav Ahuja (Global Program Director, IBM Skills Network). Abgeschlossen am 21.10.2025.",
       "description_en": "Online course: Introduction to Vector Databases for Retrieval Augmented Generation (RAG). Instructors: Wojciech Fulmyk (PhD Candidate, IBM) and Rav Ahuja (Global Program Director, IBM Skills Network). Completed 21 Oct 2025.",
-      "pdf_path": "certificates/2025-05_Vector Databases for RAG.pdf",
+      "pdf_path": "certificates/2025-10_Vector Databases for RAG.pdf",
       "sort_order": 30,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": "https://www.coursera.org/account/accomplishments/verify/6W1IPDRRCNZD",
+      "skills_acquired": "RAG, Vector Databases, pgvector, Embeddings, Semantic Search, LLM Integration, IBM Watson, Chroma, Pinecone"
     },
     {
       "id": 13,
@@ -72,13 +94,15 @@
       "name_en": "Build Intelligent Agents using DeepSeek & N8N",
       "issuer": "Board Infinity / Coursera",
       "category": "ai_data",
-      "date_from": "2025-05",
+      "date_from": "2025-07",
       "date_to": "2025-08",
       "description_de": "Online-Kurs: Aufbau intelligenter Agenten mit DeepSeek und N8N. Instructors: Abhay Gupta (Co-Founder Board Infinity) und Mirza Rahim Baig (Founder Zaza AI UG). Abgeschlossen am 12.07.2025.",
       "description_en": "Online course: Building intelligent agents using DeepSeek and N8N workflow automation. Instructors: Abhay Gupta (Co-Founder Board Infinity) and Mirza Rahim Baig (Founder Zaza AI UG). Completed 12 Jul 2025.",
       "pdf_path": "certificates/2025-07_Build Intelligent Agents using DeepSeek and N8N.pdf",
       "sort_order": 31,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": "https://www.coursera.org/account/accomplishments/verify/J3NC6W9KH33X",
+      "skills_acquired": "Agentic AI, n8n, DeepSeek, Workflow Automation, Multi-Agent Systems, AI Agents"
     },
     {
       "id": 14,
@@ -92,7 +116,9 @@
       "description_en": "Online project: MySQL for Data Engineering. Instructor: Noah Gift, Executive in Residence, Duke University MIDS. Completed 18 May 2025.",
       "pdf_path": "certificates/2025-05_MySQL for Data Engineering.pdf",
       "sort_order": 32,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": "https://coursera.org/verify/YSWATS6HPX2G",
+      "skills_acquired": "MySQL, SQL, Data Engineering, Database Design, Query Optimization, ETL, Data Modeling"
     },
     {
       "id": 43,
@@ -100,13 +126,15 @@
       "name_en": "Python for Everybody (Specialization, 5 courses)",
       "issuer": "University of Michigan / Coursera",
       "category": "ai_data",
-      "date_from": "2025-03",
+      "date_from": "2025-04",
       "date_to": "2025-04",
       "description_de": "Specialization mit 5 Kursen: Programming for Everybody (Getting Started with Python), Python Data Structures, Using Python to Access Web Data, Using Databases with Python, Capstone: Retrieving, Processing, and Visualizing Data with Python. Instructor: Charles Severance, University of Michigan. Abgeschlossen am 30.04.2025.",
       "description_en": "Specialization with 5 courses: Programming for Everybody (Getting Started with Python), Python Data Structures, Using Python to Access Web Data, Using Databases with Python, Capstone: Retrieving, Processing, and Visualizing Data with Python. Instructor: Charles Severance, University of Michigan. Completed 30 Apr 2025.",
-      "pdf_path": "certificates/2025-03_Python for Everybody (Specialization, 5 courses).pdf",
+      "pdf_path": "certificates/2025-04_Python for Everybody (Specialization, 5 courses).pdf",
       "sort_order": 33,
-      "updated_at": "2026-03-18 13:22:54"
+      "updated_at": "2026-03-18 13:22:54",
+      "credential_url": "https://coursera.org/verify/specialization/CF74CWGYGGK1",
+      "skills_acquired": "Python, Programming, Data Structures, Web Scraping, SQL, Databases, Data Visualization, API Integration"
     },
     {
       "id": 18,
@@ -114,13 +142,15 @@
       "name_en": "Google AI Essentials (Specialization, 5 courses)",
       "issuer": "Google / Coursera",
       "category": "ai_data",
-      "date_from": "2025-12",
+      "date_from": "2026-01",
       "date_to": "2026-01",
       "description_de": "Specialization mit 5 Kursen von Google: Introduction to AI, Maximize Productivity With AI Tools, Discover the Art of Prompting, Use AI Responsibly, Stay Ahead of the AI Curve. Abgeschlossen am 02.01.2026.",
       "description_en": "Specialization with 5 courses by Google: Introduction to AI, Maximize Productivity With AI Tools, Discover the Art of Prompting, Use AI Responsibly, Stay Ahead of the AI Curve. Completed 02 Jan 2026.",
-      "pdf_path": "certificates/2025-01_Google AI Essentials.pdf",
+      "pdf_path": "certificates/2026-01_Google AI Essentials.pdf",
       "sort_order": 36,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": "https://www.coursera.org/account/accomplishments/specialization/GH8M2M1M26DE",
+      "skills_acquired": "Generative AI, Prompt Engineering, AI Tools, Google AI, LLM, AI for Work, Productivity AI, Responsible AI"
     },
     {
       "id": 19,
@@ -134,7 +164,9 @@
       "description_en": "Specialization with 4 courses by Google: Start Writing Prompts like a Pro, Design Prompts for Everyday Work Tasks, Speed Up Data Analysis and Presentation Building, Use AI as a Creative or Expert Partner. Completed 31 Dec 2025.",
       "pdf_path": "certificates/2025-12_Google Prompting Essentials.pdf",
       "sort_order": 37,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": "https://www.coursera.org/account/accomplishments/specialization/YZPNR2ZXGUZC",
+      "skills_acquired": "Prompt Engineering, LLM, Generative AI, Prompt Design, AI Communication, Iterative Prompting, Context Setting"
     },
     {
       "id": 50,
@@ -148,7 +180,9 @@
       "description_en": "Module of Google Prompting Essentials Specialization",
       "pdf_path": "certificates/2025-12_Introduction to AI (Google).pdf",
       "sort_order": 37,
-      "updated_at": "2026-03-18 16:55:43"
+      "updated_at": "2026-03-18 16:55:43",
+      "credential_url": "https://www.coursera.org/account/accomplishments/verify/XS4PFGZW8JJX",
+      "skills_acquired": "AI Fundamentals, Machine Learning Basics, AI Applications, Google AI Ecosystem, Responsible AI"
     },
     {
       "id": 21,
@@ -162,7 +196,9 @@
       "description_en": "Online course: Introduction to OpenAI Codex. Instructor: Scrimba. Completed 28 Jan 2026.",
       "pdf_path": "certificates/2026-01_Introduction to OpenAI Codex.pdf",
       "sort_order": 39,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": "https://www.coursera.org/account/accomplishments/verify/DUTT11CSUM1R",
+      "skills_acquired": "OpenAI Codex, AI Code Generation, Prompt Engineering, LLM for Coding, Developer Productivity"
     },
     {
       "id": 56,
@@ -176,7 +212,9 @@
       "description_en": "1-day training Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way. 30 Oct 2025.",
       "pdf_path": "certificates/2025-10_TBBP-Solving-Problems-The-TB-Way.pdf",
       "sort_order": 49,
-      "updated_at": "2026-03-18 18:07:48"
+      "updated_at": "2026-03-18 18:07:48",
+      "credential_url": null,
+      "skills_acquired": "Problem Solving, Toyota Way, Root Cause Analysis, A3 Thinking, Kaizen, TPS"
     },
     {
       "id": 23,
@@ -190,7 +228,9 @@
       "description_en": "Value Stream Engineering, 4 days (23-26 October 2012) at Fraunhofer IAO (Institute for Industrial Engineering)",
       "pdf_path": "certificates/2012-10_Value Stream Engineering (Fraunhofer IAO) - Kursunterlagen.pdf",
       "sort_order": 50,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": "Value Stream Mapping, Lean, Fertigungsoptimierung, Taktzeitanalyse, Flow Manufacturing, Waste Reduction, Prozessdesign"
     },
     {
       "id": 51,
@@ -204,7 +244,9 @@
       "description_en": "5-day training on Design FMEA and Process FMEA, instructor: Gabor Kulsar, Magna Steyr.",
       "pdf_path": "certificates/TIUB_Schulungsuebersicht.pdf",
       "sort_order": 51,
-      "updated_at": "2026-03-18 17:19:48"
+      "updated_at": "2026-03-18 17:19:48",
+      "credential_url": null,
+      "skills_acquired": "FMEA, Design FMEA, Process FMEA, Risikoanalyse, Automotive Quality, AIAG-VDA, Failure Mode Analysis, Preventive Action"
     },
     {
       "id": 57,
@@ -218,7 +260,9 @@
       "description_en": "Advanced workshop for certified SME consultants, 20 Feb 2013 Frankfurt. Topics: DIN EN ISO 9001:2008 requirements, implementation in consulting practice, internal audit preparation, new QM handbook.",
       "pdf_path": "certificates/2013-02_QM-Workshop-ISO-9001.pdf",
       "sort_order": 52,
-      "updated_at": "2026-03-18 18:08:35"
+      "updated_at": "2026-03-18 18:08:35",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 24,
@@ -232,7 +276,9 @@
       "description_en": "4 weeks training with certification project",
       "pdf_path": "certificates/2001-04-Black-Belt-Training.jpg; certificates/2001-05-Black-Belt-Certification.jpg",
       "sort_order": 60,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": "Six Sigma, DMAIC, Lean Management, Prozessoptimierung, Statistische Prozesskontrolle, FMEA, Ursachenanalyse, Projektmanagement, Datenanalyse, Qualitätsverbesserung"
     },
     {
       "id": 44,
@@ -246,7 +292,9 @@
       "description_en": "EOQ Certificate No. DE96SM-3584, issued 05 Jan 1996. European recognition of the DGQ Quality Manager certificate under the EOQ Harmonized Scheme for Registration/Certification of Quality Personnel. Valid in conjunction with DGQ certificate.",
       "pdf_path": "certificates/1996-01-EOQ-Quality-Systems-Manager.jpg",
       "sort_order": 68,
-      "updated_at": "2026-03-18 16:55:43"
+      "updated_at": "2026-03-18 16:55:43",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 25,
@@ -260,7 +308,9 @@
       "description_en": "DGQ Certificate No. L/QM/5/9590/019, exam passed 20 Oct 1995 in Bonn-Holzlar. Full course 28 Aug - 20 Oct 1995 covering: Quality Management Systems, Statistical Tools and Methods, Quality Information and Quality Costs, Quality Promotion, Quality Management Practice. Incl. moderation of working groups and presentation of results.",
       "pdf_path": "certificates/1995-09-Qualitaetsmanagementsysteme.jpg; certificates/1995-09-Werkzeuge-und-statistische-Methoden.jpg; certificates/1995-10-DGQ-Qualitaetsmanager.jpg; certificates/1995-10-Qualitaetsfoerderung.jpg; certificates/1995-10-Qualitaetsinformation.jpg; certificates/1995-10-Qualitaetsmanagement-QM.jpg",
       "sort_order": 70,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": "Qualitätsmanagement, ISO 9001, Qualitätsaudits, Prozessmanagement, KVP, Kundenzufriedenheit, QM-Systemaufbau, Dokumentenlenkung"
     },
     {
       "id": 26,
@@ -274,7 +324,9 @@
       "description_en": "Test of a 4 week statistic course",
       "pdf_path": "certificates/1996-04-Qualitätstechnik-II.jpg",
       "sort_order": 71,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 27,
@@ -288,7 +340,9 @@
       "description_en": "DGQ Certificate No. L/OQM/A/9641/013, exam passed 26 Apr 1996 in Bonn. Qualification per DGQ guidelines and DIN EN ISO 10011-2 (Quality audit guidelines - qualification criteria for quality auditors). Certified competence in auditing and evaluating QM systems incl. preparation, reporting, corrective actions and statistical methods. DAR TGA accredited. Valid until 07 May 1999.",
       "pdf_path": "certificates/1996-05-DGQ-Auditor-Lead-Auditor.jpg",
       "sort_order": 72,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": "Lead Auditing, ISO 10011-2, ISO 9001, Qualitätsauditierung, Internal Auditing, Compliance, Audit-Berichterstattung, Nichtkonformitätsmanagement"
     },
     {
       "id": 46,
@@ -302,7 +356,9 @@
       "description_en": "DGQ Certificate Internal Auditor of Quality Systems",
       "pdf_path": "certificates/1996-05-Internal-Auditor-of-Quality-Systems.jpg",
       "sort_order": 72,
-      "updated_at": "2026-03-18 16:55:43"
+      "updated_at": "2026-03-18 16:55:43",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 28,
@@ -316,7 +372,9 @@
       "description_en": "New requirements for medical devices, Medical Device Act, EU directives, CE marking, DIN EN ISO 9001 and DIN EN 46001",
       "pdf_path": "certificates/1996-10-Das-Medizinproduktegesetz-EG-Richlinien-CE.jpg",
       "sort_order": 73,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 45,
@@ -330,7 +388,9 @@
       "description_en": "EOQ Certificate No. DE96A-3156, issued 10 Jun 1996. European recognition of the DGQ Auditor certificate under the EOQ Harmonized Scheme for Registration/Certification of Quality Personnel. Valid until 07 May 1999.",
       "pdf_path": "certificates/1996-06-EOQ-Quality-Auditor.jpg",
       "sort_order": 73,
-      "updated_at": "2026-03-18 16:55:43"
+      "updated_at": "2026-03-18 16:55:43",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 29,
@@ -344,7 +404,9 @@
       "description_en": "Seminar 05-06 May 1997, Altdorf near Nuremberg. Topics: International and national developments in quality management and standards, TQM concept, QS 9000 vs. VDA requirements, QM system audit per VDA Vol. 6.1, comparison to DIN EN ISO 9001, corporate management and strategy, product and process, auditing and certification procedures.",
       "pdf_path": "certificates/1997-05-Die-neuen-Anforderungen-der-nach-VDA.jpg",
       "sort_order": 74,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 30,
@@ -358,7 +420,9 @@
       "description_en": "In-house seminar \"Internal System Audit - A Quality Audit\", 28-29 May 1998, Burscheid. Topics: Quality management as competitive factor, QM standards, internal system prerequisites, audit execution prerequisites, audit execution, practical examples, case studies. Instructor: Klaus Schumacher (GFQ), Michael Ellwanger.",
       "pdf_path": "certificates/1998-05-Internes-Systemaudit.jpg",
       "sort_order": 75,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 31,
@@ -372,7 +436,9 @@
       "description_en": "Measurement system analysis (MSA) per VDA6.1 / QS9000 as measurement device responsible at Johnson Controls. On-the-job qualification.",
       "pdf_path": null,
       "sort_order": 76,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 40,
@@ -386,7 +452,9 @@
       "description_en": "REFA basic certificate including time and wage management",
       "pdf_path": "certificates/1996-12-REFA-Daten-und-Zeitmanagement.jpg; certificates/1997-03-REFA-Grundschein.jpg; certificates/1997-03-Zeit-und-Entgeldmanagement.jpg",
       "sort_order": 77,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 48,
@@ -400,7 +468,9 @@
       "description_en": "REFA seminar on work system design",
       "pdf_path": "certificates/1996-11-Arbeitssystemgestaltung.jpg",
       "sort_order": 78,
-      "updated_at": "2026-03-18 16:55:43"
+      "updated_at": "2026-03-18 16:55:43",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 32,
@@ -414,7 +484,9 @@
       "description_en": "Program & Launch Management University (PMU), Johnson Controls, 4 weeks training with final exam",
       "pdf_path": "certificates/2001-11-Program-Manager-PMU.jpg",
       "sort_order": 80,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": "Program Management, Projektmanagement, Stakeholder Management, Risikomanagement, Change Management, Interdisziplinäre Teamführung, Meilensteinplanung, Budget Management"
     },
     {
       "id": 33,
@@ -428,7 +500,9 @@
       "description_en": "Certified SME Restructuring Consultant (KMU-Fachberater Sanierung®) at KMU-Akademie e.V., Hamm. 10 days training plus 1 day exam.",
       "pdf_path": "certificates/2010-03 DIE KMU Berater.pdf; certificates/2010-07-KMU-Sanierung.jpg",
       "sort_order": 81,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": "Restrukturierung, Sanierung, Liquiditätsmanagement, Finanzanalyse, Turnaround Management, KMU-Beratung, Krisenmanagement, Businessplan-Analyse"
     },
     {
       "id": 47,
@@ -442,7 +516,9 @@
       "description_en": "RKW professional course: Managing the company with key performance indicators - results optimization through proven methods based on Excel. 21 October 1996, 09:00-16:30, RKW office Nuremberg. Instructor: Rudolf Hertel, management consultant.",
       "pdf_path": "certificates/1996-10-Das-Unternehmen-mit-wichtigen-Kennzahlen-steuern.jpg",
       "sort_order": 82,
-      "updated_at": "2026-03-18 16:55:43"
+      "updated_at": "2026-03-18 16:55:43",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 58,
@@ -456,7 +532,9 @@
       "description_en": "2-day seminar at Schloss Montabaur, 16-17 April 2010. Topics: Developing success strategies step by step, EKS success strategy (bottleneck-focused strategy), competence and requirements profile, concentrating resources on core strengths. Instructor: Cord Tepelmann.",
       "pdf_path": "certificates/2010-04_KMU-Strategie-EKS.pdf",
       "sort_order": 82,
-      "updated_at": "2026-03-18 18:31:58"
+      "updated_at": "2026-03-18 18:31:58",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 41,
@@ -470,7 +548,9 @@
       "description_en": "3-day course on environmental simulation of vibration and shock loads, 26-28 January 1999, Technische Akademie Esslingen, Ostfildern.",
       "pdf_path": "certificates/1999-01-Umweltsimulation-von-Schwingungs-und-Stossbelastungen.jpg",
       "sort_order": 89,
-      "updated_at": "2026-03-18 13:09:26"
+      "updated_at": "2026-03-18 13:09:26",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 34,
@@ -484,7 +564,9 @@
       "description_en": "On-the-job training in test methods and procedures, 1 month at Prince Automotive, Holland MI, USA",
       "pdf_path": null,
       "sort_order": 90,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 35,
@@ -498,7 +580,9 @@
       "description_en": "One-day CANoe hands-on workshop: CAN data traffic, introduction to CANoe. 07 September 2000, Stuttgart-Weilimdorf.",
       "pdf_path": "certificates/2000-09-CANoe-Praxis-Workshop.jpg",
       "sort_order": 91,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 49,
@@ -512,7 +596,9 @@
       "description_en": "Language course: English in Management and International Business",
       "pdf_path": "certificates/2001-02-English-in-management-and-international-business.jpg",
       "sort_order": 91,
-      "updated_at": "2026-03-18 16:55:43"
+      "updated_at": "2026-03-18 16:55:43",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 36,
@@ -526,7 +612,9 @@
       "description_en": null,
       "pdf_path": null,
       "sort_order": 92,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 52,
@@ -540,7 +628,9 @@
       "description_en": "TPG info day on Microsoft Project, 09 Oct 2012.",
       "pdf_path": "certificates/TIUB_Schulungsuebersicht.pdf",
       "sort_order": 92,
-      "updated_at": "2026-03-18 17:19:48"
+      "updated_at": "2026-03-18 17:19:48",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 37,
@@ -554,7 +644,9 @@
       "description_en": "1) DVS introductory course G-Schw: Gas welding and brazing of thin sheets per DVS guideline 1113 (Apr 1993, 1 week). 2) DVS course MAG-St D: MAG thin sheet welding incl. resistance spot welding per DVS guideline 1133 (Dec 1994, 2 weeks).",
       "pdf_path": "certificates/1993-04-DVS-Lehrgang-G-Schw-01.jpg; certificates/1993-04-DVS-Lehrgang-G-Schw-02.jpg; certificates/1994-12-DVS-Lehrgang-MAG-St-D-01.jpg; certificates/1994-12-DVS-Lehrgang-MAG-St-D-02.jpg",
       "sort_order": 93,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 53,
@@ -568,7 +660,9 @@
       "description_en": "Data protection training 2012, Luther law firm, 27 Sep 2012.",
       "pdf_path": "certificates/TIUB_Schulungsuebersicht.pdf",
       "sort_order": 93,
-      "updated_at": "2026-03-18 17:19:48"
+      "updated_at": "2026-03-18 17:19:48",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 38,
@@ -582,7 +676,9 @@
       "description_en": null,
       "pdf_path": null,
       "sort_order": 94,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 39,
@@ -596,7 +692,9 @@
       "description_en": "Diploma for outstanding performance. 11-22 November 1996, Bornheim near Bonn. Topics: speech and personality, preparing speeches and negotiations, free speech, body language impact, persuasion skills.",
       "pdf_path": "certificates/1996-11-Rhetorik-und-Kommunikation.jpg",
       "sort_order": 95,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-03-17 14:12:51",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 54,
@@ -610,7 +708,9 @@
       "description_en": "Live webinar: GDPR compliance for agencies and web designers. eRecht24.",
       "pdf_path": "certificates/TIUB_Schulungsuebersicht.pdf",
       "sort_order": 96,
-      "updated_at": "2026-03-18 17:19:48"
+      "updated_at": "2026-03-18 17:19:48",
+      "credential_url": null,
+      "skills_acquired": null
     },
     {
       "id": 55,
@@ -624,7 +724,9 @@
       "description_en": "Training on Siemens NX Viewer and 3D Tool V12 new functions, on-the-job during BR238 project.",
       "pdf_path": "certificates/TIUB_Schulungsuebersicht.pdf",
       "sort_order": 96,
-      "updated_at": "2026-03-18 17:19:48"
+      "updated_at": "2026-03-18 17:19:48",
+      "credential_url": null,
+      "skills_acquired": null
     }
   ],
   "driving_licenses": [
@@ -879,12 +981,140 @@
       "photo_path": "20240912-Michael Schiffer.jpg",
       "website": "https://www.schifferm.de",
       "linkedin_url": "https://www.linkedin.com/in/michael-schiffer",
-      "summary_de": "Prozessoptimierer & Program Manager mit 20+ Jahren Automobilindustrie, Serienanläufen und globalen Werksstrukturen. Seit 2024 verstärkt fokussiert auf Generative AI, Healthcare Automation, Datenanalyse, KI-gestützte Prozessoptimierung und Telemedizin-Workflows. Fundierte Kenntnisse in Python, MySQL, RAG-Architekturen, KI-Automatisierung (Lokale-LLM, Lokale-Agenten) und Healthcare-Operations.",
-      "summary_en": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Solid expertise in Python, MySQL, RAG architectures, AI automation (local LLM, local agents) and healthcare operations.",
-      "updated_at": "2026-03-17 14:08:01"
+      "summary_de": "Prozessoptimierer & Program Manager mit 20+ Jahren Automobilindustrie, Serienanläufen und globalen Werksstrukturen. Seit 2024 verstärkt fokussiert auf Generative AI, Healthcare Automation, Datenanalyse, KI-gestützte Prozessoptimierung und Telemedizin-Workflows. Betrieb einer eigenen On-Premise-LLM-Infrastruktur auf heterogenem Multi-GPU-Verbund: zwei produktive RAG-Systeme mit rund 42.000 embeddeten Chunks (COBOL-Legacy-Korpus und Dokumenten-/Mail-Wissensbasis), 130.000+ geroutete Requests und 463 Mio. verarbeitete Input-Token in 14 Tagen. Fundierte Kenntnisse in Python/FastAPI, PostgreSQL mit pgvector, Hybrid-Retrieval und Reranking, GPU-Lastmanagement sowie Dokumenten-KI (OCR/Vision-LLM).",
+      "summary_en": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Operates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster: two production RAG systems with around 42,000 embedded chunks (COBOL legacy corpus and a document/mail knowledge base), 130,000+ routed requests and 463M processed input tokens in 14 days. Solid expertise in Python/FastAPI, PostgreSQL with pgvector, hybrid retrieval and reranking, GPU load management and document AI (OCR/vision LLM).",
+      "updated_at": "2026-07-21 09:14:43"
     }
   ],
   "projects": [
+    {
+      "id": 22,
+      "work_experience_id": 11,
+      "client": null,
+      "date_from": "2025-09",
+      "date_to": null,
+      "title_de": "Mobile Recorder App + KI-Bearbeitungs-Pipeline",
+      "title_en": "Mobile Recorder App + AI Editing Pipeline",
+      "description_de": "Mobiles Aufnahme-Werkzeug fuer strukturierte Sprachaufzeichnungen mit nachgelagerter KI-Pipeline. Public Web-App (https://the-implementers.de/Recorder/) zur Aufnahme von Briefen, Anamnesen, Teammeetings, Notizen, Ideen, Aufmassen und Uebergaben — direkt im Browser, ohne Installation. Vorab-Auswahl von Kontext (Patient-ID/Name, Themenkategorie, Empfaenger) bestimmt nachgelagertes Routing der Pipeline. Audio-Upload via HTTPS, anschliessend Verarbeitung in dedizierter Pipeline-UI (FastAPI, ti-nas-06:8011): WhisperX-Transkription mit Speaker Diarization, themenspezifische LLM-Aufbereitung (Brief, Akteneintrag, Untersuchungsbericht, Memo etc.), manuelle Korrektur in Web-UI mit Diff-Ansicht, Quality Gates gegen LLM-Halluzination. Ergebnis-Routing nach Themenkategorie: medizinische Dokumente in OpenEMR-Patientenakte (Auto-Upload), Geschaefts-Notizen in Flow-Notes-DB, Aufmasse in Projekt-Datenbank. Voll Self-Hosted, Audio bleibt im eigenen Netzwerk. Stack: Vanilla JS Frontend, MediaRecorder API, FastAPI, WhisperX, Ollama (qwen3.5/gpt-oss), PostgreSQL, OpenEMR-API, Caddy mit IP-Whitelist.",
+      "description_en": "Mobile recording tool for structured audio capture with downstream AI pipeline. Public web app (https://the-implementers.de/Recorder/) for recording letters, medical histories, team meetings, notes, ideas, site surveys, and handovers — directly in the browser, no installation required. Context pre-selection (patient ID/name, topic category, recipient) drives downstream pipeline routing. Audio upload via HTTPS, then processed in dedicated pipeline UI (FastAPI, ti-nas-06:8011): WhisperX transcription with speaker diarization, topic-specific LLM processing (letter, EHR entry, examination report, memo, etc.), manual correction in web UI with diff view, quality gates against LLM hallucination. Result routing by topic category: medical documents into OpenEMR patient records (auto-upload), business notes into Flow-Notes DB, measurements into project database. Fully self-hosted, audio stays in own network. Stack: Vanilla JS frontend, MediaRecorder API, FastAPI, WhisperX, Ollama (qwen3.5/gpt-oss), PostgreSQL, OpenEMR API, Caddy with IP whitelist.",
+      "sort_order": 0,
+      "updated_at": "2026-04-22 11:37:05",
+      "category": "ai",
+      "description_short_de": "Mobile Recorder Web-App (https://the-implementers.de/Recorder/) mit themenbasierter KI-Pipeline: Sprache zu strukturiertem Text zu automatischem Routing in OpenEMR/Notes/Projekt-DB. Vielseitig: Briefe, Anamnesen, Teammeetings, Aufmasse, Uebergaben.",
+      "description_short_en": "Mobile recorder web app (https://the-implementers.de/Recorder/) with topic-based AI pipeline: speech to structured text to automatic routing to EHR/notes/project DB. Versatile: letters, medical histories, team meetings, site surveys, handovers."
+    },
+    {
+      "id": 23,
+      "work_experience_id": 11,
+      "client": null,
+      "date_from": "2026-04",
+      "date_to": null,
+      "title_de": "Ollama-Stallwatch — Hang-Detection & REST-API für lokale LLM-Inferenz",
+      "title_en": "Ollama-Stallwatch — Hang Detection & REST API for Local LLM Inference",
+      "description_de": "Public MIT-lizenziertes Monitoring- und Diagnose-Tool für lokal gehostete Ollama-LLM-Inferenz auf Multi-GPU-Servern. Adressiert das in Production schwer fassbare Ghost-Hang-Pattern: Modell ist im VRAM geladen, GPU bleibt bei 0% Auslastung, ollama-serve haengt CPU-bound im Image-Preprocessing oder Vision-Encoder — im Log unsichtbar, nur in nvtop live erkennbar. Vier-Komponenten-Stack: GPU-Logger (nvidia-smi delta-logged), Log-Parser (Docker-Log in SQLite), Process-Logger (/proc mit Heartbeat), Stall-Detector mit gdb/proc Stack-Capture ohne Container-Modifikation via NOPASSWD-Sudoers. Hang-Detektion in drei parallelen Confidence-Levels (strict/loose/ghost) mit unterschiedlichen Trigger-Bedingungen, ergaenzt um orthogonale Mode-Klassifikation (A/B) die zwischen recoverable und silent Hangs unterscheidet. Read-only REST-API (Port 3002, Python stdlib) mit kombinierbaren Filtern (since/at/overlapping, confidence/mode/client_ip) fuer Cross-Host-Korrelation. Web-Dashboard (Chart.js, live aus SQLite) mit Stall-Banderolen ueber Zeitreihen. Idempotenter Installer mit Host-Detection und portabler config.toml. Realer Production-Impact: bei parallel laufender OCR-Pipeline ueber 24 Stunden 10.871 PDF-Seiten, 4.837 Inference-Calls, 97 erfasste Hang-Events — Pipeline-Success-Rate dadurch 97,8% statt ~75-80% bei naivem Wall-Clock-Timeout. Selfheal-Strategie auf Basis der Stall-Daten reduzierte Hang-Recovery-Zeit von ~40 Minuten auf ~17 Sekunden (Faktor ~140x). Stack: Python 3.12 stdlib-only (keine Pip-Dependencies), SQLite mit WAL, Chart.js via CDN, systemd-Service-Management, gdb und nvidia-smi als externe Tools. ~1.700 Zeilen Python, 3 iterative Entwicklungstage mit AI-Pair-Programming. Repo: https://github.com/tiubde-michael/ollama-stallwatch",
+      "description_en": "Public MIT-licensed monitoring and diagnostic tool for locally hosted Ollama LLM inference on multi-GPU servers. Addresses the hard-to-detect production ghost-hang pattern: model loaded in VRAM, GPU at 0% utilization, ollama-serve CPU-bound in image preprocessing or vision encoder — invisible in logs, only live in nvtop. Four-component stack: GPU logger (nvidia-smi delta-logged), log parser (Docker log into SQLite), process logger (/proc with heartbeat), stall detector with gdb/proc stack capture without container modification via NOPASSWD sudoers. Hang detection in three parallel confidence levels (strict/loose/ghost) with different trigger conditions, complemented by orthogonal mode classification (A/B) distinguishing recoverable from silent hangs. Read-only REST API (port 3002, Python stdlib) with combinable filters (since/at/overlapping, confidence/mode/client_ip) for cross-host correlation. Web dashboard (Chart.js, live from SQLite) with stall bands over time series. Idempotent installer with host detection and portable config.toml. Real production impact: parallel OCR pipeline over 24 hours recorded 10,871 PDF pages, 4,837 inference calls, 97 hang events — pipeline success rate 97.8% instead of ~75-80% with naive wall-clock timeout. Selfheal strategy based on stall data reduced hang recovery time from ~40 minutes to ~17 seconds (factor ~140x). Stack: Python 3.12 stdlib-only (no pip dependencies), SQLite with WAL, Chart.js via CDN, systemd service management, gdb and nvidia-smi as external tools. ~1,700 lines of Python, 3 iterative development days with AI-pair programming. Repo: https://github.com/tiubde-michael/ollama-stallwatch",
+      "sort_order": 0,
+      "updated_at": "2026-04-22 13:22:39",
+      "category": "ai",
+      "description_short_de": "Public GitHub-Projekt (MIT) zur Erkennung von Ghost-Hangs in Ollama-LLM-Inferenz. 4 Collector-Services, SQLite-Backend, REST-API, Dashboard. Real-Impact: OCR-Pipeline 97,8% Erfolgsquote (vs 75-80% naiv), Hang-Recovery 140x schneller. https://github.com/tiubde-michael/ollama-stallwatch",
+      "description_short_en": "Public GitHub project (MIT) for detecting ghost hangs in Ollama LLM inference. 4 collector services, SQLite backend, REST API, dashboard. Real impact: OCR pipeline 97.8% success rate (vs 75-80% naive), hang recovery 140x faster. https://github.com/tiubde-michael/ollama-stallwatch"
+    },
+    {
+      "id": 24,
+      "work_experience_id": 11,
+      "client": null,
+      "date_from": "2026-06",
+      "date_to": null,
+      "title_de": "GPU-Lastmanagement für heterogenen LLM-Verbund",
+      "title_en": "GPU Load Management for a Heterogeneous LLM Cluster",
+      "description_de": "Eigenentwicklung einer zentralen Routing-Engine für einen heterogenen GPU-Verbund: 4 GPU-Knoten (RTX 3090, Tesla V100, RTX 3060, NVIDIA GB10 mit 128 GB Unified Memory) und 8+ Modell-Endpoints (Chat, Embeddings, Reranker). Fähigkeitsbasierte Kandidatenwahl (Endpoint × Modell × Kontextfenster × Slots) statt statischer Pools; benannte Mandanten (Klinik, Chat, Batch, Gast) mit Prioritäten, Quoten und Preemption niederpriorer Lasten. Migration im laufenden Betrieb ohne Ausfall: Shadow-Mode (Alt- vs. Neu-Entscheidung je Request protokolliert und reviewed) mit anschließendem stufenweisen Cutover; Nacht-Burn-in über 23.600 Requests mit ~0,1 % Abnormalitäten. Auto-Discovery der Endpoint-Kapazitäten (llama.cpp /metrics, ollama, HuggingFace TEI), Live-Monitoring-UI in React und vollständiges Reservierungs-Audit. Produktionsvolumen: 130.000+ geroutete Requests in 14 Tagen. Stack: Python, FastAPI, PostgreSQL, React/TypeScript, llama.cpp, ollama, TEI, Docker.",
+      "description_en": "In-house development of a central routing engine for a heterogeneous GPU cluster: 4 GPU nodes (RTX 3090, Tesla V100, RTX 3060, NVIDIA GB10 with 128 GB unified memory) and 8+ model endpoints (chat, embeddings, reranker). Capability-based candidate selection (endpoint × model × context window × slots) instead of static pools; named tenants (clinic, chat, batch, guest) with priorities, quotas and preemption of low-priority load. Zero-downtime migration in production: shadow mode (old vs. new decision logged and reviewed per request) followed by a staged cutover; overnight burn-in across 23,600 requests with ~0.1 % anomalies. Auto-discovery of endpoint capacities (llama.cpp /metrics, ollama, HuggingFace TEI), React live monitoring UI and full reservation audit trail. Production volume: 130,000+ routed requests in 14 days. Stack: Python, FastAPI, PostgreSQL, React/TypeScript, llama.cpp, ollama, TEI, Docker.",
+      "sort_order": 0,
+      "updated_at": "2026-07-21 08:36:42",
+      "category": "ai",
+      "description_short_de": "Zentrale Routing-Engine für 4 heterogene GPU-Knoten und 8+ Modell-Endpoints. Fähigkeitsbasiertes Routing, Mandanten-Prioritäten, Preemption. 130.000+ geroutete Requests in 14 Tagen, ausfallfreie Migration per Shadow-Mode.",
+      "description_short_en": "Central routing engine for 4 heterogeneous GPU nodes and 8+ model endpoints. Capability-based routing, tenant priorities, preemption. 130,000+ routed requests in 14 days, zero-downtime shadow-mode migration."
+    },
+    {
+      "id": 25,
+      "work_experience_id": 11,
+      "client": null,
+      "date_from": "2026-06",
+      "date_to": null,
+      "title_de": "OpenAI-kompatibles API-Gateway mit externer Kunden-Anbindung",
+      "title_en": "OpenAI-Compatible API Gateway with External Customer Integration",
+      "description_de": "Eigenes /v1-Gateway (Chat mit SSE-Streaming, Embeddings, Rerank) vor dem GPU-Verbund; Anbindung eines externen Kubernetes-Clusters auf Kundenseite über Token-Auth mit Scopes. Per-Token-Limits (parallele Requests, Requests/min, Token/min) live aus der Datenbank steuerbar; Modell-Allowlist und Kontext-Guards gegen stille Trunkierung. Produktionslast über 14 Tage: 338.000 Chat-Requests, 463 Mio. Input- und 76 Mio. Output-Token, Peak 5.746 Requests/h bei ~1 % Fehlerquote. Traffic- und Fair-Use-Analysen auf Audit-Basis (Token-, Volumen- und Bandbreiten-Hochrechnung) als Entscheidungsgrundlage für Hosting-Verträge. Stack: Python, FastAPI, SSE, PostgreSQL, JWT/Token-Scopes, Caddy, Docker.",
+      "description_en": "Custom /v1 gateway (chat with SSE streaming, embeddings, rerank) in front of the GPU cluster; integration of an external customer-side Kubernetes cluster via scoped token auth. Per-token limits (concurrent requests, requests/min, tokens/min) configurable live from the database; model allowlist and context guards against silent truncation. Production load over 14 days: 338,000 chat requests, 463M input and 76M output tokens, peak 5,746 requests/h at ~1 % error rate. Audit-based traffic and fair-use analyses (token, volume and bandwidth projections) as a decision basis for hosting contracts. Stack: Python, FastAPI, SSE, PostgreSQL, JWT/token scopes, Caddy, Docker.",
+      "sort_order": 0,
+      "updated_at": "2026-07-21 08:36:42",
+      "category": "ai",
+      "description_short_de": "OpenAI-kompatibles /v1-Gateway (Chat/Embeddings/Rerank) mit Token-Scopes und Live-Rate-Limits, angebunden an ein externes Kunden-K8s. 338.000 Requests und 463 Mio. Input-Token in 14 Tagen.",
+      "description_short_en": "OpenAI-compatible /v1 gateway (chat/embeddings/rerank) with token scopes and live rate limits, serving an external customer K8s cluster. 338,000 requests and 463M input tokens in 14 days."
+    },
+    {
+      "id": 26,
+      "work_experience_id": 11,
+      "client": null,
+      "date_from": "2026-07",
+      "date_to": null,
+      "title_de": "Inbetriebnahme & Tuning NVIDIA GB10 (ARM64) als LLM-Server",
+      "title_en": "Commissioning & Tuning of an NVIDIA GB10 (ARM64) LLM Server",
+      "description_de": "Inbetriebnahme eines ASUS Ascent GX10 (NVIDIA GB10, ARM64, Unified Memory) als produktiver LLM-Server. Diagnose reproduzierbarer vLLM-Instabilität auf der GB10/ARM64-Plattform und Umbau auf zwei parallele llama.cpp-Instanzen mit Kontext-Split auf einem Chip (4×256k für Langkontext, 8×48k für Standardlast). Paralleler Betrieb von Chat-, Embedding- und Reranker-Services auf demselben Knoten. Eigene Messreihen zu Prefill- und Generierungs-Durchsatz sowie Sättigungsverhalten (Bandbreiten-Bound bei 273 GB/s). 429-basierte Backpressure-Strategie: Verbund-Durchsatz ~193 tok/s bei 0 Fehlern im 30-Minuten-Messfenster. Erkenntnistransfer in Hardware-Dimensionierung und Beschaffungsempfehlungen für Kundenprojekte.",
+      "description_en": "Commissioning of an ASUS Ascent GX10 (NVIDIA GB10, ARM64, unified memory) as a production LLM server. Diagnosed reproducible vLLM instability on the GB10/ARM64 platform and migrated to two parallel llama.cpp instances with a context split on a single chip (4×256k for long context, 8×48k for standard load). Chat, embedding and reranker services running concurrently on the same node. Own measurement series on prefill and generation throughput and saturation behaviour (bandwidth-bound at 273 GB/s). 429-based backpressure strategy: cluster throughput ~193 tok/s with 0 errors across a 30-minute measurement window. Findings transferred into hardware sizing and procurement recommendations for customer projects.",
+      "sort_order": 0,
+      "updated_at": "2026-07-21 08:36:42",
+      "category": "ai",
+      "description_short_de": "NVIDIA GB10 (ARM64) als LLM-Server produktiv gesetzt: vLLM-Instabilität diagnostiziert, Umbau auf llama.cpp mit Kontext-Split. ~193 tok/s bei 0 Fehlern, 429-Backpressure-Strategie.",
+      "description_short_en": "Brought an NVIDIA GB10 (ARM64) into production as an LLM server: diagnosed vLLM instability, migrated to llama.cpp with context split. ~193 tok/s at 0 errors, 429 backpressure strategy."
+    },
+    {
+      "id": 27,
+      "work_experience_id": 11,
+      "client": "Mittelständischer Softwarehersteller (über Generalunternehmer, AT)",
+      "date_from": "2026-04",
+      "date_to": null,
+      "title_de": "RAG-Wissensplattform für COBOL-Altsysteme — Lead Architektur",
+      "title_en": "RAG Knowledge Platform for Legacy COBOL Systems — Lead Architect",
+      "description_de": "Strategischer Lead Architektur sowie Sparring- und Review-Instanz für ein zweiköpfiges Senior-Entwickler-Tandem beim Aufbau einer On-Premise-Wissensplattform, die eine über Jahrzehnte gewachsene COBOL-Codebasis (mehrere Mio. LOC, Visual COBOL, Fixed Format) durchsuchbar und beauskunftbar macht. Betrieb vollständig on-premise, da der Quellcode das Kernasset des Kunden ist. Fünfstufige Architektur: deterministische Inventarisierung per Parser statt LLM (PROGRAM-ID, COPY-, CALL-, EXEC-SQL-Beziehungen, Dateideskriptoren, Datenstrukturen), Graph-Extraktion über Aufruf-, Copy-, Daten- und Job-Beziehungen, LLM-gestützte Anreicherung, Qualitätsschleife und Retrieval mit Zitatzwang (jede Antwort referenziert Programm und Zeilennummer, ohne belastbaren Treffer keine generierte Antwort). Korpus: 528 COBOL-Programm-Kennungen, 17.279 Chunks mit Dual-Embeddings (bge-m3 on-prem + Azure text-embedding-3-large), 3.697 CALL/COPY-Abhängigkeitskanten als Graph. Hybrid-Retrieval per Reciprocal Rank Fusion über 5 Pfade (Code, Doku mehrstufig, Sektionen, GraphRAG) plus Knowledge Cards und Cross-Encoder-Reranking (lokal bzw. Cohere Rerank); Embedding-Backend pro Request zwischen On-Prem-GPU und Azure/EU umschaltbar. Fachwörterbuch-/Synonymschicht mit Query-Expansion zur Überbrückung zwischen Fachsprache und Bezeichnern im Code. Qualitätssicherung: 430 Ground-Truth-Queries als Eval-Harness, 12 kategoriespezifische Suchprofile, Multipass-LLM-Tiefenanalyse je Programm mit Fallback-Modellkette; Recall@10 von rund 61 % im Prototyp auf über 83 % im produktiven Stand gesteigert. Lokaler Betrieb quantisierter Open-Weights-Modelle (MoE ~35B / ~3B aktiv, q4) mit Hybrid-Fallback auf ein EU-gehostetes Cloud-Modell für nicht vertrauliche Anteile. Modell-Benchmark über sieben Kandidaten und Hardware-Empfehlung in drei Ausbaustufen mit zwei Beschaffungspfaden als dokumentierte Entscheidungsgrundlage. Gap-Analyse der Quellcode-Erstlieferung: rund 90 % der Aufruf-Ziele lagen außerhalb der Lieferung — daraus konkrete Nachlieferungsempfehlung an den Endkunden. Packaging und Betrieb: Multi-Stage-Docker, Alembic-Migrationen, getrennte Dev-/Prod-Instanzen mit abgesichertem Migrationsweg, K8s-Manifeste, GitHub Actions in eine private Container-Registry; Auslieferung on-prem und im Kunden-Kubernetes. Zugänge über REST-API, MCP-Server für Entwicklerwerkzeuge und Web-Chat für nicht entwicklungsnahe Rollen. IP- und Lizenzprüfung vor Auslieferung (Abhängigkeits-Scan, Copyleft-Erkennung, Attribution-Nachweis). 100 % remote, Workshops per Video.",
+      "description_en": "Strategic lead architect and sparring/review partner for a two-person senior developer team building an on-premise knowledge platform that makes a COBOL codebase grown over decades (several million LOC, Visual COBOL, fixed format) searchable and answerable. Fully on-premise operation, as the source code is the customer's core asset. Five-stage architecture: deterministic inventory via parser rather than LLM (PROGRAM-ID, COPY, CALL and EXEC SQL relations, file descriptors, data structures), graph extraction across call, copy, data and job relations, LLM-based enrichment, a quality loop, and retrieval with mandatory citation (every answer references program and line number; no generated answer without a solid hit). Corpus: 528 COBOL program identifiers, 17,279 chunks with dual embeddings (bge-m3 on-prem + Azure text-embedding-3-large), 3,697 CALL/COPY dependency edges as a graph. Hybrid retrieval via reciprocal rank fusion across 5 paths (code, multi-level documentation, sections, GraphRAG) plus knowledge cards and cross-encoder reranking (local or Cohere Rerank); embedding backend switchable per request between on-prem GPU and Azure/EU. Domain dictionary/synonym layer with query expansion bridging in-house terminology and identifiers in the code. Quality assurance: 430 ground-truth queries as an eval harness, 12 category-specific search profiles, multipass LLM deep analysis per program with a fallback model chain; recall@10 raised from around 61 % in the prototype to over 83 % in the production state. Local operation of quantised open-weights models (MoE ~35B / ~3B active, q4) with a hybrid fallback to an EU-hosted cloud model for non-confidential portions. Model benchmark across seven candidates and a hardware recommendation in three expansion stages with two procurement paths as a documented decision basis. Gap analysis of the initial source code delivery: around 90 % of call targets lay outside the delivery — leading to a concrete follow-up delivery recommendation to the end customer. Packaging and operations: multi-stage Docker, Alembic migrations, separate dev/prod instances with a hardened migration path, K8s manifests, GitHub Actions into a private container registry; deployed both on-prem and in the customer's Kubernetes. Access via REST API, MCP server for developer tooling and a web chat for non-engineering roles. IP and licence review before delivery (dependency scan, copyleft detection, attribution evidence). 100 % remote, workshops via video.",
+      "sort_order": 0,
+      "updated_at": "2026-07-21 08:36:42",
+      "category": "ai",
+      "description_short_de": "Lead Architektur einer On-Premise-RAG-Wissensplattform für eine COBOL-Codebasis mit mehreren Mio. LOC. 17.279 Chunks mit Dual-Embeddings, 3.697 Graph-Kanten, Hybrid-Retrieval per RRF über 5 Pfade mit Zitatzwang. Recall@10 von 61 % auf über 83 % gesteigert; Modell-Benchmark über 7 Kandidaten als Hardware-Entscheidungsgrundlage.",
+      "description_short_en": "Lead architect of an on-premise RAG knowledge platform for a COBOL codebase of several million LOC. 17,279 chunks with dual embeddings, 3,697 graph edges, hybrid RRF retrieval across 5 paths with mandatory citation. Recall@10 raised from 61 % to over 83 %; model benchmark across 7 candidates as a hardware decision basis."
+    },
+    {
+      "id": 28,
+      "work_experience_id": 11,
+      "client": null,
+      "date_from": "2026-03",
+      "date_to": null,
+      "title_de": "E-Mail-Automation und -Archiv mit RAG-Assistent",
+      "title_en": "E-Mail Automation and Archive with RAG Assistant",
+      "description_de": "IMAP-Fetcher mit Drei-Phasen-UID-Abgleich (Deduplizierung vor Header- und Body-Fetch), Regel-Engine auf Absender- und Betreff-Mustern sowie robuster Fehlerbehandlung für instabile Provider-IMAP-Server. Volltext-Archivierung in PostgreSQL, automatisches Anhang-Routing in die OCR-Strecke (Rechnungseingang) und Nextcloud-Synchronisation. Darauf aufgesetzt ein zweites RAG-System auf Dokument-, Mail- und Notiz-Basis: 24.500+ embeddete OCR-Chunks in pgvector als Wissensbasis für einen internen Chat-Assistenten. Stack: Python, FastAPI, PostgreSQL/pgvector, IMAP, Nextcloud, Docker.",
+      "description_en": "IMAP fetcher with three-phase UID reconciliation (deduplication before header and body fetch), a rule engine on sender and subject patterns, and robust error handling for unstable provider IMAP servers. Full-text archiving in PostgreSQL, automatic attachment routing into the OCR pipeline (incoming invoices) and Nextcloud synchronisation. On top of it, a second RAG system over documents, mail and notes: 24,500+ embedded OCR chunks in pgvector as the knowledge base for an internal chat assistant. Stack: Python, FastAPI, PostgreSQL/pgvector, IMAP, Nextcloud, Docker.",
+      "sort_order": 0,
+      "updated_at": "2026-07-21 08:36:42",
+      "category": "ai",
+      "description_short_de": "IMAP-Automation mit Regel-Engine, Volltext-Archiv und Anhang-Routing in die OCR-Strecke. Zweites RAG-System mit 24.500+ embeddeten Chunks in pgvector für einen internen Chat-Assistenten.",
+      "description_short_en": "IMAP automation with rule engine, full-text archive and attachment routing into the OCR pipeline. Second RAG system with 24,500+ embedded chunks in pgvector for an internal assistant."
+    },
+    {
+      "id": 21,
+      "work_experience_id": 11,
+      "client": null,
+      "date_from": "2026-01",
+      "date_to": null,
+      "title_de": "TI-Flows Stack — Custom Workflow-Automatisierungsplattform",
+      "title_en": "TI-Flows Stack — Custom Workflow Automation Platform",
+      "description_de": "Kompletter Ersatz der n8n-Workflow-Engine durch eine maßgeschneiderte Python/React-Plattform für medizinische Datenverarbeitung, Server-Sicherheit und Portfolio-Management. Async-Backend (FastAPI + SQLAlchemy + asyncpg), React/TypeScript-SPA mit 30 Seiten, 20+ Workflows mit Cron-Scheduling und Execution-Chaining, 11 Background-Tasks. Workflow-Engine mit dynamischem Handler-Import, WebSocket-Live-Logs und verketteter Ausführung. 7-Schichten-Sicherheitskonzept: IP-Whitelist/Blacklist (Caddy), Brute-Force-Monitor mit Auto-Blacklisting, Telegram-gesteuerte IP-Freischaltung per Inline-Keyboard, JWT-Auth, Device-Tokens, Rate-Limiting. 5-stufige medizinische Transkript-Pipeline (WhisperX-Diktat bis Akteneintrag) mit LLM-Quality-Gates. Depot-Modul: Playwright-basierter comdirect-Scraper, 7-Faktor-Aktien-Ranking, KI-News-Zusammenfassung (Ollama). Zentrale Ollama-Queue mit Semaphore-basierter GPU-Serialisierung. Shared Library (flowlib) für 3 Services. ~24.000 LOC (12.800 Python + 8.000 TypeScript + 1.600 flowlib + 2.000 SQL), 21 DB-Migrationen. Stack: Python 3.10, FastAPI, SQLAlchemy async, React 18, TypeScript, Vite, PostgreSQL (pgvector), Docker Compose, Caddy, Ollama, Telegram Bot API, Playwright.",
+      "description_en": "Complete replacement of n8n workflow engine with a custom Python/React platform for medical data processing, server security and portfolio management. Async backend (FastAPI + SQLAlchemy + asyncpg), React/TypeScript SPA with 30 pages, 20+ workflows with cron scheduling and execution chaining, 11 background tasks. Workflow engine with dynamic handler import, WebSocket live logs and chained execution. 7-layer security concept: IP whitelist/blacklist (Caddy), brute-force monitor with auto-blacklisting, Telegram-controlled IP whitelisting via inline keyboard, JWT auth, device tokens, rate limiting. 5-stage medical transcript pipeline (WhisperX dictation to medical record) with LLM quality gates. Depot module: Playwright-based comdirect scraper, 7-factor stock ranking, AI news summarization (Ollama). Central Ollama queue with semaphore-based GPU serialization. Shared library (flowlib) for 3 services. ~24,000 LOC (12,800 Python + 8,000 TypeScript + 1,600 flowlib + 2,000 SQL), 21 DB migrations. Stack: Python 3.10, FastAPI, SQLAlchemy async, React 18, TypeScript, Vite, PostgreSQL (pgvector), Docker Compose, Caddy, Ollama, Telegram Bot API, Playwright.",
+      "sort_order": 1,
+      "updated_at": "2026-03-29 15:47:38",
+      "category": "ai",
+      "description_short_de": "TI-Flows Stack: Self-Hosted Workflow-Automatisierung als n8n-Ersatz. 20+ Workflows, 30 Frontend-Seiten, 7-Schichten-Security, LLM-Pipeline, Depot-Analyse. ~24.000 LOC Python/React.",
+      "description_short_en": "TI-Flows Stack: Self-hosted workflow automation replacing n8n. 20+ workflows, 30 frontend pages, 7-layer security, LLM pipeline, depot analysis. ~24,000 LOC Python/React."
+    },
     {
       "id": 18,
       "work_experience_id": 11,
@@ -893,8 +1123,8 @@
       "date_to": "2026-02",
       "title_de": "Invoice API — Medizinisches Abrechnungssystem",
       "title_en": "Invoice API — Medical Billing System",
-      "description_de": "Vollständiges Abrechnungssystem für eine ärztliche Praxis mit Mehrmandantenfähigkeit (Arzt, IT-Dienstleistungen, Apotheke). Draft→Finalisierung→Storno-Workflow mit datenbankgestützter State Machine (PL/pgSQL-Trigger). ZUGFeRD/EN16931-konforme Rechnungserzeugung (PDF mit eingebettetem CII-XML). OpenEMR-Integration (Patienten, Diagnosen, Behandlungen). Server-Side Rendering mit Jinja2 + HTMX. Snapshot-Pattern für revisionssichere Rechnungen. ~4.200 LOC Python, ~1.700 LOC SQL, 30+ Endpoints, 13 DB-Migrationen.",
-      "description_en": "Complete billing system for a medical practice with multi-tenant support (physician, IT services, pharmacy). Draft→Finalized→Cancelled workflow with database-driven state machine (PL/pgSQL triggers). ZUGFeRD/EN16931-compliant invoice generation (PDF with embedded CII-XML). OpenEMR integration (patients, diagnoses, treatments). Server-side rendering with Jinja2 + HTMX. Snapshot pattern for audit-proof invoices. ~4,200 LOC Python, ~1,700 LOC SQL, 30+ endpoints, 13 DB migrations.",
+      "description_de": "Vollständiges Abrechnungssystem für eine ärztliche Praxis mit Mehrmandantenfähigkeit (Arzt, IT-Dienstleistungen, Apotheke). Draft/Finalisierung/Storno-Workflow mit datenbankgestützter State Machine (PL/pgSQL-Trigger) — finalisierte Rechnungen sind unveränderlich (Revisionssicherheit). ZUGFeRD/EN16931-konforme Rechnungserzeugung (PDF mit eingebettetem CII-XML). OpenEMR-Integration: Patientenstammdaten, Diagnosen, Behandlungen. Steuerlogik: §4 UStG-Befreiung, Reverse Charge, innergemeinschaftliche Lieferungen. Server-Side Rendering mit Jinja2 + HTMX. Snapshot-Pattern für revisionssichere Rechnungen. ~4.200 LOC Python, ~1.700 LOC SQL, 30+ Endpoints, 13 DB-Migrationen. Stack: Python, FastAPI, SQLAlchemy (async), PostgreSQL, HTMX, Jinja2, Docker, Caddy.",
+      "description_en": "Complete billing system for a medical practice with multi-tenant support (physician, IT services, pharmacy). Draft/Finalized/Cancelled workflow with database-driven state machine (PL/pgSQL triggers) — finalized invoices are immutable (audit-proof). ZUGFeRD/EN16931-compliant invoice generation (PDF with embedded CII-XML). OpenEMR integration: patient data, diagnoses, treatments. Tax logic: medical exemption, reverse charge, intra-community supplies. Server-side rendering with Jinja2 + HTMX. Snapshot pattern for audit-proof invoices. ~4,200 LOC Python, ~1,700 LOC SQL, 30+ endpoints, 13 DB migrations. Stack: Python, FastAPI, SQLAlchemy (async), PostgreSQL, HTMX, Jinja2, Docker, Caddy.",
       "sort_order": 2,
       "updated_at": "2026-03-24 08:41:03",
       "category": "ai",
@@ -909,29 +1139,45 @@
       "date_to": null,
       "title_de": "Intelligente Dokumentenerkennung & automatisierte Bankabstimmung",
       "title_en": "Intelligent Document Recognition & Automated Bank Reconciliation",
-      "description_de": "KI-gestützte Pipeline zur automatischen Erkennung, Klassifizierung und Zuordnung von Geschäftsdokumenten (Rechnungen, Belege, Verträge) zu Bankbewegungen. Multi-Modell OCR-Pipeline (PaddleOCR, Qwen-VL, Mistral-Nemo/Qwen3.5) zur strukturierten Metadaten-Extraktion aus gescannten Dokumenten. Automatische Dokumententrennung in Multi-Dokument-PDFs mittels LLM-Feature-Extraktion und trainiertem ML-Modell (GradientBoosting, F1=0.59). Index-basierte Bank-Matching-Engine für >3.000 Transaktionen und >4.000 Dokumente in ~7 Sekunden. Web-UI (FastAPI) mit Dokumentenansicht, 4-Spalten-Vergleich, Bankkontenübersicht und konfigurierbaren Scoring-Parametern. DB-gesteuerte Prompt-Versionierung mit Loop-basiertem Retry und automatischem Fallback. Infrastruktur: Docker Compose, PostgreSQL, Ollama-LLM-Server mit Tesla V100 und RTX-GPUs.",
-      "description_en": "AI-powered pipeline for automatic recognition, classification and matching of business documents (invoices, receipts, contracts) to bank transactions. Multi-model OCR pipeline (PaddleOCR, Qwen-VL, Mistral-Nemo/Qwen3.5) for structured metadata extraction from scanned documents. Automatic document separation in multi-document PDFs using LLM feature extraction combined with trained ML model (GradientBoosting, F1=0.59). Index-based bank matching engine processing >3,000 transactions and >4,000 documents in ~7 seconds. Web UI (FastAPI) with document viewer, 4-column extraction comparison, bank account overview and configurable scoring parameters. DB-driven prompt versioning with loop-based retry and automatic fallback. Infrastructure: Docker Compose, PostgreSQL, Ollama LLM server with Tesla V100 and RTX GPUs.",
+      "description_de": "Architektur und produktiver Betrieb einer On-Premise OCR-/Dokumenten-Pipeline fuer deutsche Steuer- und Buchhaltungsdokumente; Ersatz fuer Azure Document Intelligence mit messbar besserer Erkennungsqualitaet und vollstaendiger Datenhoheit. Volumen: 12.156 verarbeitete Seiten (Stand 07/2026), 97,8% Erfolgsquote; laufende Cloud-Kosten von $1.500/Jahr auf 0 EUR gesenkt. Azure-Vergleich (400 Dokumente A/B-Test): Rechnungsnummer 33%→86%, Gesamtbetrag 41%→88%, Absender 58%→94%. Fuenf-Layer-Stack: PaddleOCR (Baseline), qwen3-vl:4b (schnelle Vision), mistral-nemo:12b (Text-Fallback), qwen3.5:27b (hochqualitative Strukturextraktion), Qwen3.5:27b Klassifikation in 18 Dokumenttypen mit Mandanten-Routing. Acht produktive Resilienz-Mechanismen entwickelt: Watchdog-Threads mit Wall-Clock + GPU-Idle + Cross-Host-Stall-Polling, eigene Degeneracy-Detection fuer pathologische Vision-Modell-Ausgaben, Partial-Text-Recovery, Cold-Load-Selbstheilung (12s Cost vs 180s gesparter Hang = 15x Netto-Gewinn), Per-Phase-Modell-Unload mit Verifikation, Cross-Host-Monitoring mit REST-API und drei Confidence-Stufen fuer Hang-Typen. Nachgelagerte Layer: Index-basiertes Bank-Matching (>3.000 Transaktionen x >4.000 Dokumente in ca. 7 Sekunden) und DATEV-EXTF-CSV-Export nach gelernten Kontierungsregeln. Web-UI (FastAPI) mit 4-Spalten-Vergleich der Extraktionsquellen, DB-gesteuerte Prompt-Versionierung mit Fallback-Ketten. Infrastruktur: Docker Compose Multi-Container, PostgreSQL auf NAS, GPU-Sharing (RTX 3090 Ti + RTX 5060 Ti) via Ollama. Stack: Python, FastAPI, PaddleOCR, Ollama (qwen3-vl, qwen3.5, mistral-nemo, deepseek-ocr, gemma3), PostgreSQL, Docker, scikit-learn, httpx mit Streaming + Watchdog-Cancel. Ergänzungen 2026: LLM-gestützter Mehrseiten-Dokument-Split, ZUGFeRD-/XRechnung-Abgleich, Belegklassifikation nach Mandant, Dokumentklasse und Steuerjahr sowie Vorkontierung für die DATEV-Übergabe. Der zuvor parallel betriebene Azure-Document-Intelligence-Pfad wurde vollständig durch die eigene On-Premise-Strecke abgelöst und ist nicht mehr im Einsatz. Messwerte je Seite auf einer Tesla V100: ~2,5 s OCR + ~5–6 s Vision-LLM-Extraktion reine Rechenzeit; bewusst kleine Spezialmodelle (5 GB + 3,5 GB) statt eines großen Generalisten.",
+      "description_en": "Architecture and production operation of an on-premise OCR / document pipeline for German tax and accounting documents; replaces Azure Document Intelligence with measurably better extraction accuracy and full data sovereignty. Volume: 12,156 pages processed (as of 07/2026), 97.8% success rate; ongoing cloud cost reduced from $1,500/year to 0 EUR. Azure A/B benchmark (400 documents): invoice number 33%→86%, total amount 41%→88%, sender 58%→94%. Five-layer stack: PaddleOCR (baseline), qwen3-vl:4b (fast vision), mistral-nemo:12b (text fallback), qwen3.5:27b (high-quality structured extraction), qwen3.5:27b classification into 18 document types with tenant routing. Eight production resilience mechanisms: watchdog threads with wall-clock + GPU-idle + cross-host stall polling, custom degeneracy detection for pathological vision-model output, partial-text recovery, cold-load self-healing (12s cost vs 180s saved hang = 15x net gain), per-phase model unload with verification, cross-host monitoring with REST API and three confidence levels for hang types. Downstream layers: index-based bank matching (>3,000 transactions x >4,000 documents in ~7 seconds) and DATEV-EXTF-CSV export based on learned booking rules. Web UI (FastAPI) with 4-column comparison of extraction sources, DB-driven prompt versioning with fallback chains. Infrastructure: Docker Compose multi-container, PostgreSQL on NAS, GPU sharing (RTX 3090 Ti + RTX 5060 Ti) via Ollama. Stack: Python, FastAPI, PaddleOCR, Ollama (qwen3-vl, qwen3.5, mistral-nemo, deepseek-ocr, gemma3), PostgreSQL, Docker, scikit-learn, httpx streaming with watchdog-cancel. 2026 additions: LLM-based multi-page document splitting, ZUGFeRD/XRechnung reconciliation, document classification by client, document class and tax year, and pre-accounting for DATEV handover. The Azure Document Intelligence path previously run in parallel has been fully replaced by the in-house on-premise pipeline and is no longer in use. Per-page measurements on a Tesla V100: ~2.5 s OCR + ~5–6 s vision LLM extraction of pure compute time; deliberately small specialist models (5 GB + 3.5 GB) instead of one large generalist.",
       "sort_order": 3,
-      "updated_at": "2026-03-24 08:39:49",
+      "updated_at": "2026-07-21 09:14:43",
       "category": "ai",
-      "description_short_de": "KI-gestützte Dokumentenerkennung und automatisierte Zuordnung zu Bankbewegungen. Multi-Modell OCR-Pipeline, ML-basierte Dokumententrennung, Web-UI.",
-      "description_short_en": "AI-powered document recognition and automated matching to bank transactions. Multi-model OCR pipeline, ML-based document separation, web UI."
+      "description_short_de": "On-Prem OCR-Pipeline als Azure-Ersatz: 10.871 Seiten, 97,8% Erfolg, Extraktion 33%→86% vs Azure. 5-Layer Multi-LLM-Stack (PaddleOCR, qwen-vl, qwen3.5, mistral-nemo). Inkl. Bank-Matching und DATEV-Export.",
+      "description_short_en": "On-prem OCR pipeline replacing Azure: 10,871 pages, 97.8% success, extraction 33%→86% vs Azure. 5-layer multi-LLM stack (PaddleOCR, qwen-vl, qwen3.5, mistral-nemo). Incl. bank matching and DATEV export."
+    },
+    {
+      "id": 20,
+      "work_experience_id": 11,
+      "client": "Praxis für Schmerztherapie & TCM, Baden-Baden",
+      "date_from": "2026-01",
+      "date_to": "2026-02",
+      "title_de": "HRV-Analyse-Pipeline — Automatisierte Herzratenvariabilitäts-Auswertung",
+      "title_en": "HRV Analysis Pipeline — Automated Heart Rate Variability Assessment",
+      "description_de": "Modulare Pipeline zur reproduzierbaren HRV-Analyse von 24–26h Langzeit-EKG-Aufzeichnungen im EDF-Format. Vollautomatische Verarbeitung: EDF-Einlesen, R-Peak-Detektion (Bandpass, Envelope, Refraktärbereinigung), Artefaktkorrektur, Zeit-/Frequenzbereichsmetriken (SDNN, RMSSD, LF/HF), PNS/SNS-Trendberechnung (Kubios-kalibriert), ECG-basierte Atemfrequenzschätzung und Time-Varying HRV Power Spectrum. Docker-Container mit File-Watcher für Batch-Betrieb. Ersetzt manuelle Legacy-Windows-Software (8 Schritte auf 2). Stack: Python, NumPy, SciPy, Matplotlib, pyEDFlib, Docker.",
+      "description_en": "Modular pipeline for reproducible HRV analysis of 24-26h long-term ECG recordings in EDF format. Fully automated: EDF reading, R-peak detection, artifact correction, time/frequency domain metrics, PNS/SNS trends (Kubios-calibrated), ECG-derived respiration and TV-HRV Power Spectrum. Docker file watcher for batch operation. Replaces manual legacy Windows software. Stack: Python, NumPy, SciPy, Matplotlib, pyEDFlib, Docker.",
+      "sort_order": 3,
+      "updated_at": "2026-03-26 18:17:24",
+      "category": "healthcare",
+      "description_short_de": "Automatisierte HRV-Analyse aus Langzeit-EKG: R-Peak-Detektion, Artefaktkorrektur, PNS/SNS-Trends, 3-seitiger PDF-Report. Docker.",
+      "description_short_en": "Automated HRV analysis from long-term ECG: R-peak detection, artifact correction, PNS/SNS trends, 3-page PDF report. Docker."
     },
     {
       "id": 16,
       "work_experience_id": 11,
       "client": null,
       "date_from": "2026-02",
-      "date_to": "2026-02",
-      "title_de": "Konzept Leistungsdokumentation Schmerztherapie",
-      "title_en": "Concept for Performance Documentation in Pain Therapy",
-      "description_de": "Konzept zur Leistungsdokumentation der Abteilung Schmerztherapie mit interdisziplinärer Eingabe und Abgleich mit OPS-Katalog.",
-      "description_en": "Concept for performance documentation of a pain therapy department with interdisciplinary input and reconciliation with OPS catalogue (German procedure classification).",
+      "date_to": null,
+      "title_de": "Schmerztherapie-Dokumentationssystem (schmerz_dok)",
+      "title_en": "Pain Therapy Documentation System (schmerz_dok)",
+      "description_de": "Klinikfähiges Dokumentationssystem für die multimodale Schmerztherapie. Unterstützt ein interdisziplinäres Team (Ärzte, Psychotherapeuten, Physiotherapeuten, Pflege). OPS-basiertes Anforderungs-Tracking (OPS 8-918, 8-91c) mit Meilensteinen auf 21-Tage-Zeitachse. 4-Farben-Ampelsystem für Echtzeit-Therapiefortschrittskontrolle. Bettenbelegungskalender mit Gantt-Visualisierung und Überbelastungserkennung. Rich-Text-Editor (TipTap/ProseMirror) mit Versionierung. 10-stufige Rollenhierarchie mit Audit-Trail. Serverseitige PDF-Reports (WeasyPrint). Stack: Python 3.12, FastAPI, SQLAlchemy 2.0 (async), React 19, Tailwind CSS, PostgreSQL 16, Docker, Nginx, JWT.",
+      "description_en": "Hospital-grade documentation system for multimodal pain therapy. Supports interdisciplinary teams. OPS-based treatment tracking with 21-day timeline milestones. 4-color traffic light system for therapy progress. Bed occupancy calendar with Gantt visualization. Rich-text editor (TipTap) with versioning. 10-level role hierarchy with audit trail. Server-side PDF reports (WeasyPrint). Stack: Python 3.12, FastAPI, SQLAlchemy 2.0 (async), React 19, Tailwind CSS, PostgreSQL 16, Docker, Nginx, JWT.",
       "sort_order": 4,
       "updated_at": "2026-03-20 17:16:35",
-      "category": "healthcare",
-      "description_short_de": "Konzept zur digitalen Leistungsdokumentation in der Schmerztherapie.",
-      "description_short_en": "Concept for digital performance documentation in pain therapy."
+      "category": "ai",
+      "description_short_de": "Klinisches Dokumentationssystem: OPS-Tracking, Ampelsystem, Bettenbelegung, Audit-Trail. FastAPI + React + PostgreSQL.",
+      "description_short_en": "Clinical documentation system: OPS tracking, traffic light system, bed occupancy, audit trail. FastAPI + React + PostgreSQL."
     },
     {
       "id": 19,
@@ -1258,10 +1504,10 @@
       "id": 22,
       "category": "programming",
       "name": "Python",
-      "level_de": "gut",
-      "level_en": "proficient",
+      "level_de": "sehr gut",
+      "level_en": "very good",
       "sort_order": 10,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-07-21 08:36:42"
     },
     {
       "id": 28,
@@ -1273,13 +1519,40 @@
       "updated_at": "2026-03-17 14:12:51"
     },
     {
+      "id": 33,
+      "category": "llm_infrastructure",
+      "name": "LLM-Serving (llama.cpp, vLLM, ollama, TEI)",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 10,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 41,
+      "category": "backend",
+      "name": "FastAPI (async, SSE, WebSockets)",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 10,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 48,
+      "category": "databases",
+      "name": "PostgreSQL mit pgvector",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 15,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
       "id": 2,
       "category": "os",
       "name": "Linux",
-      "level_de": "Basis",
-      "level_en": "basic",
+      "level_de": "gut",
+      "level_en": "good",
       "sort_order": 20,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-07-21 08:36:42"
     },
     {
       "id": 4,
@@ -1321,10 +1594,10 @@
       "id": 19,
       "category": "databases",
       "name": "Postgres",
-      "level_de": "Basis",
-      "level_en": "basic",
+      "level_de": "sehr gut",
+      "level_en": "very good",
       "sort_order": 20,
-      "updated_at": "2026-03-17 14:12:51"
+      "updated_at": "2026-07-21 08:36:42"
     },
     {
       "id": 23,
@@ -1345,6 +1618,24 @@
       "updated_at": "2026-03-17 14:12:51"
     },
     {
+      "id": 34,
+      "category": "llm_infrastructure",
+      "name": "Multi-GPU-Betrieb & GPU-Lastmanagement",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 20,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 42,
+      "category": "backend",
+      "name": "SQLAlchemy async / asyncpg",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 20,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
       "id": 31,
       "category": "ai_automation",
       "name": "Claude Code / Codex",
@@ -1352,6 +1643,15 @@
       "level_en": "proficient",
       "sort_order": 25,
       "updated_at": "2026-03-17 18:25:30"
+    },
+    {
+      "id": 49,
+      "category": "databases",
+      "name": "Alembic / Schema-Migrationen",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 25,
+      "updated_at": "2026-07-21 08:36:42"
     },
     {
       "id": 5,
@@ -1408,6 +1708,24 @@
       "updated_at": "2026-03-17 14:12:51"
     },
     {
+      "id": 35,
+      "category": "llm_infrastructure",
+      "name": "RAG & Hybrid Retrieval (Vektor + BM25, RRF)",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 30,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 43,
+      "category": "backend",
+      "name": "React + TypeScript (SPA, Live-Monitoring)",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 30,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
       "id": 32,
       "category": "ai_automation",
       "name": "Lokale Telefonagenten / Local Phone Agents",
@@ -1453,6 +1771,24 @@
       "updated_at": "2026-03-17 14:12:51"
     },
     {
+      "id": 36,
+      "category": "llm_infrastructure",
+      "name": "Embeddings & Cross-Encoder-Reranking (bge-m3, Cohere)",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 40,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 44,
+      "category": "backend",
+      "name": "Docker / Docker Compose",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 40,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
       "id": 17,
       "category": "pm_tools",
       "name": "BugZilla",
@@ -1471,6 +1807,33 @@
       "updated_at": "2026-03-17 14:12:51"
     },
     {
+      "id": 37,
+      "category": "llm_infrastructure",
+      "name": "Azure OpenAI / EU-gehostete Cloud-Modelle",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 50,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 45,
+      "category": "backend",
+      "name": "Caddy Reverse Proxy & Security-Hardening",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 50,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 50,
+      "category": "llm_infrastructure",
+      "name": "Azure Document Intelligence",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 55,
+      "updated_at": "2026-07-21 09:14:43"
+    },
+    {
       "id": 27,
       "category": "programming",
       "name": "C",
@@ -1478,6 +1841,51 @@
       "level_en": "basic",
       "sort_order": 60,
       "updated_at": "2026-03-17 14:12:51"
+    },
+    {
+      "id": 38,
+      "category": "llm_infrastructure",
+      "name": "Quantisierung & Modellauswahl (Qwen MoE, Gemma, MedGemma)",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 60,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 46,
+      "category": "backend",
+      "name": "GitHub Actions CI / Container Registry",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 60,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 39,
+      "category": "llm_infrastructure",
+      "name": "OCR & Vision-LLM (PaddleOCR, DeepSeek-OCR, Qwen-VL)",
+      "level_de": "sehr gut",
+      "level_en": "very good",
+      "sort_order": 70,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 47,
+      "category": "backend",
+      "name": "Kubernetes (Deployment-Manifeste)",
+      "level_de": "Basis",
+      "level_en": "basic",
+      "sort_order": 70,
+      "updated_at": "2026-07-21 08:36:42"
+    },
+    {
+      "id": 40,
+      "category": "llm_infrastructure",
+      "name": "LLM-Evaluation & Benchmarking (Ground-Truth-Harness)",
+      "level_de": "gut",
+      "level_en": "good",
+      "sort_order": 80,
+      "updated_at": "2026-07-21 08:36:42"
     }
   ],
   "work_experience": [

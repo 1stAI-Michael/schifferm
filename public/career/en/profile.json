@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Dipl.-Ing. Michael Schiffer MBA",
-    "label": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Solid expertise in Python, MySQL, RAG architectures, AI automation (local LLM, local agents) and healthcare operations.",
+    "label": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Operates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster: two production RAG systems with around 42,000 embedded chunks (COBOL legacy corpus and a document/mail knowledge base), 130,000+ routed requests and 463M processed input tokens in 14 days. Solid expertise in Python/FastAPI, PostgreSQL with pgvector, hybrid retrieval and reranking, GPU load management and document AI (OCR/vision LLM).",
     "email": "Schiffer@TIUB.de",
     "phone": "+49 172 25 6 42 48",
     "url": "https://www.schifferm.de",
@@ -32,9 +32,16 @@
       "summary": "Consulting / Interim Management",
       "highlights": [
         "Consulting and interim management in the automotive industry, healthcare and other sectors. Focus areas: program management, production launches, plant management, supplier development, cost reduction, process optimization, AI implementation and AI-driven process automation.",
+        "Mobile Recorder App + AI Editing Pipeline: Mobile recording tool for structured audio capture with downstream AI pipeline. Public web app (https://the-implementers.de/Recorder/) for recording letters, medical histories, team meetings, notes, ideas, site surveys, and handovers — directly in the browser, no installation required. Context pre-selection (patient ID/name, topic category, recipient) drives downstream pipeline routing. Audio upload via HTTPS, then processed in dedicated pipeline UI (FastAPI, ti-nas-06:8011): WhisperX transcription with speaker diarization, topic-specific LLM processing (letter, EHR entry, examination report, memo, etc.), manual correction in web UI with diff view, quality gates against LLM hallucination. Result routing by topic category: medical documents into OpenEMR patient records (auto-upload), business notes into Flow-Notes DB, measurements into project database. Fully self-hosted, audio stays in own network. Stack: Vanilla JS frontend, MediaRecorder API, FastAPI, WhisperX, Ollama (qwen3.5/gpt-oss), PostgreSQL, OpenEMR API, Caddy with IP whitelist.",
+        "Ollama-Stallwatch — Hang Detection & REST API for Local LLM Inference: Public MIT-licensed monitoring and diagnostic tool for locally hosted Ollama LLM inference on multi-GPU servers. Addresses the hard-to-detect production ghost-hang pattern: model loaded in VRAM, GPU at 0% utilization, ollama-serve CPU-bound in image preprocessing or vision encoder — invisible in logs, only live in nvtop. Four-component stack: GPU logger (nvidia-smi delta-logged), log parser (Docker log into SQLite), process logger (/proc with heartbeat), stall detector with gdb/proc stack capture without container modification via NOPASSWD sudoers. Hang detection in three parallel confidence levels (strict/loose/ghost) with different trigger conditions, complemented by orthogonal mode classification (A/B) distinguishing recoverable from silent hangs. Read-only REST API (port 3002, Python stdlib) with combinable filters (since/at/overlapping, confidence/mode/client_ip) for cross-host correlation. Web dashboard (Chart.js, live from SQLite) with stall bands over time series. Idempotent installer with host detection and portable config.toml. Real production impact: parallel OCR pipeline over 24 hours recorded 10,871 PDF pages, 4,837 inference calls, 97 hang events — pipeline success rate 97.8% instead of ~75-80% with naive wall-clock timeout. Selfheal strategy based on stall data reduced hang recovery time from ~40 minutes to ~17 seconds (factor ~140x). Stack: Python 3.12 stdlib-only (no pip dependencies), SQLite with WAL, Chart.js via CDN, systemd service management, gdb and nvidia-smi as external tools. ~1,700 lines of Python, 3 iterative development days with AI-pair programming. Repo: https://github.com/tiubde-michael/ollama-stallwatch",
+        "GPU Load Management for a Heterogeneous LLM Cluster: In-house development of a central routing engine for a heterogeneous GPU cluster: 4 GPU nodes (RTX 3090, Tesla V100, RTX 3060, NVIDIA GB10 with 128 GB unified memory) and 8+ model endpoints (chat, embeddings, reranker). Capability-based candidate selection (endpoint × model × context window × slots) instead of static pools; named tenants (clinic, chat, batch, guest) with priorities, quotas and preemption of low-priority load. Zero-downtime migration in production: shadow mode (old vs. new decision logged and reviewed per request) followed by a staged cutover; overnight burn-in across 23,600 requests with ~0.1 % anomalies. Auto-discovery of endpoint capacities (llama.cpp /metrics, ollama, HuggingFace TEI), React live monitoring UI and full reservation audit trail. Production volume: 130,000+ routed requests in 14 days. Stack: Python, FastAPI, PostgreSQL, React/TypeScript, llama.cpp, ollama, TEI, Docker.",
+        "OpenAI-Compatible API Gateway with External Customer Integration: Custom /v1 gateway (chat with SSE streaming, embeddings, rerank) in front of the GPU cluster; integration of an external customer-side Kubernetes cluster via scoped token auth. Per-token limits (concurrent requests, requests/min, tokens/min) configurable live from the database; model allowlist and context guards against silent truncation. Production load over 14 days: 338,000 chat requests, 463M input and 76M output tokens, peak 5,746 requests/h at ~1 % error rate. Audit-based traffic and fair-use analyses (token, volume and bandwidth projections) as a decision basis for hosting contracts. Stack: Python, FastAPI, SSE, PostgreSQL, JWT/token scopes, Caddy, Docker.",
+        "Commissioning & Tuning of an NVIDIA GB10 (ARM64) LLM Server: Commissioning of an ASUS Ascent GX10 (NVIDIA GB10, ARM64, unified memory) as a production LLM server. Diagnosed reproducible vLLM instability on the GB10/ARM64 platform and migrated to two parallel llama.cpp instances with a context split on a single chip (4×256k for long context, 8×48k for standard load). Chat, embedding and reranker services running concurrently on the same node. Own measurement series on prefill and generation throughput and saturation behaviour (bandwidth-bound at 273 GB/s). 429-based backpressure strategy: cluster throughput ~193 tok/s with 0 errors across a 30-minute measurement window. Findings transferred into hardware sizing and procurement recommendations for customer projects.",
+        "RAG Knowledge Platform for Legacy COBOL Systems — Lead Architect (Mittelständischer Softwarehersteller (über Generalunternehmer, AT)): Strategic lead architect and sparring/review partner for a two-person senior developer team building an on-premise knowledge platform that makes a COBOL codebase grown over decades (several million LOC, Visual COBOL, fixed format) searchable and answerable. Fully on-premise operation, as the source code is the customer's core asset. Five-stage architecture: deterministic inventory via parser rather than LLM (PROGRAM-ID, COPY, CALL and EXEC SQL relations, file descriptors, data structures), graph extraction across call, copy, data and job relations, LLM-based enrichment, a quality loop, and retrieval with mandatory citation (every answer references program and line number; no generated answer without a solid hit). Corpus: 528 COBOL program identifiers, 17,279 chunks with dual embeddings (bge-m3 on-prem + Azure text-embedding-3-large), 3,697 CALL/COPY dependency edges as a graph. Hybrid retrieval via reciprocal rank fusion across 5 paths (code, multi-level documentation, sections, GraphRAG) plus knowledge cards and cross-encoder reranking (local or Cohere Rerank); embedding backend switchable per request between on-prem GPU and Azure/EU. Domain dictionary/synonym layer with query expansion bridging in-house terminology and identifiers in the code. Quality assurance: 430 ground-truth queries as an eval harness, 12 category-specific search profiles, multipass LLM deep analysis per program with a fallback model chain; recall@10 raised from around 61 % in the prototype to over 83 % in the production state. Local operation of quantised open-weights models (MoE ~35B / ~3B active, q4) with a hybrid fallback to an EU-hosted cloud model for non-confidential portions. Model benchmark across seven candidates and a hardware recommendation in three expansion stages with two procurement paths as a documented decision basis. Gap analysis of the initial source code delivery: around 90 % of call targets lay outside the delivery — leading to a concrete follow-up delivery recommendation to the end customer. Packaging and operations: multi-stage Docker, Alembic migrations, separate dev/prod instances with a hardened migration path, K8s manifests, GitHub Actions into a private container registry; deployed both on-prem and in the customer's Kubernetes. Access via REST API, MCP server for developer tooling and a web chat for non-engineering roles. IP and licence review before delivery (dependency scan, copyleft detection, attribution evidence). 100 % remote, workshops via video.",
+        "E-Mail Automation and Archive with RAG Assistant: IMAP fetcher with three-phase UID reconciliation (deduplication before header and body fetch), a rule engine on sender and subject patterns, and robust error handling for unstable provider IMAP servers. Full-text archiving in PostgreSQL, automatic attachment routing into the OCR pipeline (incoming invoices) and Nextcloud synchronisation. On top of it, a second RAG system over documents, mail and notes: 24,500+ embedded OCR chunks in pgvector as the knowledge base for an internal chat assistant. Stack: Python, FastAPI, PostgreSQL/pgvector, IMAP, Nextcloud, Docker.",
         "TI-Flows Stack — Custom Workflow Automation Platform: Complete replacement of n8n workflow engine with a custom Python/React platform for medical data processing, server security and portfolio management. Async backend (FastAPI + SQLAlchemy + asyncpg), React/TypeScript SPA with 30 pages, 20+ workflows with cron scheduling and execution chaining, 11 background tasks. Workflow engine with dynamic handler import, WebSocket live logs and chained execution. 7-layer security concept: IP whitelist/blacklist (Caddy), brute-force monitor with auto-blacklisting, Telegram-controlled IP whitelisting via inline keyboard, JWT auth, device tokens, rate limiting. 5-stage medical transcript pipeline (WhisperX dictation to medical record) with LLM quality gates. Depot module: Playwright-based comdirect scraper, 7-factor stock ranking, AI news summarization (Ollama). Central Ollama queue with semaphore-based GPU serialization. Shared library (flowlib) for 3 services. ~24,000 LOC (12,800 Python + 8,000 TypeScript + 1,600 flowlib + 2,000 SQL), 21 DB migrations. Stack: Python 3.10, FastAPI, SQLAlchemy async, React 18, TypeScript, Vite, PostgreSQL (pgvector), Docker Compose, Caddy, Ollama, Telegram Bot API, Playwright.",
         "Invoice API — Medical Billing System: Complete billing system for a medical practice with multi-tenant support (physician, IT services, pharmacy). Draft/Finalized/Cancelled workflow with database-driven state machine (PL/pgSQL triggers) — finalized invoices are immutable (audit-proof). ZUGFeRD/EN16931-compliant invoice generation (PDF with embedded CII-XML). OpenEMR integration: patient data, diagnoses, treatments. Tax logic: medical exemption, reverse charge, intra-community supplies. Server-side rendering with Jinja2 + HTMX. Snapshot pattern for audit-proof invoices. ~4,200 LOC Python, ~1,700 LOC SQL, 30+ endpoints, 13 DB migrations. Stack: Python, FastAPI, SQLAlchemy (async), PostgreSQL, HTMX, Jinja2, Docker, Caddy.",
-        "Intelligent Document Recognition & Automated Bank Reconciliation: Architecture and production operation of an on-premise OCR / document pipeline for German tax and accounting documents; replaces Azure Document Intelligence with measurably better extraction accuracy and full data sovereignty. Volume: 10,871 pages processed, 97.8% success rate; ongoing cloud cost reduced from $1,500/year to 0 EUR. Azure A/B benchmark (400 documents): invoice number 33%→86%, total amount 41%→88%, sender 58%→94%. Five-layer stack: PaddleOCR (baseline), qwen3-vl:4b (fast vision), mistral-nemo:12b (text fallback), qwen3.5:27b (high-quality structured extraction), qwen3.5:27b classification into 18 document types with tenant routing. Eight production resilience mechanisms: watchdog threads with wall-clock + GPU-idle + cross-host stall polling, custom degeneracy detection for pathological vision-model output, partial-text recovery, cold-load self-healing (12s cost vs 180s saved hang = 15x net gain), per-phase model unload with verification, cross-host monitoring with REST API and three confidence levels for hang types. Downstream layers: index-based bank matching (>3,000 transactions x >4,000 documents in ~7 seconds) and DATEV-EXTF-CSV export based on learned booking rules. Web UI (FastAPI) with 4-column comparison of extraction sources, DB-driven prompt versioning with fallback chains. Infrastructure: Docker Compose multi-container, PostgreSQL on NAS, GPU sharing (RTX 3090 Ti + RTX 5060 Ti) via Ollama. Stack: Python, FastAPI, PaddleOCR, Ollama (qwen3-vl, qwen3.5, mistral-nemo, deepseek-ocr, gemma3), PostgreSQL, Docker, scikit-learn, httpx streaming with watchdog-cancel.",
+        "Intelligent Document Recognition & Automated Bank Reconciliation: Architecture and production operation of an on-premise OCR / document pipeline for German tax and accounting documents; replaces Azure Document Intelligence with measurably better extraction accuracy and full data sovereignty. Volume: 12,156 pages processed (as of 07/2026), 97.8% success rate; ongoing cloud cost reduced from $1,500/year to 0 EUR. Azure A/B benchmark (400 documents): invoice number 33%→86%, total amount 41%→88%, sender 58%→94%. Five-layer stack: PaddleOCR (baseline), qwen3-vl:4b (fast vision), mistral-nemo:12b (text fallback), qwen3.5:27b (high-quality structured extraction), qwen3.5:27b classification into 18 document types with tenant routing. Eight production resilience mechanisms: watchdog threads with wall-clock + GPU-idle + cross-host stall polling, custom degeneracy detection for pathological vision-model output, partial-text recovery, cold-load self-healing (12s cost vs 180s saved hang = 15x net gain), per-phase model unload with verification, cross-host monitoring with REST API and three confidence levels for hang types. Downstream layers: index-based bank matching (>3,000 transactions x >4,000 documents in ~7 seconds) and DATEV-EXTF-CSV export based on learned booking rules. Web UI (FastAPI) with 4-column comparison of extraction sources, DB-driven prompt versioning with fallback chains. Infrastructure: Docker Compose multi-container, PostgreSQL on NAS, GPU sharing (RTX 3090 Ti + RTX 5060 Ti) via Ollama. Stack: Python, FastAPI, PaddleOCR, Ollama (qwen3-vl, qwen3.5, mistral-nemo, deepseek-ocr, gemma3), PostgreSQL, Docker, scikit-learn, httpx streaming with watchdog-cancel. 2026 additions: LLM-based multi-page document splitting, ZUGFeRD/XRechnung reconciliation, document classification by client, document class and tax year, and pre-accounting for DATEV handover. The Azure Document Intelligence path previously run in parallel has been fully replaced by the in-house on-premise pipeline and is no longer in use. Per-page measurements on a Tesla V100: ~2.5 s OCR + ~5–6 s vision LLM extraction of pure compute time; deliberately small specialist models (5 GB + 3.5 GB) instead of one large generalist.",
         "HRV Analysis Pipeline — Automated Heart Rate Variability Assessment (Praxis für Schmerztherapie & TCM, Baden-Baden): Modular pipeline for reproducible HRV analysis of 24-26h long-term ECG recordings in EDF format. Fully automated: EDF reading, R-peak detection, artifact correction, time/frequency domain metrics, PNS/SNS trends (Kubios-calibrated), ECG-derived respiration and TV-HRV Power Spectrum. Docker file watcher for batch operation. Replaces manual legacy Windows software. Stack: Python, NumPy, SciPy, Matplotlib, pyEDFlib, Docker.",
         "Pain Therapy Documentation System (schmerz_dok): Hospital-grade documentation system for multimodal pain therapy. Supports interdisciplinary teams. OPS-based treatment tracking with 21-day timeline milestones. 4-color traffic light system for therapy progress. Bed occupancy calendar with Gantt visualization. Rich-text editor (TipTap) with versioning. 10-level role hierarchy with audit trail. Server-side PDF reports (WeasyPrint). Stack: Python 3.12, FastAPI, SQLAlchemy 2.0 (async), React 19, Tailwind CSS, PostgreSQL 16, Docker, Nginx, JWT.",
         "VIVO PainCare — AI-powered Clinical Pain Assessment and Admission Justification (Praxis für Schmerztherapie & TCM, Baden-Baden): Clinical decision support system for inpatient pain therapy. Automated processing of VIVO PainCare pain questionnaires (PDF → Markdown → regex extraction → database) with 20-factor traffic-light scoring (red-yellow-green) across standardized pain scales (VAS, PDI, MPSS, DASS, FFbH, VR-12, NHP, HKF-R10, SBL). AI-generated therapy recommendations and objective justifications for hospital admission per cost-effectiveness mandate (medgemma:27b, self-hosted). Longitudinal analysis over 182-day course with automatic discharge letter text generation. Print-optimized A4 one-pager for patient records. 206 questionnaires processed, ~28,000 answers extracted, 117 patients in system. Stack: FastAPI, Ollama (medgemma:27b), PyMuPDF, React + TypeScript, PostgreSQL, Docker.",
@@ -217,6 +224,12 @@
     }
   ],
   "certificates": [
+    {
+      "name": "Agentic AI with LangChain and LangGraph",
+      "issuer": "Coursera (IBM Skills Network)",
+      "date": "2026-04",
+      "url": ""
+    },
     {
       "name": "Introduction to Deep Learning & Neural Networks with Keras (IBM)",
       "issuer": "IBM / Coursera",
@@ -481,7 +494,7 @@
       "name": "Operating Systems",
       "keywords": [
         "Windows (bis 11) (proficient)",
-        "Linux (basic)"
+        "Linux (good)"
       ]
     },
     {
@@ -528,7 +541,9 @@
       "name": "Databases",
       "keywords": [
         "MySQL (basic)",
-        "Postgres (basic)",
+        "PostgreSQL mit pgvector (very good)",
+        "Postgres (very good)",
+        "Alembic / Schema-Migrationen (good)",
         "Access (basic)",
         "Lotus 1-2-3 (basic)"
       ]
@@ -536,7 +551,7 @@
     {
       "name": "Programming",
       "keywords": [
-        "Python (proficient)",
+        "Python (very good)",
         "C# (basic)",
         "Visual Basic (basic)",
         "VB.NET (basic)",
@@ -552,6 +567,32 @@
         "Claude Code / Codex (proficient)",
         "GPT-OS:20B / Qwen etc. (proficient)",
         "Lokale Telefonagenten / Local Phone Agents (proficient)"
+      ]
+    },
+    {
+      "name": "LLM Infrastructure",
+      "keywords": [
+        "LLM-Serving (llama.cpp, vLLM, ollama, TEI) (very good)",
+        "Multi-GPU-Betrieb & GPU-Lastmanagement (very good)",
+        "RAG & Hybrid Retrieval (Vektor + BM25, RRF) (very good)",
+        "Embeddings & Cross-Encoder-Reranking (bge-m3, Cohere) (very good)",
+        "Azure OpenAI / EU-gehostete Cloud-Modelle (good)",
+        "Azure Document Intelligence (good)",
+        "Quantisierung & Modellauswahl (Qwen MoE, Gemma, MedGemma) (good)",
+        "OCR & Vision-LLM (PaddleOCR, DeepSeek-OCR, Qwen-VL) (very good)",
+        "LLM-Evaluation & Benchmarking (Ground-Truth-Harness) (good)"
+      ]
+    },
+    {
+      "name": "Backend & DevOps",
+      "keywords": [
+        "FastAPI (async, SSE, WebSockets) (very good)",
+        "SQLAlchemy async / asyncpg (good)",
+        "React + TypeScript (SPA, Live-Monitoring) (good)",
+        "Docker / Docker Compose (very good)",
+        "Caddy Reverse Proxy & Security-Hardening (good)",
+        "GitHub Actions CI / Container Registry (good)",
+        "Kubernetes (Deployment-Manifeste) (basic)"
       ]
     }
   ],
@@ -579,7 +620,7 @@
   ],
   "meta": {
     "canonical": "https://schifferm.de/career/profile.json",
-    "version": "2026-03-17 14:08:01",
-    "lastModified": "2026-03-17 14:08:01"
+    "version": "2026-07-21 09:14:43",
+    "lastModified": "2026-07-21 09:14:43"
   }
 }

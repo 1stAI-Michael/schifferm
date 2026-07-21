@@ -31,7 +31,7 @@
     }
   ],
   "headline": "Process Optimization • Program Management • Generative AI • Healthcare Automation",
-  "oneLiner": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Solid expertise in Python, MySQL, RAG architectures, AI automation (local LLM, local agents) and healthcare operations.",
+  "oneLiner": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Operates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster: two production RAG systems with around 42,000 embedded chunks (COBOL legacy corpus and a document/mail knowledge base), 130,000+ routed requests and 463M processed input tokens in 14 days. Solid expertise in Python/FastAPI, PostgreSQL with pgvector, hybrid retrieval and reranking, GPU load management and document AI (OCR/vision LLM).",
   "keywords": [
     "process optimization",
     "program management",
@@ -80,7 +80,7 @@
   "skills": {
     "os": [
       "Windows (bis 11) (proficient)",
-      "Linux (basic)"
+      "Linux (good)"
     ],
     "office": [
       "MS Excel (advanced)",
@@ -109,12 +109,14 @@
     ],
     "databases": [
       "MySQL (basic)",
-      "Postgres (basic)",
+      "PostgreSQL mit pgvector (very good)",
+      "Postgres (very good)",
+      "Alembic / Schema-Migrationen (good)",
       "Access (basic)",
       "Lotus 1-2-3 (basic)"
     ],
     "programming": [
-      "Python (proficient)",
+      "Python (very good)",
       "C# (basic)",
       "Visual Basic (basic)",
       "VB.NET (basic)",
@@ -127,6 +129,26 @@
       "Claude Code / Codex (proficient)",
       "GPT-OS:20B / Qwen etc. (proficient)",
       "Lokale Telefonagenten / Local Phone Agents (proficient)"
+    ],
+    "llm_infrastructure": [
+      "LLM-Serving (llama.cpp, vLLM, ollama, TEI) (very good)",
+      "Multi-GPU-Betrieb & GPU-Lastmanagement (very good)",
+      "RAG & Hybrid Retrieval (Vektor + BM25, RRF) (very good)",
+      "Embeddings & Cross-Encoder-Reranking (bge-m3, Cohere) (very good)",
+      "Azure OpenAI / EU-gehostete Cloud-Modelle (good)",
+      "Azure Document Intelligence (good)",
+      "Quantisierung & Modellauswahl (Qwen MoE, Gemma, MedGemma) (good)",
+      "OCR & Vision-LLM (PaddleOCR, DeepSeek-OCR, Qwen-VL) (very good)",
+      "LLM-Evaluation & Benchmarking (Ground-Truth-Harness) (good)"
+    ],
+    "backend": [
+      "FastAPI (async, SSE, WebSockets) (very good)",
+      "SQLAlchemy async / asyncpg (good)",
+      "React + TypeScript (SPA, Live-Monitoring) (good)",
+      "Docker / Docker Compose (very good)",
+      "Caddy Reverse Proxy & Security-Hardening (good)",
+      "GitHub Actions CI / Container Registry (good)",
+      "Kubernetes (Deployment-Manifeste) (basic)"
     ]
   },
   "experience": [
@@ -205,6 +227,70 @@
   ],
   "projects": [
     {
+      "title": "Mobile Recorder App + AI Editing Pipeline",
+      "client": null,
+      "dateFrom": "2025-09",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Mobile recorder web app (https://the-implementers.de/Recorder/) with topic-based AI pipeline: speech to structured text to automatic routing to EHR/notes/project DB. Versatile: letters, medical histories, team meetings, site surveys, handovers."
+    },
+    {
+      "title": "Ollama-Stallwatch — Hang Detection & REST API for Local LLM Inference",
+      "client": null,
+      "dateFrom": "2026-04",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Public GitHub project (MIT) for detecting ghost hangs in Ollama LLM inference. 4 collector services, SQLite backend, REST API, dashboard. Real impact: OCR pipeline 97.8% success rate (vs 75-80% naive), hang recovery 140x faster. https://github.com/tiubde-michael/ollama-stallwatch"
+    },
+    {
+      "title": "GPU Load Management for a Heterogeneous LLM Cluster",
+      "client": null,
+      "dateFrom": "2026-06",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Central routing engine for 4 heterogeneous GPU nodes and 8+ model endpoints. Capability-based routing, tenant priorities, preemption. 130,000+ routed requests in 14 days, zero-downtime shadow-mode migration."
+    },
+    {
+      "title": "OpenAI-Compatible API Gateway with External Customer Integration",
+      "client": null,
+      "dateFrom": "2026-06",
+      "dateTo": null,
+      "category": "ai",
+      "description": "OpenAI-compatible /v1 gateway (chat/embeddings/rerank) with token scopes and live rate limits, serving an external customer K8s cluster. 338,000 requests and 463M input tokens in 14 days."
+    },
+    {
+      "title": "Commissioning & Tuning of an NVIDIA GB10 (ARM64) LLM Server",
+      "client": null,
+      "dateFrom": "2026-07",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Brought an NVIDIA GB10 (ARM64) into production as an LLM server: diagnosed vLLM instability, migrated to llama.cpp with context split. ~193 tok/s at 0 errors, 429 backpressure strategy."
+    },
+    {
+      "title": "RAG Knowledge Platform for Legacy COBOL Systems — Lead Architect",
+      "client": "Mittelständischer Softwarehersteller (über Generalunternehmer, AT)",
+      "dateFrom": "2026-04",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Lead architect of an on-premise RAG knowledge platform for a COBOL codebase of several million LOC. 17,279 chunks with dual embeddings, 3,697 graph edges, hybrid RRF retrieval across 5 paths with mandatory citation. Recall@10 raised from 61 % to over 83 %; model benchmark across 7 candidates as a hardware decision basis."
+    },
+    {
+      "title": "E-Mail Automation and Archive with RAG Assistant",
+      "client": null,
+      "dateFrom": "2026-03",
+      "dateTo": null,
+      "category": "ai",
+      "description": "IMAP automation with rule engine, full-text archive and attachment routing into the OCR pipeline. Second RAG system with 24,500+ embedded chunks in pgvector for an internal assistant."
+    },
+    {
+      "title": "TI-Flows Stack — Custom Workflow Automation Platform",
+      "client": null,
+      "dateFrom": "2026-01",
+      "dateTo": null,
+      "category": "ai",
+      "description": "TI-Flows Stack: Self-hosted workflow automation replacing n8n. 20+ workflows, 30 frontend pages, 7-layer security, LLM pipeline, depot analysis. ~24,000 LOC Python/React."
+    },
+    {
       "title": "Invoice API — Medical Billing System",
       "client": null,
       "dateFrom": "2025-12",
@@ -218,15 +304,23 @@
       "dateFrom": "2025-08",
       "dateTo": null,
       "category": "ai",
-      "description": "AI-powered document recognition and automated matching to bank transactions. Multi-model OCR pipeline, ML-based document separation, web UI."
+      "description": "On-prem OCR pipeline replacing Azure: 10,871 pages, 97.8% success, extraction 33%→86% vs Azure. 5-layer multi-LLM stack (PaddleOCR, qwen-vl, qwen3.5, mistral-nemo). Incl. bank matching and DATEV export."
     },
     {
-      "title": "Concept for Performance Documentation in Pain Therapy",
-      "client": null,
-      "dateFrom": "2026-02",
+      "title": "HRV Analysis Pipeline — Automated Heart Rate Variability Assessment",
+      "client": "Praxis für Schmerztherapie & TCM, Baden-Baden",
+      "dateFrom": "2026-01",
       "dateTo": "2026-02",
       "category": "healthcare",
-      "description": "Concept for digital performance documentation in pain therapy."
+      "description": "Automated HRV analysis from long-term ECG: R-peak detection, artifact correction, PNS/SNS trends, 3-page PDF report. Docker."
+    },
+    {
+      "title": "Pain Therapy Documentation System (schmerz_dok)",
+      "client": null,
+      "dateFrom": "2026-02",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Clinical documentation system: OPS tracking, traffic light system, bed occupancy, audit trail. FastAPI + React + PostgreSQL."
     },
     {
       "title": "VIVO PainCare — AI-powered Clinical Pain Assessment and Admission Justification",
@@ -385,18 +479,19 @@
   ],
   "certifications": {
     "ai_data": [
+      "Agentic AI with LangChain and LangGraph — Coursera (IBM Skills Network) (2026-04)",
       "Introduction to Deep Learning & Neural Networks with Keras (IBM) — IBM / Coursera (2026-01)",
-      "Vector Databases for RAG — IBM / Coursera (2025-05)",
-      "Build Intelligent Agents using DeepSeek & N8N — Board Infinity / Coursera (2025-05)",
+      "Vector Databases for RAG — IBM / Coursera (2025-10)",
+      "Build Intelligent Agents using DeepSeek & N8N — Board Infinity / Coursera (2025-07)",
       "MySQL for Data Engineering — Duke University / Coursera (2025-05)",
-      "Python for Everybody (Specialization, 5 courses) — University of Michigan / Coursera (2025-03)",
-      "Google AI Essentials (Specialization, 5 courses) — Google / Coursera (2025-12)",
+      "Python for Everybody (Specialization, 5 courses) — University of Michigan / Coursera (2025-04)",
+      "Google AI Essentials (Specialization, 5 courses) — Google / Coursera (2026-01)",
       "Google Prompting Essentials (Specialization, 4 courses) — Google / Coursera (2025-12)",
       "Introduction to AI (Google) — Google / Coursera (2025-12)",
       "Introduction to OpenAI Codex — Scrimba / Coursera (2026-01)"
     ],
     "ai_healthcare": [
-      "Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 courses) — Coursera (2025-10)"
+      "Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 courses) — Coursera (2025-11)"
     ],
     "quality": [
       "Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way — Toyota Boshoku (2025-10)",
