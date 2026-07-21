@@ -34,8 +34,10 @@ export const certCategoryMeta = {
 };
 
 export const skillCategoryMeta = {
+  llm_infrastructure: { de: "LLM-Infrastruktur",   en: "LLM Infrastructure" },
   programming:   { de: "Programmierung",           en: "Programming" },
   ai_automation: { de: "KI & Automatisierung",     en: "AI & Automation" },
+  backend:       { de: "Backend & DevOps",         en: "Backend & DevOps" },
   databases:     { de: "Datenbanken",              en: "Databases" },
   office:        { de: "Office",                   en: "Office" },
   cad:           { de: "CAD",                      en: "CAD" },
@@ -120,7 +122,7 @@ export function getSkills(lang) {
 
 export function getSkillsGrouped(lang) {
   const skills = getSkills(lang);
-  const order = ["programming", "ai_automation", "databases", "office", "cad", "pm_tools", "os", "pdm", "mrp"];
+  const order = ["llm_infrastructure", "programming", "ai_automation", "backend", "databases", "office", "cad", "pm_tools", "os", "pdm", "mrp"];
   const grouped = {};
   for (const s of skills) {
     if (!grouped[s.category]) grouped[s.category] = [];

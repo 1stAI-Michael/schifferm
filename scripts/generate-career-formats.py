@@ -138,8 +138,10 @@ def build_json_resume(conn, lang="en"):
 
     skills_out = []
     cat_labels = {
+        "llm_infrastructure": "LLM Infrastructure" if not de else "LLM-Infrastruktur",
         "ai_automation": "AI & Automation",
         "programming": "Programming" if not de else "Programmierung",
+        "backend": "Backend & DevOps",
         "databases": "Databases" if not de else "Datenbanken",
         "office": "Office",
         "cad": "CAD",
@@ -322,8 +324,10 @@ def build_full_markdown(conn, lang="en"):
     for s in skills_raw:
         skill_groups.setdefault(s["category"], []).append(s)
     cat_labels = {
+        "llm_infrastructure": "LLM-Infrastruktur" if de else "LLM Infrastructure",
         "ai_automation": "AI & Automation",
         "programming": "Programmierung" if de else "Programming",
+        "backend": "Backend & DevOps",
         "databases": "Datenbanken" if de else "Databases",
         "office": "Office",
         "cad": "CAD",
