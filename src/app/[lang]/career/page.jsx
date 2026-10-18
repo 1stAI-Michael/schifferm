@@ -4,10 +4,10 @@ import { getLocale } from "../../../lib/content";
 import { siteConfig } from "../../../lib/site";
 import {
   getPersonalInfo,
-  getWorkExperience,
+  getWorkExperienceGrouped,
   getEducation,
   getSkillsGrouped,
-  getCertificationsGrouped,
+  getCertificationsSplit,
   getLanguages,
   getAwards,
   getDrivingLicenses,
@@ -15,6 +15,9 @@ import {
   getMemberships,
 } from "../../../lib/careerData";
 import LevelDots from "../../../components/LevelDots";
+import JobProjects from "../../../components/career/JobProjects";
+import CertGroup from "../../../components/career/CertGroup";
+import ArchivedCertifications from "../../../components/career/ArchivedCertifications";
 
 export const dynamicParams = false;
 
@@ -42,6 +45,7 @@ const copy = {
     projects: "Projekte",
     thesis: "Abschlussarbeit",
     grade: "Note",
+    stations: (n) => `${n} Stationen`,
   },
   en: {
     pageTitle: "Full Curriculum Vitae",
@@ -62,6 +66,7 @@ const copy = {
     projects: "Projects",
     thesis: "Thesis",
     grade: "Grade",
+    stations: (n) => `${n} positions`,
   },
 };
 
@@ -80,10 +85,10 @@ export default async function CareerPage({ params }) {
   const lang = getLocale(resolvedParams?.lang);
   const t = copy[lang];
   const info = getPersonalInfo(lang);
-  const work = getWorkExperience(lang);
+  const workGroups = getWorkExperienceGrouped(lang);
   const education = getEducation(lang);
   const skillGroups = getSkillsGrouped(lang);
-  const certGroups = getCertificationsGrouped(lang);
+  const certs = getCertificationsSplit(lang);
   const languages = getLanguages(lang);
   const awards = getAwards(lang);
   const drivingLicenses = getDrivingLicenses(lang);
@@ -98,7 +103,11 @@ export default async function CareerPage({ params }) {
           {t.pageTitle}
         </p>
         <h1 className="mt-2 font-heading text-3xl text-slate-900">{info.name}</h1>
-        <p className="mt-3 text-base text-slate-700">{info.summary}</p>
+        <div className="mt-3 space-y-3 text-base text-slate-700">
+          {info.summaryParagraphs.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </div>
       </div>
 
       {/* Contact */}
@@ -108,11 +117,6 @@ export default async function CareerPage({ params }) {
           <div>
             <a href={`mailto:${info.email}`} className="text-implementers-blue hover:underline">
               {info.email}
-            </a>
-          </div>
-          <div>
-            <a href={`tel:${info.phone.replace(/\s/g, "")}`} className="text-implementers-blue hover:underline">
-              {info.phone}
             </a>
           </div>
           <div>{info.city}, {info.country}</div>
@@ -149,45 +153,47 @@ export default async function CareerPage({ params }) {
       <div className="mb-10">
         <h2 className="mb-6 text-xl font-semibold text-slate-900">{t.experience}</h2>
         <div className="space-y-6">
-          {work.map((job) => (
-            <div key={job.id} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          {workGroups.map((group) => (
+            <div key={group.id} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-base font-semibold text-slate-900">{job.employer}</h3>
+                <h3 className="text-base font-semibold text-slate-900">{group.employer}</h3>
                 <span className="text-xs font-mono font-medium text-slate-400">
-                  {job.dateFrom} – {job.dateTo || t.present}
+                  {group.dateFrom} – {group.dateTo || t.present}
                 </span>
               </div>
-              <div className="mt-1 text-sm font-medium text-implementers-blue">{job.role}</div>
-              {(job.level || job.department) && (
-                <div className="mt-1 flex flex-wrap gap-2">
-                  {job.level && (
-                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">{job.level}</span>
-                  )}
-                  {job.department && (
-                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">{job.department}</span>
-                  )}
-                </div>
+              {group.isGrouped && (
+                <div className="mt-1 text-xs text-slate-500">{t.stations(group.stations.length)}</div>
               )}
-              {job.description && (
-                <p className="mt-2 text-sm text-slate-600">{job.description}</p>
-              )}
-              {job.projects.length > 0 && (
-                <div className="mt-3 border-t border-slate-100 pt-3">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">{t.projects}</div>
-                  <ul className="space-y-1.5 text-sm text-slate-700">
-                    {job.projects.map((p) => (
-                      <li key={p.id} className="flex gap-2">
-                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-implementers-blue" />
-                        <span>
-                          <span className="font-medium">{p.title}</span>
-                          {p.client && <span className="text-slate-500"> ({p.client})</span>}
-                          <span className="text-slate-400 text-xs ml-1">{p.dateFrom}–{p.dateTo || t.present}</span>
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+
+              <div className={group.isGrouped ? "mt-5 space-y-6 border-l-2 border-slate-100 pl-5" : ""}>
+                {group.stations.map((job) => (
+                  <div key={job.id} className={group.isGrouped ? "relative" : ""}>
+                    {group.isGrouped && (
+                      <>
+                        <span className="absolute -left-[26px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-implementers-blue" />
+                        <div className="text-xs font-mono text-slate-400">
+                          {job.dateFrom} – {job.dateTo || t.present}
+                        </div>
+                      </>
+                    )}
+                    <div className="mt-1 text-sm font-medium text-implementers-blue">{job.role}</div>
+                    {(job.level || job.department) && (
+                      <div className="mt-1 flex flex-wrap gap-2">
+                        {job.level && (
+                          <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">{job.level}</span>
+                        )}
+                        {job.department && (
+                          <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">{job.department}</span>
+                        )}
+                      </div>
+                    )}
+                    {job.description && (
+                      <p className="mt-2 text-sm text-slate-600">{job.description}</p>
+                    )}
+                    <JobProjects projects={job.projects} lang={lang} />
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -247,27 +253,14 @@ export default async function CareerPage({ params }) {
       {/* Certifications */}
       <div className="mb-10">
         <h2 className="mb-6 text-xl font-semibold text-slate-900">{t.certifications}</h2>
-        {certGroups.map((group) => (
-          <div key={group.category} className="mb-4 rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-            <div className="flex items-center justify-between px-6 py-3 bg-slate-50">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-600">{group.label}</h3>
-              <span className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-                {group.items.length}
-              </span>
-            </div>
-            <ul className="px-6 divide-y divide-slate-100">
-              {group.items.map((cert) => (
-                <li key={cert.id} className="flex flex-wrap items-baseline justify-between gap-2 py-2.5">
-                  <div>
-                    <span className="text-sm font-medium text-slate-900">{cert.name}</span>
-                    {cert.issuer && <span className="ml-2 text-sm text-slate-500">— {cert.issuer}</span>}
-                  </div>
-                  <span className="text-xs font-mono text-slate-400">{cert.dateFrom}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {certs.current.map((group) => (
+          <CertGroup key={group.category} group={group} />
         ))}
+        <ArchivedCertifications
+          groups={certs.archived}
+          count={certs.archivedCount}
+          lang={lang}
+        />
       </div>
 
       {/* Awards */}

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LogoMark from "./LogoMark";
+import { profileContent } from "../content/profile";
 
 const getLocaleFromPath = (pathname) => (pathname?.startsWith("/en") ? "en" : "de");
 
@@ -35,10 +36,19 @@ function Footer() {
         </div>
         <div className="flex flex-col items-start gap-3 md:items-end">
           <div className="text-sm text-slate-300">
-            <div>Spremberg, Deutschland</div>
+            {/* Aus profile.js, nicht aus der career-Datenbank: die fuehrt die
+                Anschrift von 1stAI (Kostomloty). Hier steht die von Michael
+                Schiffer — Michael-Entscheid 27.08.2026, gilt unveraendert fuer
+                den ORT. Nur die Mailadresse ist am 18.10.2026 umgestellt worden
+                (fA-1446). Zuvor standen beide Werte doppelt: hier fest und in
+                profile.js. */}
+            <div>{profileContent.person.location}</div>
             <div>
-              <a href="mailto:Schiffer@TIUB.de" className="hover:text-implementers-accent">
-                Schiffer@TIUB.de
+              <a
+                href={`mailto:${profileContent.person.email}`}
+                className="hover:text-implementers-accent"
+              >
+                {profileContent.person.email}
               </a>
             </div>
             <div>

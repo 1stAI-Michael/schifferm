@@ -8,7 +8,7 @@ export const profileContent = {
   person: {
     name: "Dipl.-Ing. Michael Schiffer, MBA",
     location: "Spremberg, Deutschland",
-    email: "Schiffer@TIUB.de",
+    email: "schiffer@1stAI.eu",
     mobile: "+49 172 25 6 42 48",
     languages: [
       { code: "de", label: "DE", level: "native" },

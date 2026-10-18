@@ -9,20 +9,23 @@ Process optimizer & Program Manager with 20+ years in automotive industry, produ
 - AI / Data / Workflow Engineering: RAG + vector DBs, LLM workflows, Python+SQL pipelines, local LLMs (Ollama/LM Studio), n8n
 
 ## Skills
-- os: Windows (bis 11) (proficient), Linux (good)
-- office: MS Excel (advanced), MS Project (advanced), MS PowerPoint (proficient), MS Word (proficient)
+- os: Windows (bis 11) (proficient), Linux (proficient)
+- office: MS Excel (advanced), MS PowerPoint (proficient), MS Word (proficient)
 - cad: OnShape (proficient), AutoCAD 3D (proficient), CATIA V5 (basic)
 - pdm: Sherpa (basic), Matrix One (basic)
 - mrp: SAP (basic)
 - pm_tools: MS Project (advanced), DotProject (basic), eGroup (proficient), eRoom (proficient), BugZilla (proficient)
-- databases: MySQL (basic), PostgreSQL mit pgvector (very good), Postgres (very good), Alembic / Schema-Migrationen (good), Access (basic), Lotus 1-2-3 (basic)
-- programming: Python (very good), C# (basic), Visual Basic (basic), VB.NET (basic), Pascal (basic), C (basic)
-- ai_automation: N8N (proficient), Ollama & LM Studio (lokale KI) (proficient), Claude Code / Codex (proficient), GPT-OS:20B / Qwen etc. (proficient), Lokale Telefonagenten / Local Phone Agents (proficient)
-- llm_infrastructure: LLM-Serving (llama.cpp, vLLM, ollama, TEI) (very good), Multi-GPU-Betrieb & GPU-Lastmanagement (very good), RAG & Hybrid Retrieval (Vektor + BM25, RRF) (very good), Embeddings & Cross-Encoder-Reranking (bge-m3, Cohere) (very good), Azure OpenAI / EU-gehostete Cloud-Modelle (good), Azure Document Intelligence (good), Quantisierung & Modellauswahl (Qwen MoE, Gemma, MedGemma) (good), OCR & Vision-LLM (PaddleOCR, DeepSeek-OCR, Qwen-VL) (very good), LLM-Evaluation & Benchmarking (Ground-Truth-Harness) (good)
-- backend: FastAPI (async, SSE, WebSockets) (very good), SQLAlchemy async / asyncpg (good), React + TypeScript (SPA, Live-Monitoring) (good), Docker / Docker Compose (very good), Caddy Reverse Proxy & Security-Hardening (good), GitHub Actions CI / Container Registry (good), Kubernetes (Deployment-Manifeste) (basic)
+- databases: MySQL (basic), PostgreSQL mit pgvector (advanced), Alembic / Schema-Migrationen (proficient), Access (basic), Lotus 1-2-3 (basic)
+- programming: Python (proficient), C# (basic), Visual Basic (basic), VB.NET (basic), Pascal (basic), C (basic)
+- ai_automation: N8N (proficient), Ollama & LM Studio (lokale KI) (proficient), Claude Code / Codex (advanced), GPT-OS:20B / Qwen etc. (proficient), Lokale Telefonagenten / Local Phone Agents (proficient)
+- llm_infrastructure: LLM-Serving (llama.cpp, vLLM, ollama, TEI) (advanced), Multi-GPU-Betrieb & GPU-Lastmanagement (advanced), RAG & Hybrid Retrieval (Vektor + BM25, RRF) (advanced), Embeddings & Cross-Encoder-Reranking (bge-m3, Cohere) (advanced), Azure OpenAI / EU-gehostete Cloud-Modelle (proficient), Azure Document Intelligence (proficient), Quantisierung & Modellauswahl (Qwen MoE, Gemma, MedGemma) (proficient), OCR & Vision-LLM (PaddleOCR, DeepSeek-OCR, Qwen-VL) (advanced), LLM-Evaluation & Benchmarking (Ground-Truth-Harness) (proficient)
+- backend: FastAPI (async, SSE, WebSockets) (advanced), SQLAlchemy async / asyncpg (proficient), React + TypeScript (SPA, Live-Monitoring) (proficient), Docker / Docker Compose (advanced), Caddy Reverse Proxy & Security-Hardening (proficient), GitHub Actions CI / Container Registry (proficient), Kubernetes (Deployment-Manifeste) (basic)
+- medtech: qEEG-Messung und -Auswertung (19-Kanal / 2-Kanal, Normdatenbank-Abgleich) (proficient), Neurofeedback-Systeme (Messung und Protokolle) (proficient), Narkosemonitor-Anbindung GE / Mindray inkl. EKG-Daten (proficient), OpenEMR (Praxis- und Klinikinformationssystem) (proficient)
 
 ## Experience
+- 2026-06–present: 1stAI — Founder
 - 2010-01–present: The Implementers GmbH — Principal Consultant / Managing Director
+- 2017-05–2025-05: Praxis für Schmerztherapie & TCM, Olga Schiffer MSc — Practice IT, Digitalisation and Back Office
 - 2009-07–2010-06: Johnson Controls — Program Manager Insolvent Suppliers
 - 2007-12–2009-06: Johnson Controls — Program Manager
 - 2006-09–2007-11: Johnson Controls — Operations Manager (Crisis Management)
@@ -41,8 +44,12 @@ Process optimizer & Program Manager with 20+ years in automotive industry, produ
 - GPU Load Management for a Heterogeneous LLM Cluster 2026-06–present: Central routing engine for 4 heterogeneous GPU nodes and 8+ model endpoints. Capability-based routing, tenant priorities, preemption. 130,000+ routed requests in 14 days, zero-downtime shadow-mode migration.
 - OpenAI-Compatible API Gateway with External Customer Integration 2026-06–present: OpenAI-compatible /v1 gateway (chat/embeddings/rerank) with token scopes and live rate limits, serving an external customer K8s cluster. 338,000 requests and 463M input tokens in 14 days.
 - Commissioning & Tuning of an NVIDIA GB10 (ARM64) LLM Server 2026-07–present: Brought an NVIDIA GB10 (ARM64) into production as an LLM server: diagnosed vLLM instability, migrated to llama.cpp with context split. ~193 tok/s at 0 errors, 429 backpressure strategy.
-- RAG Knowledge Platform for Legacy COBOL Systems — Lead Architect (Mittelständischer Softwarehersteller (über Generalunternehmer, AT)) 2026-04–present: Lead architect of an on-premise RAG knowledge platform for a COBOL codebase of several million LOC. 17,279 chunks with dual embeddings, 3,697 graph edges, hybrid RRF retrieval across 5 paths with mandatory citation. Recall@10 raised from 61 % to over 83 %; model benchmark across 7 candidates as a hardware decision basis.
+- RAG Knowledge Platform for Legacy COBOL Systems — Lead Architect (Mittelständischer Softwarehersteller (über Generalunternehmer)) 2026-04–2026-10: Lead architect of an on-premise RAG knowledge platform for a COBOL codebase of several million LOC. 17,279 chunks with dual embeddings, 3,697 graph edges, hybrid RRF retrieval across 5 paths with mandatory citation. Recall@10 raised from 61 % to over 83 %; model benchmark across 7 candidates as a hardware decision basis.
 - E-Mail Automation and Archive with RAG Assistant 2026-03–present: IMAP automation with rule engine, full-text archive and attachment routing into the OCR pipeline. Second RAG system with 24,500+ embedded chunks in pgvector for an internal assistant.
+- Agent Studio — Multi-Agent Software Development with Claude Code 2026-04–present: Built and operate a development environment in which around two dozen Claude Code sessions work in parallel across several machines, each with its own workspace and identity. Coordination via a purpose-built ticket board on PostgreSQL: priorities, due dates, responsibility as a dedicated field, blocking, conditional claim; agents commission and review each other through sub-tickets. Shift operation with a watcher, versioned documentation and playbooks from Git, credentials exclusively via a broker. Codex as an independent reviewer.
+- Agent Studio Overview — Control Station for Parallel Claude Code and Codex Sessions 2026-08–present: Control station for running many Claude Code and Codex CLI sessions at once: nine windows with around fifty sessions, built with one click and laid out automatically per workplace. Simultaneous prompting of multiple sessions with measured input readiness, automated command sequences, detection and reporting of open agent questions. Around 6,400 lines of Python, standard library only, 20 tables, 249 regression tests; replaces 13 shell scripts, monitoring load cut from 200 % to 4 % CPU.
+- Modernisation of an Excel VBA Planning Application with Claude Code — Migration to CSV, SQLite and HTML (Endkunde über Generalunternehmer) 2026-05–2026-05: AI-assisted reverse engineering and replacement of an 18-month project plan in Excel with around a dozen VBA macros for timeline, bars and predecessor arrows (around 130 work packages in 12 phases), implemented with Claude Code and reviewed with Codex. Key finding: Excel was carrying two roles at once — data storage and rendering. New architecture: CSV as source of truth, generated SQLite, static single-file HTML — 2,733 lines of Python and HTML/JS with no external dependencies, all four predecessor types (FS, SS, FF, SF), automated consistency check. Two silent error classes of the legacy system eliminated by construction.
+- Agentic Coding with Local Open-Weight Models — Claude Code On-Premise 2026-09–present: Operate Claude Code additionally against locally hosted open-weight models (Qwen on llama.cpp) through a translator between the Anthropic and OpenAI interfaces — agentic coding without a cloud connection. Found and fixed two different causes behind the same grammar-enforcement error message; production run with 40 tools and around 87,000 tokens. Model choice by measurement: 144 agent runs with hidden checks — Qwen3.8-27B solves 72 of 72, Qwen3.6-35B-A3B 64 of 72; routing by task derived from it.
 - TI-Flows Stack — Custom Workflow Automation Platform 2026-01–present: TI-Flows Stack: Self-hosted workflow automation replacing n8n. 20+ workflows, 30 frontend pages, 7-layer security, LLM pipeline, depot analysis. ~24,000 LOC Python/React.
 - Invoice API — Medical Billing System 2025-12–2026-02: Billing system for medical providers with ZUGFeRD-compliant invoice generation and OpenEMR integration.
 - Intelligent Document Recognition & Automated Bank Reconciliation 2025-08–present: On-prem OCR pipeline replacing Azure: 10,871 pages, 97.8% success, extraction 33%→86% vs Azure. 5-layer multi-LLM stack (PaddleOCR, qwen-vl, qwen3.5, mistral-nemo). Incl. bank matching and DATEV export.
@@ -53,7 +60,7 @@ Process optimizer & Program Manager with 20+ years in automotive industry, produ
 - Supplier Management suspension parts (KTM) 2023-05–2024-11: Supplier development for forged parts with turning/milling incl. changes, launches and claims management.
 - Transfer of 150 serial production items (KTM) 2022-07–2024-01: Transfer of 150 serial production suspension parts due to short-notice plant closure.
 - Lean / Process consultation (Von Roll Schweiz AG) 2018-06–2018-11: Process optimization in internal sales of a Swiss machinery manufacturer.
-- Back Office Support and Process Improvement (Praxis für Schmerztherapie & TCM, Baden-Baden) 2018-05–2025-05: Ongoing support for a private practice: anesthesia protocols, document management, telemedicine workflows.
+- Back Office Support and Process Improvement (Praxis für Schmerztherapie & TCM, Baden-Baden) 2018-05–2025-05: Ongoing support for a private practice: electronic anaesthesia record with monitor integration, OpenEMR, GOÄ billing, end-to-end telemedicine workflow from GDPR consent to billing, document management.
 - Start-up consulting and coaching (Praxis für Schmerztherapie & TCM, Baden-Baden) 2017-05–2018-04: Start-up consulting and coaching for a private pain therapy & TCM practice.
 - Acting Plant Manager (MAO Automotive GmbH & Co) 2018-02–2018-06: Interim plant management and stabilization of a Hungarian production facility until handover.
 - Program Manager critical suppliers DAG BR238 Door Trim (Megatech Industries Deutschland GmbH) 2016-07–2017-10: Supplier development DAG BR238 door trim incl. sampling, PPAP/EMPB and production launch.
@@ -72,50 +79,51 @@ Process optimizer & Program Manager with 20+ years in automotive industry, produ
 - 1988-06–1991-06: High School Diploma (Abitur) Focus on Mathematics and Physics, Ernst-Moritz-Arndt-Gymnasium der Stadt Bonn (3,2)
 
 ## Certifications
+- EU AI Act Explained: What You Need to Know About the New AI Regulation from August — WBS.LEGAL (Prof. Christian Solmecke) (2026-08)
 - Agentic AI with LangChain and LangGraph — Coursera (IBM Skills Network) (2026-04)
 - Introduction to Deep Learning & Neural Networks with Keras (IBM) — IBM / Coursera (2026-01)
+- Google AI Essentials (Specialization, 5 courses) — Google / Coursera (2026-01)
+- Introduction to OpenAI Codex — Scrimba / Coursera (2026-01)
+- Google Prompting Essentials (Specialization, 4 courses) — Google / Coursera (2025-12)
+- Introduction to AI (Google) — Google / Coursera (2025-12)
 - Vector Databases for RAG — IBM / Coursera (2025-10)
 - Build Intelligent Agents using DeepSeek & N8N — Board Infinity / Coursera (2025-07)
 - MySQL for Data Engineering — Duke University / Coursera (2025-05)
 - Python for Everybody (Specialization, 5 courses) — University of Michigan / Coursera (2025-04)
-- Google AI Essentials (Specialization, 5 courses) — Google / Coursera (2026-01)
-- Google Prompting Essentials (Specialization, 4 courses) — Google / Coursera (2025-12)
-- Introduction to AI (Google) — Google / Coursera (2025-12)
-- Introduction to OpenAI Codex — Scrimba / Coursera (2026-01)
 - Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 courses) — Coursera (2025-11)
 - Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way — Toyota Boshoku (2025-10)
-- Value Stream Engineering (4 days) — Fraunhofer IAO, Stuttgart (2012-10)
 - Design and Process FMEA (5 days) — Gabor Kulsar / Magna Steyr (2013-11)
 - Advanced Workshop QM per DIN EN ISO 9001:2008 — KMU-Berater Bundesverband / Gemeinschaft zertifizierter Unternehmensberater (2013-02)
+- Value Stream Engineering (4 days) — Fraunhofer IAO, Stuttgart (2012-10)
 - JCI SixSigma Certified Black Belt — Johnson Controls (2001-01)
-- EOQ Quality Systems Manager — EOQ / DGQ (1996-01)
-- DGQ-Quality Manager — DGQ Bonn (1995-10)
-- Quality Techniques II — DGQ Bonn (1996-04)
-- DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2) — DGQ Bonn (1996-05)
-- Internal Auditor of Quality Systems — DGQ (1996-05)
-- Medical Device Act, EU Directives, CE Marking — MUS Fortbildungsseminar, Köln (1996-10)
-- EOQ Quality Auditor — EOQ / DGQ (1996-06)
-- VDA6.1 and QS9000 new demands to the Automotive Industry — Technische Akademie Wuppertal (TAW) (1997-05)
 - Training for internal Audits according to VDA6.1 and QS9000 and BOS — GFQ Akademie GmbH (firmeninternes Seminar bei Johnson Controls) (1998-01)
 - Measurement device studies — Johnson Controls (on-the-job) (1998-01)
-- REFA Basic Certificate — REFA-Verband Köln (1996-09)
+- VDA6.1 and QS9000 new demands to the Automotive Industry — Technische Akademie Wuppertal (TAW) (1997-05)
 - Work System Design — REFA-Verband (1996-11)
-- Certified Program Manager (PMU / JCI) — Johnson Controls (2002-07)
-- Certified SME Restructuring Consultant — KMU-Akademie e.V., Hamm (2010-03)
-- Managing the company with key performance indicators — RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg (1996-10)
-- Strategy for Success (EKS Success Strategy) — KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach (2010-04)
-- Environmental Simulation of Vibration and Shock Loads (Shaker Course) — Technische Akademie Esslingen (TAE) (1999-01)
-- Training in Test methods and procedures — Prince Automotive / Johnson Controls (on-the-job) (1998-08)
-- CANoe Hands-on Workshop (1 day) — Vector Informatik GmbH, Stuttgart (2000-09)
-- English in Management and International Business — — (2001-02)
-- Internal trainings for project engineers - seats — Johnson Controls (2000-01)
-- TPG Microsoft Project Info Day — TPG The Project Group (2012-10)
-- DVS Welding Courses: Gas Welding (G-Schw) and MAG Thin Sheet Welding (MAG-St D) — DVS / Handwerkszentrum Bonn (1993-04)
-- Data Protection 2012 — Luther Rechtsanwaltsgesellschaft mbH (2012-09)
-- 2x 3 days courses for Teambuilding — — (1996-01)
-- Rhetoric and Communication (Diploma) — Institut für Rhetorik und Kommunikation, Bornheim bei Bonn (1996-11)
+- Medical Device Act, EU Directives, CE Marking — MUS Fortbildungsseminar, Köln (1996-10)
+- REFA Basic Certificate — REFA-Verband Köln (1996-09)
+- EOQ Quality Auditor — EOQ / DGQ (1996-06)
+- DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2) — DGQ Bonn (1996-05)
+- Internal Auditor of Quality Systems — DGQ (1996-05)
+- Quality Techniques II — DGQ Bonn (1996-04)
+- EOQ Quality Systems Manager — EOQ / DGQ (1996-01)
+- DGQ-Quality Manager — DGQ Bonn (1995-10)
 - GDPR Live Webinar — eRecht24 (2018-07)
 - Siemens NX Viewer / 3D Tool V12 — The Implementers GmbH (on-the-job) (2017-11)
+- TPG Microsoft Project Info Day — TPG The Project Group (2012-10)
+- Data Protection 2012 — Luther Rechtsanwaltsgesellschaft mbH (2012-09)
+- English in Management and International Business — — (2001-02)
+- CANoe Hands-on Workshop (1 day) — Vector Informatik GmbH, Stuttgart (2000-09)
+- Internal trainings for project engineers - seats — Johnson Controls (2000-01)
+- Environmental Simulation of Vibration and Shock Loads (Shaker Course) — Technische Akademie Esslingen (TAE) (1999-01)
+- Training in Test methods and procedures — Prince Automotive / Johnson Controls (on-the-job) (1998-08)
+- Rhetoric and Communication (Diploma) — Institut für Rhetorik und Kommunikation, Bornheim bei Bonn (1996-11)
+- 2x 3 days courses for Teambuilding — — (1996-01)
+- DVS Welding Courses: Gas Welding (G-Schw) and MAG Thin Sheet Welding (MAG-St D) — DVS / Handwerkszentrum Bonn (1993-04)
+- Strategy for Success (EKS Success Strategy) — KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach (2010-04)
+- Certified SME Restructuring Consultant — KMU-Akademie e.V., Hamm (2010-03)
+- Certified Program Manager (PMU / JCI) — Johnson Controls (2002-07)
+- Managing the company with key performance indicators — RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg (1996-10)
 
 ## Publications
 - Diploma thesis (Rheinische FH Cologne, 1998): Versuchsstand ECE-R17 Kopfstuetzenpruefung. (/docs/00-DIP-Inhalt.pdf)

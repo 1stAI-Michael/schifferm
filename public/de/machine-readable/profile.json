@@ -1,7 +1,7 @@
 {
   "name": "Dipl.-Ing. Michael Schiffer, MBA",
   "location": "Spremberg, Deutschland",
-  "email": "Schiffer@TIUB.de",
+  "email": "schiffer@1stAI.eu",
   "mobile": "+49 172 25 6 42 48",
   "languages": [
     {
@@ -84,7 +84,6 @@
     ],
     "office": [
       "MS Excel (sehr gut)",
-      "MS Project (sehr gut)",
       "MS PowerPoint (gut)",
       "MS Word (gut)"
     ],
@@ -110,13 +109,12 @@
     "databases": [
       "MySQL (Basis)",
       "PostgreSQL mit pgvector (sehr gut)",
-      "Postgres (sehr gut)",
       "Alembic / Schema-Migrationen (gut)",
       "Access (Basis)",
       "Lotus 1-2-3 (Basis)"
     ],
     "programming": [
-      "Python (sehr gut)",
+      "Python (gut)",
       "C# (Basis)",
       "Visual Basic (Basis)",
       "VB.NET (Basis)",
@@ -126,7 +124,7 @@
     "ai_automation": [
       "N8N (gut)",
       "Ollama & LM Studio (lokale KI) (gut)",
-      "Claude Code / Codex (gut)",
+      "Claude Code / Codex (sehr gut)",
       "GPT-OS:20B / Qwen etc. (gut)",
       "Lokale Telefonagenten / Local Phone Agents (gut)"
     ],
@@ -149,14 +147,32 @@
       "Caddy Reverse Proxy & Security-Hardening (gut)",
       "GitHub Actions CI / Container Registry (gut)",
       "Kubernetes (Deployment-Manifeste) (Basis)"
+    ],
+    "medtech": [
+      "qEEG-Messung und -Auswertung (19-Kanal / 2-Kanal, Normdatenbank-Abgleich) (gut)",
+      "Neurofeedback-Systeme (Messung und Protokolle) (gut)",
+      "Narkosemonitor-Anbindung GE / Mindray inkl. EKG-Daten (gut)",
+      "OpenEMR (Praxis- und Klinikinformationssystem) (gut)"
     ]
   },
   "experience": [
+    {
+      "period": "2026-06–heute",
+      "title": "1stAI",
+      "role": "Founder",
+      "description": "Eigenes Beratungs- und Entwicklungsunternehmen für KI-Implementierung, Sitz in Polen, Tätigkeit remote EU-weit. Leistung von der Architektur über die Umsetzung bis zum produktiven Betrieb in einer Hand.\n\nSchwerpunkte: Retrieval-Architekturen (RAG) auf eigenen Datenbeständen, Betrieb von Sprachmodellen im eigenen Rechenzentrum statt in der Cloud, Agenten- und Werkzeugintegration sowie die Anbindung bestehender Systeme über OpenAI-kompatible Schnittstellen.\n\nEigene On-Premise-LLM-Infrastruktur auf heterogenem Multi-GPU-Verbund als Entwicklungs- und Referenzumgebung; Fachbeiträge im eigenen Blog."
+    },
     {
       "period": "2010-01–heute",
       "title": "The Implementers GmbH",
       "role": "Berater / Geschäftsführer",
       "description": "Beratung und Interim Management in der Automobilindustrie, Healthcare und weiteren Branchen. Schwerpunkte: Programm Management, Serienanläufe, Werksleitung, Lieferantenentwicklung, Kostenreduzierung, Prozessoptimierung, KI-Implementierung und KI-gestützte Prozessautomatisierung."
+    },
+    {
+      "period": "2017-05–2025-05",
+      "title": "Praxis für Schmerztherapie & TCM, Olga Schiffer MSc",
+      "role": "Praxis-IT, Digitalisierung und Backoffice",
+      "description": "Aufbau und Betreuung der Praxis-IT einer Privatpraxis für Naturheilkunde, TCM und Schmerztherapie, parallel zur Tätigkeit bei The Implementers GmbH. Verantwortlich für die Digitalisierung der Praxisabläufe, die Anbindung medizintechnischer Geräte, Abrechnungs- und Dokumentenprozesse sowie Website und Backoffice."
     },
     {
       "period": "2009-07–2010-06",
@@ -268,9 +284,9 @@
     },
     {
       "title": "RAG-Wissensplattform für COBOL-Altsysteme — Lead Architektur",
-      "client": "Mittelständischer Softwarehersteller (über Generalunternehmer, AT)",
+      "client": "Mittelständischer Softwarehersteller (über Generalunternehmer)",
       "dateFrom": "2026-04",
-      "dateTo": null,
+      "dateTo": "2026-10",
       "category": "ai",
       "description": "Lead Architektur einer On-Premise-RAG-Wissensplattform für eine COBOL-Codebasis mit mehreren Mio. LOC. 17.279 Chunks mit Dual-Embeddings, 3.697 Graph-Kanten, Hybrid-Retrieval per RRF über 5 Pfade mit Zitatzwang. Recall@10 von 61 % auf über 83 % gesteigert; Modell-Benchmark über 7 Kandidaten als Hardware-Entscheidungsgrundlage."
     },
@@ -281,6 +297,38 @@
       "dateTo": null,
       "category": "ai",
       "description": "IMAP-Automation mit Regel-Engine, Volltext-Archiv und Anhang-Routing in die OCR-Strecke. Zweites RAG-System mit 24.500+ embeddeten Chunks in pgvector für einen internen Chat-Assistenten."
+    },
+    {
+      "title": "Agenten-Studio — Multi-Agent-Softwareentwicklung mit Claude Code",
+      "client": null,
+      "dateFrom": "2026-04",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Aufbau und Betrieb einer Entwicklungsumgebung, in der rund zwei Dutzend Claude-Code-Sitzungen auf mehreren Maschinen parallel arbeiten, jede mit eigenem Arbeitsbereich und eigener Identität. Koordination über ein eigenes Ticket-Board auf PostgreSQL: Prioritäten, Fälligkeiten, Zuständigkeit als eigenes Feld, Sperren, bedingte Übernahme; die Agenten beauftragen und prüfen sich gegenseitig über Sub-Tickets. Schichtbetrieb mit Wache, versionierte Dokumentation und Arbeitsanleitungen aus Git, Zugangsdaten ausschließlich über einen Broker. Codex als unabhängige Prüfinstanz."
+    },
+    {
+      "title": "Agenten-Studio-Übersicht — Leitstand für parallele Claude-Code- und Codex-Sitzungen",
+      "client": null,
+      "dateFrom": "2026-08",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Leitstand für den gleichzeitigen Betrieb vieler Claude-Code- und Codex-CLI-Sitzungen: neun Fenster mit rund fünfzig Sitzungen, per Klick aufgebaut und je Arbeitsort automatisch angeordnet. Gleichzeitiges Prompten mehrerer Sitzungen mit gemessener Eingabebereitschaft, automatische Befehlsketten, Erkennung und Meldung offener Rückfragen der Agenten. Rund 6.400 Zeilen Python, nur Standardbibliothek, 20 Tabellen, 249 Regressionstests; ersetzt 13 Shell-Skripte, Überwachungslast von 200 % auf 4 % CPU gesenkt."
+    },
+    {
+      "title": "Modernisierung einer Excel-VBA-Planungsanwendung mit Claude Code — Migration nach CSV, SQLite und HTML",
+      "client": "Endkunde über Generalunternehmer",
+      "dateFrom": "2026-05",
+      "dateTo": "2026-05",
+      "category": "ai",
+      "description": "KI-gestütztes Reverse Engineering und Ablösung eines Projektplans über 18 Monate in Excel mit rund einem Dutzend VBA-Makros für Zeitachse, Balken und Vorgänger-Pfeile (rund 130 Arbeitspakete in 12 Phasen), umgesetzt mit Claude Code, geprüft mit Codex. Befund der Analyse: Excel trug zwei Rollen zugleich, Datenhaltung und Darstellung. Neue Architektur: CSV als Quelle, generierte SQLite, statische Single-File-HTML — 2.733 Zeilen Python und HTML/JS ohne externe Abhängigkeiten, alle vier Vorgängertypen (FS, SS, FF, SF), automatische Konsistenzprüfung. Zwei stille Fehlerklassen des Altsystems konstruktiv beseitigt."
+    },
+    {
+      "title": "Agentisches Coding mit lokalen Open-Weight-Modellen — Claude Code on-premise",
+      "client": null,
+      "dateFrom": "2026-09",
+      "dateTo": null,
+      "category": "ai",
+      "description": "Claude Code zusätzlich gegen lokal gehostete Open-Weight-Modelle betrieben (Qwen auf llama.cpp), über einen Übersetzer zwischen Anthropic- und OpenAI-Schnittstelle — agentisches Coding ohne Cloud-Anbindung. Zwei verschiedene Ursachen hinter derselben Fehlermeldung in der Grammatik-Erzwingung gefunden und behoben; Echtbetrieb mit 40 Werkzeugen und rund 87.000 Token. Modellwahl per Messung: 144 Agentenläufe mit versteckten Prüfungen — Qwen3.8-27B löst 72 von 72, Qwen3.6-35B-A3B 64 von 72; daraus Routing nach Aufgabe."
     },
     {
       "title": "TI-Flows Stack — Custom Workflow-Automatisierungsplattform",
@@ -368,7 +416,7 @@
       "dateFrom": "2018-05",
       "dateTo": "2025-05",
       "category": "healthcare",
-      "description": "Laufende Unterstützung einer Privatpraxis: Narkoseprotokolle, Dokumentenmanagement, Telemedizin-Workflows."
+      "description": "Laufende Unterstützung einer Privatpraxis: elektronisches Narkoseprotokoll mit Monitoranbindung, OpenEMR, GOÄ-Abrechnung, durchgängiger Telemedizin-Workflow von der DSGVO-Einwilligung bis zur Abrechnung, Dokumentenmanagement."
     },
     {
       "title": "Existenzgründungsberatung und Coaching",
@@ -479,58 +527,59 @@
   ],
   "certifications": {
     "ai_data": [
+      "EU AI Act erklärt: Was DU ab August zur neuen KI-Verordnung wissen musst — WBS.LEGAL (Prof. Christian Solmecke) (2026-08)",
       "Agentic AI with LangChain and LangGraph — Coursera (IBM Skills Network) (2026-04)",
       "Introduction to Deep Learning & Neural Networks with Keras (IBM) — IBM / Coursera (2026-01)",
+      "Google AI Essentials (Specialization, 5 Kurse) — Google / Coursera (2026-01)",
+      "Introduction to OpenAI Codex — Scrimba / Coursera (2026-01)",
+      "Google Prompting Essentials (Specialization, 4 Kurse) — Google / Coursera (2025-12)",
+      "Introduction to AI (Google) — Google / Coursera (2025-12)",
       "Vector Databases for RAG — IBM / Coursera (2025-10)",
       "Build Intelligent Agents using DeepSeek & N8N — Board Infinity / Coursera (2025-07)",
       "MySQL for Data Engineering — Duke University / Coursera (2025-05)",
-      "Python for Everybody (Specialization, 5 Kurse) — University of Michigan / Coursera (2025-04)",
-      "Google AI Essentials (Specialization, 5 Kurse) — Google / Coursera (2026-01)",
-      "Google Prompting Essentials (Specialization, 4 Kurse) — Google / Coursera (2025-12)",
-      "Introduction to AI (Google) — Google / Coursera (2025-12)",
-      "Introduction to OpenAI Codex — Scrimba / Coursera (2026-01)"
+      "Python for Everybody (Specialization, 5 Kurse) — University of Michigan / Coursera (2025-04)"
     ],
     "ai_healthcare": [
       "Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 Kurse) — Coursera (2025-11)"
     ],
     "quality": [
       "Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way — Toyota Boshoku (2025-10)",
-      "Wertstrom-Engineering (4 Tage) — Fraunhofer IAO, Stuttgart (2012-10)",
       "DFMEA und PFMEA (5 Tage) — Gabor Kulsar / Magna Steyr (2013-11)",
       "Vertiefungsworkshop QM nach DIN EN ISO 9001:2008 — KMU-Berater Bundesverband / Gemeinschaft zertifizierter Unternehmensberater (2013-02)",
+      "Wertstrom-Engineering (4 Tage) — Fraunhofer IAO, Stuttgart (2012-10)",
       "SixSigma Zertifizierter Black Belt — Johnson Controls (2001-01)",
-      "EOQ Quality Systems Manager — EOQ / DGQ (1996-01)",
-      "DGQ-Qualitätsmanager — DGQ Bonn (1995-10)",
-      "Qualitätstechnik II — DGQ Bonn (1996-04)",
-      "DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2) — DGQ Bonn (1996-05)",
-      "Internal Auditor of Quality Systems — DGQ (1996-05)",
-      "Medizinproduktegesetz, EG-Richtlinien, CE-Kennzeichnung — MUS Fortbildungsseminar, Köln (1996-10)",
-      "EOQ Quality Auditor — EOQ / DGQ (1996-06)",
-      "VDA6.1 und QS9000 Anforderungen — Technische Akademie Wuppertal (TAW) (1997-05)",
       "Interne Audits VDA6.1, QS9000, BOS — GFQ Akademie GmbH (firmeninternes Seminar bei Johnson Controls) (1998-01)",
       "Prüfmittelstudien — Johnson Controls (on-the-job) (1998-01)",
+      "VDA6.1 und QS9000 Anforderungen — Technische Akademie Wuppertal (TAW) (1997-05)",
+      "Arbeitssystemgestaltung — REFA-Verband (1996-11)",
+      "Medizinproduktegesetz, EG-Richtlinien, CE-Kennzeichnung — MUS Fortbildungsseminar, Köln (1996-10)",
       "REFA-Grundschein / REFA-Sachbearbeiter — REFA-Verband Köln (1996-09)",
-      "Arbeitssystemgestaltung — REFA-Verband (1996-11)"
-    ],
-    "management": [
-      "Zertifizierter Program Manager (PMU / JCI) — Johnson Controls (2002-07)",
-      "Zertifizierter KMU-Fachberater Sanierung — KMU-Akademie e.V., Hamm (2010-03)",
-      "Das Unternehmen mit wichtigen Kennzahlen steuern — RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg (1996-10)",
-      "Mit Strategie zu mehr Erfolg (EKS-Erfolgsstrategie) — KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach (2010-04)"
+      "EOQ Quality Auditor — EOQ / DGQ (1996-06)",
+      "DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2) — DGQ Bonn (1996-05)",
+      "Internal Auditor of Quality Systems — DGQ (1996-05)",
+      "Qualitätstechnik II — DGQ Bonn (1996-04)",
+      "EOQ Quality Systems Manager — EOQ / DGQ (1996-01)",
+      "DGQ-Qualitätsmanager — DGQ Bonn (1995-10)"
     ],
     "misc": [
+      "DSGVO Live-Webinar — eRecht24 (2018-07)",
+      "Siemens NX Viewer / 3D Tool V12 — The Implementers GmbH (on-the-job) (2017-11)",
+      "TPG Infotag Microsoft Project — TPG The Project Group (2012-10)",
+      "Datenschutz 2012 — Luther Rechtsanwaltsgesellschaft mbH (2012-09)",
+      "English in Management and International Business — — (2001-02)",
+      "CANoe Praxis-Workshop (1 Tag) — Vector Informatik GmbH, Stuttgart (2000-09)",
+      "Interne Trainings Projektingenieure Sitze — Johnson Controls (2000-01)",
       "Umweltsimulation von Schwingungs- und Stoßbelastungen (Shakerkursus) — Technische Akademie Esslingen (TAE) (1999-01)",
       "Training in Testmethoden und Verfahren — Prince Automotive / Johnson Controls (on-the-job) (1998-08)",
-      "CANoe Praxis-Workshop (1 Tag) — Vector Informatik GmbH, Stuttgart (2000-09)",
-      "English in Management and International Business — — (2001-02)",
-      "Interne Trainings Projektingenieure Sitze — Johnson Controls (2000-01)",
-      "TPG Infotag Microsoft Project — TPG The Project Group (2012-10)",
-      "DVS-Lehrgänge Gasschweißen (G-Schw) und MAG-Dünnblechschweißen (MAG-St D) — DVS / Handwerkszentrum Bonn (1993-04)",
-      "Datenschutz 2012 — Luther Rechtsanwaltsgesellschaft mbH (2012-09)",
-      "2x 3 Tage Teambuilding — — (1996-01)",
       "Rhetorik und Kommunikation (Diplom) — Institut für Rhetorik und Kommunikation, Bornheim bei Bonn (1996-11)",
-      "DSGVO Live-Webinar — eRecht24 (2018-07)",
-      "Siemens NX Viewer / 3D Tool V12 — The Implementers GmbH (on-the-job) (2017-11)"
+      "2x 3 Tage Teambuilding — — (1996-01)",
+      "DVS-Lehrgänge Gasschweißen (G-Schw) und MAG-Dünnblechschweißen (MAG-St D) — DVS / Handwerkszentrum Bonn (1993-04)"
+    ],
+    "management": [
+      "Mit Strategie zu mehr Erfolg (EKS-Erfolgsstrategie) — KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach (2010-04)",
+      "Zertifizierter KMU-Fachberater Sanierung — KMU-Akademie e.V., Hamm (2010-03)",
+      "Zertifizierter Program Manager (PMU / JCI) — Johnson Controls (2002-07)",
+      "Das Unternehmen mit wichtigen Kennzahlen steuern — RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg (1996-10)"
     ]
   },
   "publications": [

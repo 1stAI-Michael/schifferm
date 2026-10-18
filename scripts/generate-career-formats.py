@@ -1,87 +1,218 @@
 #!/usr/bin/env python3
 """
-Generate machine-readable career data formats from career.db (Nextcloud).
+Generate machine-readable career data formats from the career device API.
+
+Quelle ist seit 27.08.2026 die Device-API auf app.ti-ub-ki.ddns.net (Postgres,
+Schema `career`). Die frühere SQLite `career.db` auf Nextcloud ist abgeschaltet;
+der WebDAV-Weg ist deshalb entfallen.
 
 Outputs (into public/):
   - llms.txt                   — LLM discovery file (root)
+  - career/career_data.json    — Roh-Export, versorgt die Website-UI
   - career/profile.json        — JSON Resume format (DE+EN)
   - career/profile.md          — Full markdown (DE+EN)
   - career/schema.jsonld       — schema.org Person JSON-LD
 
 Usage:
-  python scripts/generate-career-formats.py [--db /path/to/career.db]
+  python scripts/generate-career-formats.py
+  python scripts/generate-career-formats.py --json /pfad/career_data.json
+  python scripts/generate-career-formats.py --db /pfad/career.db   # Altbestand
 
-If --db is not given, downloads from Nextcloud WebDAV.
+Das Gerätetoken kommt aus $FLOWS_CAREER_TOKEN oder aus der Schienen-Token-Datei
+(~/.config/flows/tokens/VM-30-Web.token). Es wird nie ausgegeben und nie als
+Kommandozeilen-Argument weitergereicht.
 """
 
 import argparse
 import json
 import os
-import sqlite3
-import subprocess
 import sys
-import tempfile
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
 PUBLIC_DIR = ROOT_DIR / "public"
 
-WEBDAV_URL = "https://nc.ki-oe.de/remote.php/dav/files/claude/Bewerbung/career.db"
-DAVFS_SECRETS = "/etc/davfs2/secrets"
+def _api_basis():
+    """Wirt wie bei allen Flotten-Werkzeugen: Umgebung, dann maschine.env
+    (fA-645/fA-681). KEIN fester Name und kein Rueckfall auf den Altnamen
+    `app.ti-ub-ki.ddns.net` — der ist seit 08.09.2026 tot, und weil er fest
+    eingetragen war, scheiterte der Bau ueber fuenf Wochen unbemerkt (fA-1446,
+    18.10.2026). Faellt die Datei weg, bricht das Skript laut ab, statt zu raten.
+    """
+    aus_umgebung = os.environ.get("FLOWS_API_BASIS", "").strip()
+    if aus_umgebung:
+        return aus_umgebung.rstrip("/")
+    for home in (Path.home(), *( [Path(__import__("pwd").getpwnam(os.environ["SUDO_USER"]).pw_dir)]
+                                 if os.environ.get("SUDO_USER") else [] )):
+        datei = home / ".config" / "flows" / "maschine.env"
+        if datei.is_file():
+            for zeile in datei.read_text(encoding="utf-8").splitlines():
+                if zeile.startswith("FLOWS_API_BASIS="):
+                    wert = zeile.split("=", 1)[1].strip().strip('"').strip("'")
+                    if wert:
+                        return wert.rstrip("/")
+    raise SystemExit(
+        "ERROR: kein FLOWS_API_BASIS — weder in der Umgebung noch in "
+        "~/.config/flows/maschine.env. Ohne Wirt wird nicht geraten."
+    )
+
+
+CAREER_API = _api_basis() + "/api/career/device"
 SITE_URL = "https://schifferm.de"
 
 
+def _token_file():
+    """Token-Datei der Schiene. Unter sudo zeigt HOME auf /root — dort liegt sie nicht,
+    deshalb auf das Home des aufrufenden Users zurückfallen (der Deploy läuft mit sudo,
+    weil /srv/Container/.env root-only ist)."""
+    candidates = [Path.home()]
+    sudo_user = os.environ.get("SUDO_USER")
+    if sudo_user:
+        try:
+            import pwd
+
+            candidates.append(Path(pwd.getpwnam(sudo_user).pw_dir))
+        except (ImportError, KeyError):
+            pass
+    for home in candidates:
+        path = home / ".config" / "flows" / "tokens" / "VM-30-Web.token"
+        if path.is_file():
+            return path
+    return candidates[0] / ".config" / "flows" / "tokens" / "VM-30-Web.token"
+
+
+TOKEN_FILE = _token_file()
+
+TABLES = (
+    "personal_info", "work_experience", "projects", "education",
+    "certifications", "skills", "languages", "driving_licenses",
+    "awards", "hobbies", "memberships",
+)
+
+
 # ---------------------------------------------------------------------------
-# DB helpers
+# Data source
 # ---------------------------------------------------------------------------
 
-def get_nc_credentials():
-    """Read Nextcloud credentials from davfs2 secrets file."""
-    try:
-        with open(DAVFS_SECRETS) as f:
-            for line in f:
-                if "nc.ki-oe.de" in line:
-                    parts = line.strip().split()
-                    if len(parts) >= 3:
-                        return parts[1], parts[2]  # user, token
-    except PermissionError:
-        result = subprocess.run(
-            ["sudo", "awk", "/nc.ki-oe.de/ {print $2, $3}", DAVFS_SECRETS],
-            capture_output=True, text=True
-        )
-        if result.returncode == 0:
-            parts = result.stdout.strip().split()
-            if len(parts) >= 2:
-                return parts[0], parts[1]
-    return None, None
+class CareerSource:
+    """Alle elf Tabellen im Speicher — Ersatz für die frühere sqlite3-Verbindung."""
+
+    def __init__(self, tables, origin):
+        self.tables = tables
+        self.origin = origin
+
+    def close(self):
+        pass
 
 
-def download_db(target_path):
-    """Download career.db from Nextcloud WebDAV."""
-    user, token = get_nc_credentials()
-    if not user or not token:
-        print("ERROR: Could not read Nextcloud credentials", file=sys.stderr)
-        sys.exit(1)
-    result = subprocess.run(
-        ["curl", "-sf", "-u", f"{user}:{token}", WEBDAV_URL, "-o", str(target_path)],
-        capture_output=True, text=True
+def read_device_token():
+    """Token aus Umgebung oder Schienen-Datei — Wert wird nie ausgegeben."""
+    token = os.environ.get("FLOWS_CAREER_TOKEN") or os.environ.get("FLOWS_TICKETS_TOKEN")
+    if token and token.strip():
+        return token.strip()
+    if TOKEN_FILE.is_file():
+        return TOKEN_FILE.read_text(encoding="utf-8").strip()
+    print(
+        f"ERROR: kein Gerätetoken — weder $FLOWS_CAREER_TOKEN noch {TOKEN_FILE}",
+        file=sys.stderr,
     )
-    if result.returncode != 0:
-        print(f"ERROR: Failed to download career.db: {result.stderr}", file=sys.stderr)
-        sys.exit(1)
-    print(f"  Downloaded career.db ({target_path.stat().st_size:,} bytes)")
+    sys.exit(1)
 
 
-def query_all(conn, table, order_by=None):
-    """Return all rows from a table as list of dicts."""
+def fetch_api():
+    """Alle Tabellen über die Device-API holen."""
+    token = read_device_token()
+    tables = {}
+    for table in TABLES:
+        req = urllib.request.Request(
+            f"{CAREER_API}/{table}",
+            headers={"Authorization": f"Bearer {token}", "Accept": "application/json"},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                payload = json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            print(f"ERROR: {table}: HTTP {exc.code} von der Career-API", file=sys.stderr)
+            sys.exit(1)
+        except urllib.error.URLError as exc:
+            print(f"ERROR: {table}: Career-API nicht erreichbar ({exc.reason})", file=sys.stderr)
+            sys.exit(1)
+        if isinstance(payload, dict):
+            payload = payload.get("rows") or payload.get(table) or []
+        tables[table] = payload
+    counts = ", ".join(f"{t} {len(tables[t])}" for t in TABLES)
+    print(f"  Career-API gelesen: {counts}")
+    return CareerSource(tables, "device-api")
+
+
+def load_json_export(path):
+    """Fertigen career_data.json-Export von der Platte lesen."""
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    tables = {t: data.get(t, []) for t in TABLES}
+    print(f"  Export gelesen: {path}")
+    return CareerSource(tables, f"json:{path}")
+
+
+def load_sqlite(path):
+    """Altbestand: lokale career.db lesen. Die Nextcloud-DB ist abgeschaltet."""
+    import sqlite3
+
+    conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
-    c = conn.cursor()
+    tables = {}
+    for table in TABLES:
+        rows = conn.execute(f"SELECT * FROM {table}").fetchall()
+        tables[table] = [dict(r) for r in rows]
+    conn.close()
+    print(f"  Lokale DB gelesen: {path}")
+    return CareerSource(tables, f"sqlite:{path}")
+
+
+# Die DB führt das Land als Klartext (country_de/country_en), nicht als ISO-Code.
+# Früher stand hier fest "DE" — das war nach dem Umzug schlicht falsch.
+COUNTRY_CODES = {
+    "germany": "DE", "deutschland": "DE",
+    "poland": "PL", "polen": "PL",
+    "austria": "AT", "österreich": "AT",
+    "switzerland": "CH", "schweiz": "CH",
+}
+
+
+def country_code(personal):
+    """ISO-Code zum Land aus der DB. Unbekannt → weglassen statt raten."""
+    name = (personal.get("country_en") or personal.get("country_de") or "").strip().lower()
+    code = COUNTRY_CODES.get(name)
+    if not code and name:
+        print(f"  WARNUNG: kein ISO-Code für Land {name!r} — addressCountry bleibt leer", file=sys.stderr)
+    return code
+
+
+def blockquote(text):
+    """Mehrabsätzigen Text als Markdown-Zitat — jede Zeile trägt ihr eigenes '>'."""
+    paragraphs = [p.strip() for p in (text or "").split("\n\n") if p.strip()]
+    return "\n>\n".join(f"> {p}" for p in paragraphs)
+
+
+def query_all(src, table, order_by=None):
+    """Return all rows from a table as list of dicts, sorted like the DB did."""
+    rows = [dict(r) for r in src.tables.get(table, [])]
+    if not rows:
+        return rows
     if order_by is None:
-        cols = [r[1] for r in c.execute(f"PRAGMA table_info({table})")]
-        order_by = "sort_order, id" if "sort_order" in cols else "id"
-    rows = c.execute(f"SELECT * FROM {table} ORDER BY {order_by}").fetchall()
-    return [dict(r) for r in rows]
+        order_by = "sort_order, id" if "sort_order" in rows[0] else "id"
+    keys = [k.strip() for k in order_by.split(",")]
+
+    def sort_key(row):
+        out = []
+        for k in keys:
+            v = row.get(k)
+            out.append((v is None, v if v is not None else 0))
+        return tuple(out)
+
+    return sorted(rows, key=sort_key)
 
 
 # ---------------------------------------------------------------------------
@@ -143,6 +274,7 @@ def build_json_resume(conn, lang="en"):
         "programming": "Programming" if not de else "Programmierung",
         "backend": "Backend & DevOps",
         "databases": "Databases" if not de else "Datenbanken",
+        "medtech": "Medical Technology" if not de else "Medizintechnik",
         "office": "Office",
         "cad": "CAD",
         "os": "Operating Systems" if not de else "Betriebssysteme",
@@ -208,7 +340,7 @@ def build_json_resume(conn, lang="en"):
                 "address": personal["street"],
                 "postalCode": personal["zip_code"],
                 "city": personal["city"],
-                "countryCode": "DE",
+                **({"countryCode": country_code(personal)} if country_code(personal) else {}),
             },
             "profiles": [
                 {
@@ -263,7 +395,7 @@ def build_full_markdown(conn, lang="en"):
 
     lines.append(f"# {name}")
     lines.append("")
-    lines.append(f"> {summary}")
+    lines.append(blockquote(summary))
     lines.append("")
     lines.append(f"- **{'Standort' if de else 'Location'}:** {personal['city']}, {personal['country_de'] if de else personal['country_en']}")
     lines.append(f"- **E-Mail:** {personal['email']}")
@@ -329,6 +461,7 @@ def build_full_markdown(conn, lang="en"):
         "programming": "Programmierung" if de else "Programming",
         "backend": "Backend & DevOps",
         "databases": "Datenbanken" if de else "Databases",
+        "medtech": "Medizintechnik" if de else "Medical Technology",
         "office": "Office",
         "cad": "CAD",
         "os": "Betriebssysteme" if de else "Operating Systems",
@@ -486,7 +619,7 @@ def build_schema_jsonld(conn):
             "streetAddress": personal["street"],
             "postalCode": personal["zip_code"],
             "addressLocality": personal["city"],
-            "addressCountry": "DE",
+            **({"addressCountry": country_code(personal)} if country_code(personal) else {}),
         },
         "sameAs": [
             personal.get("linkedin_url", ""),
@@ -510,12 +643,12 @@ def build_llms_txt(conn):
     personal = query_all(conn, "personal_info")[0]
     return f"""# {personal['title_en']}
 
-> {personal['summary_en']}
+{blockquote(personal['summary_en'])}
 
 ## Contact
 - Email: {personal['email']}
 - Phone: {personal['phone']}
-- Location: {personal['city']}, Germany
+- Location: {personal['city']}, {personal['country_en']}
 - Website: {SITE_URL}
 - LinkedIn: {personal.get('linkedin_url', '')}
 
@@ -544,21 +677,29 @@ See https://llmstxt.org for more information.
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate career data formats from career.db")
-    parser.add_argument("--db", type=Path, help="Path to local career.db (default: download from Nextcloud)")
+    parser = argparse.ArgumentParser(description="Generate career data formats from the career device API")
+    parser.add_argument("--json", type=Path, help="Fertigen career_data.json-Export lesen statt der API")
+    parser.add_argument("--db", type=Path, help="Altbestand: lokale career.db lesen")
+    parser.add_argument("--no-export", action="store_true", help="public/career/career_data.json nicht neu schreiben")
     args = parser.parse_args()
 
     print("generate-career-formats: starting...")
 
-    # Get database
-    if args.db and args.db.exists():
-        db_path = args.db
-        print(f"  Using local DB: {db_path}")
+    # Get data
+    if args.json and args.json.exists():
+        conn = load_json_export(args.json)
+    elif args.db and args.db.exists():
+        conn = load_sqlite(args.db)
     else:
-        db_path = Path(tempfile.mkdtemp()) / "career.db"
-        download_db(db_path)
+        conn = fetch_api()
 
-    conn = sqlite3.connect(str(db_path))
+    # Roh-Export für die Website-UI (src/lib/careerData.js liest genau diese Datei)
+    if not args.no_export:
+        export_path = PUBLIC_DIR / "career" / "career_data.json"
+        export_path.parent.mkdir(parents=True, exist_ok=True)
+        export = {t: query_all(conn, t) for t in TABLES}
+        export_path.write_text(json.dumps(export, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"  Written: {export_path.relative_to(ROOT_DIR)}")
 
     # Generate outputs
     for lang in ("de", "en"):

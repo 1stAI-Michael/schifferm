@@ -2,15 +2,15 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Dipl.-Ing. Michael Schiffer, MBA",
-    "label": "Prozessoptimierer & Program Manager mit 20+ Jahren Automobilindustrie, Serienanläufen und globalen Werksstrukturen. Seit 2024 verstärkt fokussiert auf Generative AI, Healthcare Automation, Datenanalyse, KI-gestützte Prozessoptimierung und Telemedizin-Workflows. Betrieb einer eigenen On-Premise-LLM-Infrastruktur auf heterogenem Multi-GPU-Verbund: zwei produktive RAG-Systeme mit rund 42.000 embeddeten Chunks (COBOL-Legacy-Korpus und Dokumenten-/Mail-Wissensbasis), 130.000+ geroutete Requests und 463 Mio. verarbeitete Input-Token in 14 Tagen. Fundierte Kenntnisse in Python/FastAPI, PostgreSQL mit pgvector, Hybrid-Retrieval und Reranking, GPU-Lastmanagement sowie Dokumenten-KI (OCR/Vision-LLM).",
-    "email": "Schiffer@TIUB.de",
+    "label": "Prozessoptimierer & Program Manager mit 20+ Jahren Automobilindustrie, Serienanläufen und globalen Werksstrukturen. Seit 2024 verstärkt fokussiert auf Generative AI, Healthcare Automation, Datenanalyse, KI-gestützte Prozessoptimierung und Telemedizin-Workflows. \n\nBetrieb einer eigenen On-Premise-LLM-Infrastruktur auf heterogenem Multi-GPU-Verbund: zwei produktive RAG-Systeme mit rund 42.000 embeddeten Chunks (COBOL-Legacy-Korpus und Dokumenten-/Mail-Wissensbasis), 130.000+ geroutete Requests und 463 Mio. verarbeitete Input-Token in 14 Tagen. \n\nFundierte Kenntnisse in Python/FastAPI, PostgreSQL mit pgvector, Hybrid-Retrieval und Reranking, GPU-Lastmanagement sowie Dokumenten-KI (OCR/Vision-LLM).",
+    "email": "schiffer@1stAI.eu",
     "phone": "+49 172 25 6 42 48",
     "url": "https://www.schifferm.de",
     "location": {
-      "address": "Weberweg 3",
-      "postalCode": "03130",
-      "city": "Spremberg",
-      "countryCode": "DE"
+      "address": "Ul. Sportowa 9",
+      "postalCode": "55-311",
+      "city": "Kostomloty",
+      "countryCode": "PL"
     },
     "profiles": [
       {
@@ -25,6 +25,16 @@
   },
   "work": [
     {
+      "name": "1stAI",
+      "position": "Founder",
+      "startDate": "2026-06",
+      "endDate": "",
+      "summary": "KI-Beratung und Software-Entwicklung",
+      "highlights": [
+        "Eigenes Beratungs- und Entwicklungsunternehmen für KI-Implementierung, Sitz in Polen, Tätigkeit remote EU-weit. Leistung von der Architektur über die Umsetzung bis zum produktiven Betrieb in einer Hand.\n\nSchwerpunkte: Retrieval-Architekturen (RAG) auf eigenen Datenbeständen, Betrieb von Sprachmodellen im eigenen Rechenzentrum statt in der Cloud, Agenten- und Werkzeugintegration sowie die Anbindung bestehender Systeme über OpenAI-kompatible Schnittstellen.\n\nEigene On-Premise-LLM-Infrastruktur auf heterogenem Multi-GPU-Verbund als Entwicklungs- und Referenzumgebung; Fachbeiträge im eigenen Blog."
+      ]
+    },
+    {
       "name": "The Implementers GmbH",
       "position": "Berater / Geschäftsführer",
       "startDate": "2010-01",
@@ -32,16 +42,20 @@
       "summary": "Beratung / Interim Management",
       "highlights": [
         "Beratung und Interim Management in der Automobilindustrie, Healthcare und weiteren Branchen. Schwerpunkte: Programm Management, Serienanläufe, Werksleitung, Lieferantenentwicklung, Kostenreduzierung, Prozessoptimierung, KI-Implementierung und KI-gestützte Prozessautomatisierung.",
-        "Mobile Recorder App + KI-Bearbeitungs-Pipeline: Mobiles Aufnahme-Werkzeug fuer strukturierte Sprachaufzeichnungen mit nachgelagerter KI-Pipeline. Public Web-App (https://the-implementers.de/Recorder/) zur Aufnahme von Briefen, Anamnesen, Teammeetings, Notizen, Ideen, Aufmassen und Uebergaben — direkt im Browser, ohne Installation. Vorab-Auswahl von Kontext (Patient-ID/Name, Themenkategorie, Empfaenger) bestimmt nachgelagertes Routing der Pipeline. Audio-Upload via HTTPS, anschliessend Verarbeitung in dedizierter Pipeline-UI (FastAPI, ti-nas-06:8011): WhisperX-Transkription mit Speaker Diarization, themenspezifische LLM-Aufbereitung (Brief, Akteneintrag, Untersuchungsbericht, Memo etc.), manuelle Korrektur in Web-UI mit Diff-Ansicht, Quality Gates gegen LLM-Halluzination. Ergebnis-Routing nach Themenkategorie: medizinische Dokumente in OpenEMR-Patientenakte (Auto-Upload), Geschaefts-Notizen in Flow-Notes-DB, Aufmasse in Projekt-Datenbank. Voll Self-Hosted, Audio bleibt im eigenen Netzwerk. Stack: Vanilla JS Frontend, MediaRecorder API, FastAPI, WhisperX, Ollama (qwen3.5/gpt-oss), PostgreSQL, OpenEMR-API, Caddy mit IP-Whitelist.",
-        "Ollama-Stallwatch — Hang-Detection & REST-API für lokale LLM-Inferenz: Public MIT-lizenziertes Monitoring- und Diagnose-Tool für lokal gehostete Ollama-LLM-Inferenz auf Multi-GPU-Servern. Adressiert das in Production schwer fassbare Ghost-Hang-Pattern: Modell ist im VRAM geladen, GPU bleibt bei 0% Auslastung, ollama-serve haengt CPU-bound im Image-Preprocessing oder Vision-Encoder — im Log unsichtbar, nur in nvtop live erkennbar. Vier-Komponenten-Stack: GPU-Logger (nvidia-smi delta-logged), Log-Parser (Docker-Log in SQLite), Process-Logger (/proc mit Heartbeat), Stall-Detector mit gdb/proc Stack-Capture ohne Container-Modifikation via NOPASSWD-Sudoers. Hang-Detektion in drei parallelen Confidence-Levels (strict/loose/ghost) mit unterschiedlichen Trigger-Bedingungen, ergaenzt um orthogonale Mode-Klassifikation (A/B) die zwischen recoverable und silent Hangs unterscheidet. Read-only REST-API (Port 3002, Python stdlib) mit kombinierbaren Filtern (since/at/overlapping, confidence/mode/client_ip) fuer Cross-Host-Korrelation. Web-Dashboard (Chart.js, live aus SQLite) mit Stall-Banderolen ueber Zeitreihen. Idempotenter Installer mit Host-Detection und portabler config.toml. Realer Production-Impact: bei parallel laufender OCR-Pipeline ueber 24 Stunden 10.871 PDF-Seiten, 4.837 Inference-Calls, 97 erfasste Hang-Events — Pipeline-Success-Rate dadurch 97,8% statt ~75-80% bei naivem Wall-Clock-Timeout. Selfheal-Strategie auf Basis der Stall-Daten reduzierte Hang-Recovery-Zeit von ~40 Minuten auf ~17 Sekunden (Faktor ~140x). Stack: Python 3.12 stdlib-only (keine Pip-Dependencies), SQLite mit WAL, Chart.js via CDN, systemd-Service-Management, gdb und nvidia-smi als externe Tools. ~1.700 Zeilen Python, 3 iterative Entwicklungstage mit AI-Pair-Programming. Repo: https://github.com/tiubde-michael/ollama-stallwatch",
-        "GPU-Lastmanagement für heterogenen LLM-Verbund: Eigenentwicklung einer zentralen Routing-Engine für einen heterogenen GPU-Verbund: 4 GPU-Knoten (RTX 3090, Tesla V100, RTX 3060, NVIDIA GB10 mit 128 GB Unified Memory) und 8+ Modell-Endpoints (Chat, Embeddings, Reranker). Fähigkeitsbasierte Kandidatenwahl (Endpoint × Modell × Kontextfenster × Slots) statt statischer Pools; benannte Mandanten (Klinik, Chat, Batch, Gast) mit Prioritäten, Quoten und Preemption niederpriorer Lasten. Migration im laufenden Betrieb ohne Ausfall: Shadow-Mode (Alt- vs. Neu-Entscheidung je Request protokolliert und reviewed) mit anschließendem stufenweisen Cutover; Nacht-Burn-in über 23.600 Requests mit ~0,1 % Abnormalitäten. Auto-Discovery der Endpoint-Kapazitäten (llama.cpp /metrics, ollama, HuggingFace TEI), Live-Monitoring-UI in React und vollständiges Reservierungs-Audit. Produktionsvolumen: 130.000+ geroutete Requests in 14 Tagen. Stack: Python, FastAPI, PostgreSQL, React/TypeScript, llama.cpp, ollama, TEI, Docker.",
+        "Mobile Recorder App + KI-Bearbeitungs-Pipeline: Mobiles Aufnahme-Werkzeug für strukturierte Sprachaufzeichnungen mit nachgelagerter KI-Pipeline. Public Web-App (https://the-implementers.de/Recorder/) zur Aufnahme von Briefen, Anamnesen, Teammeetings, Notizen, Ideen, Aufmassen und Übergaben — direkt im Browser, ohne Installation. Vorab-Auswahl von Kontext (Patient-ID/Name, Themenkategorie, Empfänger) bestimmt nachgelagertes Routing der Pipeline. Audio-Upload via HTTPS, anschließend Verarbeitung in dedizierter Pipeline-UI (FastAPI, ti-nas-06:8011): WhisperX-Transkription mit Speaker Diarization, themenspezifische LLM-Aufbereitung (Brief, Akteneintrag, Untersuchungsbericht, Memo etc.), manuelle Korrektur in Web-UI mit Diff-Ansicht, Quality Gates gegen LLM-Halluzination. Ergebnis-Routing nach Themenkategorie: medizinische Dokumente in OpenEMR-Patientenakte (Auto-Upload), Geschäfts-Notizen in Flow-Notes-DB, Aufmasse in Projekt-Datenbank. Voll Self-Hosted, Audio bleibt im eigenen Netzwerk. Stack: Vanilla JS Frontend, MediaRecorder API, FastAPI, WhisperX, Ollama (qwen3.5/gpt-oss), PostgreSQL, OpenEMR-API, Caddy mit IP-Whitelist.",
+        "Ollama-Stallwatch — Hang-Detection & REST-API für lokale LLM-Inferenz: Public MIT-lizenziertes Monitoring- und Diagnose-Tool für lokal gehostete Ollama-LLM-Inferenz auf Multi-GPU-Servern. Adressiert das in Production schwer fassbare Ghost-Hang-Pattern: Modell ist im VRAM geladen, GPU bleibt bei 0% Auslastung, ollama-serve haengt CPU-bound im Image-Preprocessing oder Vision-Encoder — im Log unsichtbar, nur in nvtop live erkennbar. Vier-Komponenten-Stack: GPU-Logger (nvidia-smi delta-logged), Log-Parser (Docker-Log in SQLite), Process-Logger (/proc mit Heartbeat), Stall-Detector mit gdb/proc Stack-Capture ohne Container-Modifikation via NOPASSWD-Sudoers. Hang-Detektion in drei parallelen Confidence-Levels (strict/loose/ghost) mit unterschiedlichen Trigger-Bedingungen, ergaenzt um orthogonale Mode-Klassifikation (A/B) die zwischen recoverable und silent Hangs unterscheidet. Read-only REST-API (Port 3002, Python stdlib) mit kombinierbaren Filtern (since/at/overlapping, confidence/mode/client_ip) für Cross-Host-Korrelation. Web-Dashboard (Chart.js, live aus SQLite) mit Stall-Banderolen über Zeitreihen. Idempotenter Installer mit Host-Detection und portabler config.toml. Realer Production-Impact: bei parallel laufender OCR-Pipeline über 24 Stunden 10.871 PDF-Seiten, 4.837 Inference-Calls, 97 erfasste Hang-Events — Pipeline-Success-Rate dadurch 97,8% statt ~75-80% bei naivem Wall-Clock-Timeout. Selfheal-Strategie auf Basis der Stall-Daten reduzierte Hang-Recovery-Zeit von ~40 Minuten auf ~17 Sekunden (Faktor ~140x). Stack: Python 3.12 stdlib-only (keine Pip-Dependencies), SQLite mit WAL, Chart.js via CDN, systemd-Service-Management, gdb und nvidia-smi als externe Tools. ~1.700 Zeilen Python, 3 iterative Entwicklungstage mit AI-Pair-Programming. Repo: https://github.com/tiubde-michael/ollama-stallwatch",
+        "GPU-Lastmanagement für heterogenen LLM-Verbund: Eigenentwicklung einer zentralen Routing-Engine für einen heterogenen GPU-Verbund: 4 GPU-Knoten (RTX 3090, Tesla V100, RTX 3060, NVIDIA GB10 mit 128 GB Unified Memory) und 8+ Modell-Endpoints (Chat, Embeddings, Reranker). Fähigkeitsbasierte Kandidatenwahl (Endpoint × Modell × Kontextfenster × Slots) statt statischer Pools; benannte Mandanten (Klinik, Chat, Batch, Gast) mit Prioritäten, Quoten und Preemption niederpriorer Lasten. Migration im laufenden Betrieb ohne Ausfall: Shadow-Mode (Alt- vs. Neu-Entscheidung je Request protokolliert und reviewed) mit anschließendem stufenweisen Cutover; Nacht-Burn-in über 23.600 Requests mit ~0,1 % Abnormalitäten. Auto-Discovery der Endpoint-Kapazitäten (llama.cpp /metrics, ollama, HuggingFace TEI), Live-Monitoring-UI in React und vollständiges Reservierungs-Audit. Produktionsvolumen: 130.000+ geroutete Requests in 14 Tagen. Nach einem Stromausfall kam ein Modellserver ohne GPU hoch und rechnete 40 Minuten auf der CPU weiter — 72 statt 950 Token/s bei der Prompt-Verarbeitung, erkennbar nur an einer einzigen Log-Zeile; seitdem wird nach jedem Neustart die GPU-Belegung je Prozess geprüft. Stack: Python, FastAPI, PostgreSQL, React/TypeScript, llama.cpp, ollama, TEI, Docker.",
         "OpenAI-kompatibles API-Gateway mit externer Kunden-Anbindung: Eigenes /v1-Gateway (Chat mit SSE-Streaming, Embeddings, Rerank) vor dem GPU-Verbund; Anbindung eines externen Kubernetes-Clusters auf Kundenseite über Token-Auth mit Scopes. Per-Token-Limits (parallele Requests, Requests/min, Token/min) live aus der Datenbank steuerbar; Modell-Allowlist und Kontext-Guards gegen stille Trunkierung. Produktionslast über 14 Tage: 338.000 Chat-Requests, 463 Mio. Input- und 76 Mio. Output-Token, Peak 5.746 Requests/h bei ~1 % Fehlerquote. Traffic- und Fair-Use-Analysen auf Audit-Basis (Token-, Volumen- und Bandbreiten-Hochrechnung) als Entscheidungsgrundlage für Hosting-Verträge. Stack: Python, FastAPI, SSE, PostgreSQL, JWT/Token-Scopes, Caddy, Docker.",
         "Inbetriebnahme & Tuning NVIDIA GB10 (ARM64) als LLM-Server: Inbetriebnahme eines ASUS Ascent GX10 (NVIDIA GB10, ARM64, Unified Memory) als produktiver LLM-Server. Diagnose reproduzierbarer vLLM-Instabilität auf der GB10/ARM64-Plattform und Umbau auf zwei parallele llama.cpp-Instanzen mit Kontext-Split auf einem Chip (4×256k für Langkontext, 8×48k für Standardlast). Paralleler Betrieb von Chat-, Embedding- und Reranker-Services auf demselben Knoten. Eigene Messreihen zu Prefill- und Generierungs-Durchsatz sowie Sättigungsverhalten (Bandbreiten-Bound bei 273 GB/s). 429-basierte Backpressure-Strategie: Verbund-Durchsatz ~193 tok/s bei 0 Fehlern im 30-Minuten-Messfenster. Erkenntnistransfer in Hardware-Dimensionierung und Beschaffungsempfehlungen für Kundenprojekte.",
-        "RAG-Wissensplattform für COBOL-Altsysteme — Lead Architektur (Mittelständischer Softwarehersteller (über Generalunternehmer, AT)): Strategischer Lead Architektur sowie Sparring- und Review-Instanz für ein zweiköpfiges Senior-Entwickler-Tandem beim Aufbau einer On-Premise-Wissensplattform, die eine über Jahrzehnte gewachsene COBOL-Codebasis (mehrere Mio. LOC, Visual COBOL, Fixed Format) durchsuchbar und beauskunftbar macht. Betrieb vollständig on-premise, da der Quellcode das Kernasset des Kunden ist. Fünfstufige Architektur: deterministische Inventarisierung per Parser statt LLM (PROGRAM-ID, COPY-, CALL-, EXEC-SQL-Beziehungen, Dateideskriptoren, Datenstrukturen), Graph-Extraktion über Aufruf-, Copy-, Daten- und Job-Beziehungen, LLM-gestützte Anreicherung, Qualitätsschleife und Retrieval mit Zitatzwang (jede Antwort referenziert Programm und Zeilennummer, ohne belastbaren Treffer keine generierte Antwort). Korpus: 528 COBOL-Programm-Kennungen, 17.279 Chunks mit Dual-Embeddings (bge-m3 on-prem + Azure text-embedding-3-large), 3.697 CALL/COPY-Abhängigkeitskanten als Graph. Hybrid-Retrieval per Reciprocal Rank Fusion über 5 Pfade (Code, Doku mehrstufig, Sektionen, GraphRAG) plus Knowledge Cards und Cross-Encoder-Reranking (lokal bzw. Cohere Rerank); Embedding-Backend pro Request zwischen On-Prem-GPU und Azure/EU umschaltbar. Fachwörterbuch-/Synonymschicht mit Query-Expansion zur Überbrückung zwischen Fachsprache und Bezeichnern im Code. Qualitätssicherung: 430 Ground-Truth-Queries als Eval-Harness, 12 kategoriespezifische Suchprofile, Multipass-LLM-Tiefenanalyse je Programm mit Fallback-Modellkette; Recall@10 von rund 61 % im Prototyp auf über 83 % im produktiven Stand gesteigert. Lokaler Betrieb quantisierter Open-Weights-Modelle (MoE ~35B / ~3B aktiv, q4) mit Hybrid-Fallback auf ein EU-gehostetes Cloud-Modell für nicht vertrauliche Anteile. Modell-Benchmark über sieben Kandidaten und Hardware-Empfehlung in drei Ausbaustufen mit zwei Beschaffungspfaden als dokumentierte Entscheidungsgrundlage. Gap-Analyse der Quellcode-Erstlieferung: rund 90 % der Aufruf-Ziele lagen außerhalb der Lieferung — daraus konkrete Nachlieferungsempfehlung an den Endkunden. Packaging und Betrieb: Multi-Stage-Docker, Alembic-Migrationen, getrennte Dev-/Prod-Instanzen mit abgesichertem Migrationsweg, K8s-Manifeste, GitHub Actions in eine private Container-Registry; Auslieferung on-prem und im Kunden-Kubernetes. Zugänge über REST-API, MCP-Server für Entwicklerwerkzeuge und Web-Chat für nicht entwicklungsnahe Rollen. IP- und Lizenzprüfung vor Auslieferung (Abhängigkeits-Scan, Copyleft-Erkennung, Attribution-Nachweis). 100 % remote, Workshops per Video.",
+        "RAG-Wissensplattform für COBOL-Altsysteme — Lead Architektur (Mittelständischer Softwarehersteller (über Generalunternehmer)): Strategischer Lead Architektur sowie Sparring- und Review-Instanz für ein zweiköpfiges Senior-Entwickler-Tandem beim Aufbau einer On-Premise-Wissensplattform, die eine über Jahrzehnte gewachsene COBOL-Codebasis (mehrere Mio. LOC, Visual COBOL, Fixed Format) durchsuchbar und beauskunftbar macht. Betrieb vollständig on-premise, da der Quellcode das Kernasset des Kunden ist. Fünfstufige Architektur: deterministische Inventarisierung per Parser statt LLM (PROGRAM-ID, COPY-, CALL-, EXEC-SQL-Beziehungen, Dateideskriptoren, Datenstrukturen), Graph-Extraktion über Aufruf-, Copy-, Daten- und Job-Beziehungen, LLM-gestützte Anreicherung, Qualitätsschleife und Retrieval mit Zitatzwang (jede Antwort referenziert Programm und Zeilennummer, ohne belastbaren Treffer keine generierte Antwort). Korpus: 528 COBOL-Programm-Kennungen, 17.279 Chunks mit Dual-Embeddings (bge-m3 on-prem + Azure text-embedding-3-large), 3.697 CALL/COPY-Abhängigkeitskanten als Graph. Hybrid-Retrieval per Reciprocal Rank Fusion über 5 Pfade (Code, Doku mehrstufig, Sektionen, GraphRAG) plus Knowledge Cards und Cross-Encoder-Reranking (lokal bzw. Cohere Rerank); Embedding-Backend pro Request zwischen On-Prem-GPU und Azure/EU umschaltbar. Fachwörterbuch-/Synonymschicht mit Query-Expansion zur Überbrückung zwischen Fachsprache und Bezeichnern im Code. Qualitätssicherung: 430 Ground-Truth-Queries als Eval-Harness, 12 kategoriespezifische Suchprofile, Multipass-LLM-Tiefenanalyse je Programm mit Fallback-Modellkette; Recall@10 von rund 61 % im Prototyp auf über 83 % im produktiven Stand gesteigert. Lokaler Betrieb quantisierter Open-Weights-Modelle (MoE ~35B / ~3B aktiv, q4) mit Hybrid-Fallback auf ein EU-gehostetes Cloud-Modell für nicht vertrauliche Anteile. Modell-Benchmark über sieben Kandidaten und Hardware-Empfehlung in drei Ausbaustufen mit zwei Beschaffungspfaden als dokumentierte Entscheidungsgrundlage. Gap-Analyse der Quellcode-Erstlieferung mit konkreter Nachlieferungsempfehlung an den Endkunden. Packaging und Betrieb: Multi-Stage-Docker, Alembic-Migrationen, getrennte Dev-/Prod-Instanzen mit abgesichertem Migrationsweg, K8s-Manifeste, GitHub Actions in eine private Container-Registry; Auslieferung on-prem und im Kunden-Kubernetes. Zugänge über REST-API, MCP-Server für Entwicklerwerkzeuge und Web-Chat für nicht entwicklungsnahe Rollen. IP- und Lizenzprüfung vor Auslieferung (Abhängigkeits-Scan, Copyleft-Erkennung, Attribution-Nachweis). 100 % remote, Workshops per Video.",
         "E-Mail-Automation und -Archiv mit RAG-Assistent: IMAP-Fetcher mit Drei-Phasen-UID-Abgleich (Deduplizierung vor Header- und Body-Fetch), Regel-Engine auf Absender- und Betreff-Mustern sowie robuster Fehlerbehandlung für instabile Provider-IMAP-Server. Volltext-Archivierung in PostgreSQL, automatisches Anhang-Routing in die OCR-Strecke (Rechnungseingang) und Nextcloud-Synchronisation. Darauf aufgesetzt ein zweites RAG-System auf Dokument-, Mail- und Notiz-Basis: 24.500+ embeddete OCR-Chunks in pgvector als Wissensbasis für einen internen Chat-Assistenten. Stack: Python, FastAPI, PostgreSQL/pgvector, IMAP, Nextcloud, Docker.",
+        "Agenten-Studio — Multi-Agent-Softwareentwicklung mit Claude Code: Seit April 2026 arbeiten in dieser Umgebung rund zwei Dutzend Claude-Code-Sitzungen parallel an Software, Infrastruktur und Dokumentation — jede auf ihrem eigenen Arbeitsbereich, mit eigener Identität und eigenen Rechten. Jeder Baustein des Arbeitsmodells antwortet auf einen gemessenen Fehler, der vorher still geblieben war: bei Agenten sieht Stille aus wie Erfolg.\n\nKoordination: Ein Ticket ist genau eine Verantwortung. Aufträge an andere Agenten werden Sub-Tickets mit eigenem Eigner; wer als Nächstes handeln muss, ist ein eigenes Feld, getrennt vom Eigner, und Abhängigkeiten stehen als Sperre am Ticket statt im Fließtext. Prioritäten A/B/C und Fälligkeiten steuern die Reihenfolge; vertagt werden darf nur mit Grund, und der Server lehnt ohne Grund ab. Greifen zwei Agenten gleichzeitig nach demselben Ticket, gewinnt der Erste per bedingter Übernahme in einer einzigen Datenbankanweisung — vorher gewann nachweislich der Letzte. Reviews laufen als Sub-Ticket an genau eine prüfende Sitzung, teils an Codex als unabhängige zweite Instanz.\n\nBetrieb: Schichten aus Durchgang und Wache — die Wache weckt nur bei einer Antwort auf die eigenen Sperren oder einer neuen Aufgabe; sieben frühere Wach-Varianten wurden auf eine zurückgeführt. Arbeitsanleitungen und Regeln kommen versioniert aus einem Git-Repository, Zugangsdaten ausschließlich über einen Broker, der den Eintrag serverseitig auflöst und Mehrdeutigkeit ablehnt statt zu raten.",
+        "Agenten-Studio-Übersicht — Leitstand für parallele Claude-Code- und Codex-Sitzungen: Wer viele Coding-Agenten gleichzeitig laufen lässt, verliert sie aus dem Blick — jede Sitzung ist ein Terminal auf einer anderen Maschine. Der Leitstand macht rund fünfzig Claude-Code- und Codex-CLI-Sitzungen in neun Fenstern sichtbar, baut die Anordnung per Klick auf und misst den Arbeitsort, statt ihn einzustellen: drei Arbeitsplätze mit unterschiedlichen Monitoren, erkannt an Anschluss und Modell.\n\nAufträge an viele Sitzungen zugleich werden erst nach gemessener Bereitschaft zugestellt. An einem gewöhnlichen Arbeitstag trugen 9 von 29 Eingabefeldern einen unabgeschickten Entwurf; die Zustellung wartet dann, statt ihn zu überschreiben. Automatische Befehlsketten warten auf eine Bestätigung, deren Nullpunkt an ein Ereignis gebunden ist statt an eine Wartezeit — eine feste Karenz hatte nachweislich die schnelle Antwort verschluckt. Rückfragen der Agenten werden aus zwei Quellen erkannt, dem Bildschirm und dem Server, mit fester Rangfolge: bei 12 von 18 wartenden Sitzungen hatte der Server keine Kenntnis davon. Beendete Sitzungen starten per Tastendruck am selben Platz neu und führen das Gespräch fort.\n\nDas Programm ersetzt 13 Shell-Skripte mit 2.300 Zeilen: rund 6.400 Zeilen Python ohne externe Abhängigkeiten, 20 Tabellen, 249 Tests — jeder prüft einen Fehler, der bereits einmal aufgetreten ist. Überwachungslast von 200 % auf 4 % CPU, Systemlast von 23,4 auf 6,3.",
+        "Modernisierung einer Excel-VBA-Planungsanwendung mit Claude Code — Migration nach CSV, SQLite und HTML (Endkunde über Generalunternehmer): Ausgangslage: Ein Projektplan über 18 Monate lebte in einer Excel-Arbeitsmappe mit rund einem Dutzend VBA-Makros. Balken waren Zeichenobjekte über Datumsspalten, Vorgänger-Pfeile wurden per Makro nachgezogen. Bei rund 130 Arbeitspaketen blieb die Oberfläche bei jeder Änderung sekundenlang stehen; Konfliktkopien auf dem gemeinsamen Laufwerk brachen die VBA-Referenzen, die Wiederherstellung kostete jedes Mal rund 20 Minuten.\n\nAnalyse mit Claude Code: Das Problem war nicht die Tabelle, sondern dass dieselbe Datei Daten und Darstellung trug. Daraus ergab sich der Schnitt — drei CSV-Dateien als einzige Quelle, eine daraus erzeugte SQLite, eine statische HTML-Seite als Auslieferung, jeder Schritt einzeln aufrufbar. Starttermine werden fest verankert oder aus Vorgänger, Versatz und Typ berechnet; alle vier Vorgängertypen waren im Bestand bereits nötig. Codex prüfte die Umsetzung als unabhängige zweite Instanz.\n\nZwei stille Fehler des Altsystems sind konstruktiv beseitigt statt per Regel: Die reduzierte Kundensicht und die interne Sicht waren zwei Dateien, die auseinanderliefen — beim letzten Vergleich fehlten der Kundensicht acht Zeilen. Jetzt ist es eine Datei mit zwei Detailstufen. Und der Fortschritt war ein Overlay über dem Balken, das beim Sortieren an der alten Stelle hängen blieb — der Balken zeigte 30 %, das Overlay 70 %. Jetzt teilen sich beide dieselbe Zeile. Kernumbau rund 12 Stunden, danach zwei Wochen Feinschliff mit Editor-Oberfläche und Konsistenzbericht; die Datenpflege bleibt eine Tabelle.",
+        "Agentisches Coding mit lokalen Open-Weight-Modellen — Claude Code on-premise: Claude Code läuft zusätzlich zum Cloud-Betrieb gegen lokal gehostete Qwen-Modelle auf llama.cpp, verbunden über einen Übersetzer zwischen Anthropic- und OpenAI-Schnittstelle. Die erste echte Sitzung brach bei jedem Werkzeugaufruf mit „failed to parse grammar\" ab. Die Ursache war nicht Größe, Anzahl der Werkzeuge oder Verlauf, sondern eine einzige Zahl in einem Werkzeugschema: eine verschachtelte Längenschranke ab 2.000 überschreitet die feste Wiederholungsgrenze des Grammatik-Parsers — 1.999 läuft, 2.000 liefert HTTP 400, exakt gemessen. Danach trat mit derselben Fehlermeldung eine zweite, völlig andere Ursache auf: Regex-Escapes in verschachtelten Mustern. Der Übersetzer entschärft beides und protokolliert jede Änderung; Nachweis im Echtbetrieb mit 40 Werkzeugen und rund 87.000 Token.\n\nModellwahl per Messung statt nach Datenblatt: acht Programmieraufgaben, drei Agenten-Harnesse, je drei Wiederholungen, jede mit einer versteckten Prüfung. Jede Prüfung musste auf dem unveränderten Projekt scheitern und bei richtiger Lösung bestehen — sonst misst man die Prüfung statt des Modells. Das dichte Qwen3.8-27B löste 72 von 72 Läufen, das schnellere Mixture-of-Experts-Modell Qwen3.6-35B-A3B 64 von 72, und seine Fehler waren Denk-, keine Tippfehler. Für Stapelarbeit bleibt das MoE-Modell gesetzt (181 gegen 32 Token/s bei acht parallelen Anfragen); geroutet wird nach Aufgabe. Mit Qwen3.8 löst Claude Code dieselben Aufgaben wie ein für offene Modelle gebautes Harness, und schneller.\n\nDenkstufen an echter Arbeit nachgemessen — Wartungsdokumentation für ein COBOL-Programm mit 4.000 Zeilen, zwei Maschinen, zwei Inferenz-Engines: die Stufe „low\" ist so gut wie „medium\" und 10 % schneller, beide liefern rund die zweieinhalbfache Abdeckung gegenüber „ohne Denken\". Die Modellvorgabe „xhigh\" lieferte 0 von 20 verwertbaren Antworten. Eine übernommene Temperatur-Empfehlung ließ sich per Gegenmessung nicht belegen.",
         "TI-Flows Stack — Custom Workflow-Automatisierungsplattform: Kompletter Ersatz der n8n-Workflow-Engine durch eine maßgeschneiderte Python/React-Plattform für medizinische Datenverarbeitung, Server-Sicherheit und Portfolio-Management. Async-Backend (FastAPI + SQLAlchemy + asyncpg), React/TypeScript-SPA mit 30 Seiten, 20+ Workflows mit Cron-Scheduling und Execution-Chaining, 11 Background-Tasks. Workflow-Engine mit dynamischem Handler-Import, WebSocket-Live-Logs und verketteter Ausführung. 7-Schichten-Sicherheitskonzept: IP-Whitelist/Blacklist (Caddy), Brute-Force-Monitor mit Auto-Blacklisting, Telegram-gesteuerte IP-Freischaltung per Inline-Keyboard, JWT-Auth, Device-Tokens, Rate-Limiting. 5-stufige medizinische Transkript-Pipeline (WhisperX-Diktat bis Akteneintrag) mit LLM-Quality-Gates. Depot-Modul: Playwright-basierter comdirect-Scraper, 7-Faktor-Aktien-Ranking, KI-News-Zusammenfassung (Ollama). Zentrale Ollama-Queue mit Semaphore-basierter GPU-Serialisierung. Shared Library (flowlib) für 3 Services. ~24.000 LOC (12.800 Python + 8.000 TypeScript + 1.600 flowlib + 2.000 SQL), 21 DB-Migrationen. Stack: Python 3.10, FastAPI, SQLAlchemy async, React 18, TypeScript, Vite, PostgreSQL (pgvector), Docker Compose, Caddy, Ollama, Telegram Bot API, Playwright.",
         "Invoice API — Medizinisches Abrechnungssystem: Vollständiges Abrechnungssystem für eine ärztliche Praxis mit Mehrmandantenfähigkeit (Arzt, IT-Dienstleistungen, Apotheke). Draft/Finalisierung/Storno-Workflow mit datenbankgestützter State Machine (PL/pgSQL-Trigger) — finalisierte Rechnungen sind unveränderlich (Revisionssicherheit). ZUGFeRD/EN16931-konforme Rechnungserzeugung (PDF mit eingebettetem CII-XML). OpenEMR-Integration: Patientenstammdaten, Diagnosen, Behandlungen. Steuerlogik: §4 UStG-Befreiung, Reverse Charge, innergemeinschaftliche Lieferungen. Server-Side Rendering mit Jinja2 + HTMX. Snapshot-Pattern für revisionssichere Rechnungen. ~4.200 LOC Python, ~1.700 LOC SQL, 30+ Endpoints, 13 DB-Migrationen. Stack: Python, FastAPI, SQLAlchemy (async), PostgreSQL, HTMX, Jinja2, Docker, Caddy.",
-        "Intelligente Dokumentenerkennung & automatisierte Bankabstimmung: Architektur und produktiver Betrieb einer On-Premise OCR-/Dokumenten-Pipeline fuer deutsche Steuer- und Buchhaltungsdokumente; Ersatz fuer Azure Document Intelligence mit messbar besserer Erkennungsqualitaet und vollstaendiger Datenhoheit. Volumen: 12.156 verarbeitete Seiten (Stand 07/2026), 97,8% Erfolgsquote; laufende Cloud-Kosten von $1.500/Jahr auf 0 EUR gesenkt. Azure-Vergleich (400 Dokumente A/B-Test): Rechnungsnummer 33%→86%, Gesamtbetrag 41%→88%, Absender 58%→94%. Fuenf-Layer-Stack: PaddleOCR (Baseline), qwen3-vl:4b (schnelle Vision), mistral-nemo:12b (Text-Fallback), qwen3.5:27b (hochqualitative Strukturextraktion), Qwen3.5:27b Klassifikation in 18 Dokumenttypen mit Mandanten-Routing. Acht produktive Resilienz-Mechanismen entwickelt: Watchdog-Threads mit Wall-Clock + GPU-Idle + Cross-Host-Stall-Polling, eigene Degeneracy-Detection fuer pathologische Vision-Modell-Ausgaben, Partial-Text-Recovery, Cold-Load-Selbstheilung (12s Cost vs 180s gesparter Hang = 15x Netto-Gewinn), Per-Phase-Modell-Unload mit Verifikation, Cross-Host-Monitoring mit REST-API und drei Confidence-Stufen fuer Hang-Typen. Nachgelagerte Layer: Index-basiertes Bank-Matching (>3.000 Transaktionen x >4.000 Dokumente in ca. 7 Sekunden) und DATEV-EXTF-CSV-Export nach gelernten Kontierungsregeln. Web-UI (FastAPI) mit 4-Spalten-Vergleich der Extraktionsquellen, DB-gesteuerte Prompt-Versionierung mit Fallback-Ketten. Infrastruktur: Docker Compose Multi-Container, PostgreSQL auf NAS, GPU-Sharing (RTX 3090 Ti + RTX 5060 Ti) via Ollama. Stack: Python, FastAPI, PaddleOCR, Ollama (qwen3-vl, qwen3.5, mistral-nemo, deepseek-ocr, gemma3), PostgreSQL, Docker, scikit-learn, httpx mit Streaming + Watchdog-Cancel. Ergänzungen 2026: LLM-gestützter Mehrseiten-Dokument-Split, ZUGFeRD-/XRechnung-Abgleich, Belegklassifikation nach Mandant, Dokumentklasse und Steuerjahr sowie Vorkontierung für die DATEV-Übergabe. Der zuvor parallel betriebene Azure-Document-Intelligence-Pfad wurde vollständig durch die eigene On-Premise-Strecke abgelöst und ist nicht mehr im Einsatz. Messwerte je Seite auf einer Tesla V100: ~2,5 s OCR + ~5–6 s Vision-LLM-Extraktion reine Rechenzeit; bewusst kleine Spezialmodelle (5 GB + 3,5 GB) statt eines großen Generalisten.",
+        "Intelligente Dokumentenerkennung & automatisierte Bankabstimmung: Architektur und produktiver Betrieb einer On-Premise OCR-/Dokumenten-Pipeline für deutsche Steuer- und Buchhaltungsdokumente; Ersatz für Azure Document Intelligence mit messbar besserer Erkennungsqualitaet und vollstaendiger Datenhoheit. Volumen: 12.156 verarbeitete Seiten (Stand 07/2026), 97,8% Erfolgsquote; laufende Cloud-Kosten von $1.500/Jahr auf 0 EUR gesenkt. Azure-Vergleich (400 Dokumente A/B-Test): Rechnungsnummer 33%→86%, Gesamtbetrag 41%→88%, Absender 58%→94%. Fuenf-Layer-Stack: PaddleOCR (Baseline), qwen3-vl:4b (schnelle Vision), mistral-nemo:12b (Text-Fallback), qwen3.5:27b (hochqualitative Strukturextraktion), Qwen3.5:27b Klassifikation in 18 Dokumenttypen mit Mandanten-Routing. Acht produktive Resilienz-Mechanismen entwickelt: Watchdog-Threads mit Wall-Clock + GPU-Idle + Cross-Host-Stall-Polling, eigene Degeneracy-Detection für pathologische Vision-Modell-Ausgaben, Partial-Text-Recovery, Cold-Load-Selbstheilung (12s Cost vs 180s gesparter Hang = 15x Netto-Gewinn), Per-Phase-Modell-Unload mit Verifikation, Cross-Host-Monitoring mit REST-API und drei Confidence-Stufen für Hang-Typen. Nachgelagerte Layer: Index-basiertes Bank-Matching (>3.000 Transaktionen x >4.000 Dokumente in ca. 7 Sekunden) und DATEV-EXTF-CSV-Export nach gelernten Kontierungsregeln. Web-UI (FastAPI) mit 4-Spalten-Vergleich der Extraktionsquellen, DB-gesteuerte Prompt-Versionierung mit Fallback-Ketten. Infrastruktur: Docker Compose Multi-Container, PostgreSQL auf NAS, GPU-Sharing (RTX 3090 Ti + RTX 5060 Ti) via Ollama. Stack: Python, FastAPI, PaddleOCR, Ollama (qwen3-vl, qwen3.5, mistral-nemo, deepseek-ocr, gemma3), PostgreSQL, Docker, scikit-learn, httpx mit Streaming + Watchdog-Cancel. Ergänzungen 2026: LLM-gestützter Mehrseiten-Dokument-Split, ZUGFeRD-/XRechnung-Abgleich, Belegklassifikation nach Mandant, Dokumentklasse und Steuerjahr sowie Vorkontierung für die DATEV-Übergabe. Der zuvor parallel betriebene Azure-Document-Intelligence-Pfad wurde vollständig durch die eigene On-Premise-Strecke abgelöst und ist nicht mehr im Einsatz. Messwerte je Seite auf einer Tesla V100: ~2,5 s OCR + ~5–6 s Vision-LLM-Extraktion reine Rechenzeit; bewusst kleine Spezialmodelle (5 GB + 3,5 GB) statt eines großen Generalisten.",
         "HRV-Analyse-Pipeline — Automatisierte Herzratenvariabilitäts-Auswertung (Praxis für Schmerztherapie & TCM, Baden-Baden): Modulare Pipeline zur reproduzierbaren HRV-Analyse von 24–26h Langzeit-EKG-Aufzeichnungen im EDF-Format. Vollautomatische Verarbeitung: EDF-Einlesen, R-Peak-Detektion (Bandpass, Envelope, Refraktärbereinigung), Artefaktkorrektur, Zeit-/Frequenzbereichsmetriken (SDNN, RMSSD, LF/HF), PNS/SNS-Trendberechnung (Kubios-kalibriert), ECG-basierte Atemfrequenzschätzung und Time-Varying HRV Power Spectrum. Docker-Container mit File-Watcher für Batch-Betrieb. Ersetzt manuelle Legacy-Windows-Software (8 Schritte auf 2). Stack: Python, NumPy, SciPy, Matplotlib, pyEDFlib, Docker.",
         "Schmerztherapie-Dokumentationssystem (schmerz_dok): Klinikfähiges Dokumentationssystem für die multimodale Schmerztherapie. Unterstützt ein interdisziplinäres Team (Ärzte, Psychotherapeuten, Physiotherapeuten, Pflege). OPS-basiertes Anforderungs-Tracking (OPS 8-918, 8-91c) mit Meilensteinen auf 21-Tage-Zeitachse. 4-Farben-Ampelsystem für Echtzeit-Therapiefortschrittskontrolle. Bettenbelegungskalender mit Gantt-Visualisierung und Überbelastungserkennung. Rich-Text-Editor (TipTap/ProseMirror) mit Versionierung. 10-stufige Rollenhierarchie mit Audit-Trail. Serverseitige PDF-Reports (WeasyPrint). Stack: Python 3.12, FastAPI, SQLAlchemy 2.0 (async), React 19, Tailwind CSS, PostgreSQL 16, Docker, Nginx, JWT.",
         "VIVO PainCare — KI-gestützte klinische Schmerzbewertung und Aufnahmebegründung (Praxis für Schmerztherapie & TCM, Baden-Baden): Klinisches Entscheidungsunterstützungssystem für die stationäre Schmerztherapie. Automatisierte Verarbeitung von VIVO PainCare-Schmerzfragebögen (PDF → Markdown → Regex-Extraktion → Datenbank) mit 20-Faktor-Ampelbewertung (Rot-Gelb-Grün) über standardisierte Schmerzskalen (VAS, PDI, MPSS, DASS, FFbH, VR-12, NHP, HKF-R10, SBL). KI-generierte Therapieempfehlungen und objektive Begründungen für den Krankenhausaufenthalt nach Wirtschaftlichkeitsgebot (medgemma:27b, Self-Hosted). Längsschnittanalyse über 182-Tage-Verlauf mit automatischer Entlassbrief-Textbausteinerstellung. Druckoptimierter A4-One-Pager für die Patientenakte. 206 Fragebögen verarbeitet, ~28.000 Antworten extrahiert, 117 Patienten im System. Stack: FastAPI, Ollama (medgemma:27b), PyMuPDF, React + TypeScript, PostgreSQL, Docker.",
@@ -49,8 +63,6 @@
         "Lieferantenentwicklung Fahrwerksteile (KTM): Lieferantenentwicklung Fahrwerksteile (Fließpressteile mit Drehen- und Fräsbearbeitung) inkl. Änderungen, Neuanläufen, Verlagerungen und Engpasssteuerung.",
         "Verlagerung von 150 Fahrwerksteilen (KTM): Verlagerung von 150 Fahrwerksteilen in (Drehen- und Fräsbearbeitung) laufender Serie wg. kurzfristiger Standortschließung.",
         "Prozessaufnahme und Prozessoptimierung (Von Roll Schweiz AG): Prozessaufnahme und Prozessoptimierung im internen Vertrieb eines international tätigen Schweizer Maschinenbauunternehmens.",
-        "Back Office Support und Prozessoptimierung (Praxis für Schmerztherapie & TCM, Baden-Baden): Laufende Unterstützung einer Privatpraxis für Schmerztherapie & TCM: Entwicklung von Narkoseprotokollen, Aufbau und Pflege der Webseite, Digitalisierung und Optimierung der Praxisprozesse.",
-        "Existenzgründungsberatung und Coaching (Praxis für Schmerztherapie & TCM, Baden-Baden): Existenzgründungsberatung und Coaching einer Privatpraxis für Schmerztherapie & TCM. Betreuung vom Konzept, Businessplan, Finanzierung, Terminverfolgung, Umbau und Einrichtung, Erstellen der Standardabläufe bis zur Implementierung einer Nachkalkulation.",
         "Interim Werksleitung (MAO Automotive GmbH & Co): Interim Werksleitung und Stabilisierung bis zur Übergabe an einen neuen Werksleiter, in einem ungarischen Produktionswerk für KFZ Innenraum Teile. Schwerpunkte Kaschierprozesse inkl. WKZ-Optimierung, Personal Reduzierung, Engpasssteuerung und Rückstandsabbau.",
         "Lieferantenentwicklung DAG BR238 Türverkleidung (Megatech Industries Deutschland GmbH): Führung des Teams zur Befähigung aller Lieferanten DAG BR238 Türverkleidung inkl. Musterungen, PPAP / EMPB Tracking, Engpasssteuerung und Prozessabnahmen.",
         "Interim COO & Werksleiter (PWG Profilrollen-Werkzeugbau GmbH): Führung des Werkes in Deutschland und Ausbau des Werkes in der Slowakei bei einem Aluminium verarbeitenden KFZ-Zulieferer für Dachsysteme. Ca. 350 Mitarbeiter, ca. 80 Mio. EUR Umsatz.",
@@ -60,6 +72,18 @@
         "Kostenreduzierung DAG C218 Türverkleidung (Toyota Boshoku Europe NV): Kostenreduzierung (Prozess, Material, Lohn und Lieferanten) bei der Türinnenverkleidung DAG C218.",
         "Werkzeugverlagerung Spritzgusswerkzeuge (Toyota Boshoku Europe NV): Werkzeugverlagerung von Spritzgusswerkzeugen zu neuen Lieferanten in laufender Serie inkl. Musterungen, Verbauversuchen, Vorstellung beim OEM und Abstimmung der Bemusterungsumfänge (PPAP/EMPB) mit dem OEM und den Lieferanten.",
         "Programm Management BMW Sonnenblenden (Magna): Führung eines interdisziplinären Teams zur Entwicklung und Produktionsverlagerung von Sonnenblenden. Neuentwicklung der BMW L7, F12 & F13, i8 und MCV-Sonnenblenden."
+      ]
+    },
+    {
+      "name": "Praxis für Schmerztherapie & TCM, Olga Schiffer MSc",
+      "position": "Praxis-IT, Digitalisierung und Backoffice",
+      "startDate": "2017-05",
+      "endDate": "2025-05",
+      "summary": "Gesundheitswesen / Arztpraxis",
+      "highlights": [
+        "Aufbau und Betreuung der Praxis-IT einer Privatpraxis für Naturheilkunde, TCM und Schmerztherapie, parallel zur Tätigkeit bei The Implementers GmbH. Verantwortlich für die Digitalisierung der Praxisabläufe, die Anbindung medizintechnischer Geräte, Abrechnungs- und Dokumentenprozesse sowie Website und Backoffice.",
+        "Back Office Support und Prozessoptimierung (Praxis für Schmerztherapie & TCM, Baden-Baden): Laufende Unterstützung einer Privatpraxis für Schmerztherapie & TCM. Entwicklung eines elektronischen Narkoseprotokolls für ambulante Narkosen mit Live-Datenanbindung der Narkosemonitore von GE und Mindray einschließlich EKG-Daten sowie GOÄ-konformer Rechnungsstellung. Umstellung des Praxisbetriebs auf OpenEMR inklusive Rechnungsschnittstelle. Automatisierung der ärztlichen Betriebsabläufe sowie OCR-gestützte Erfassung und Vorkontierung eingehender Rechnungen. Aufbau und technischer Betrieb von Website und Fachblog der Praxis zu den Themen Naturheilkunde, TCM, Orthomolekulare Medizin sowie Cannabis-, Ketamin- und Neurofeedback-Therapie. Durchführung von 19-Kanal- und 2-Kanal-EEG-Messungen sowie Erstellung von qEEG-Auswertungen einschließlich Normdatenbank-Abgleich. Aufbau eines durchgängigen Telemedizin-Workflows aus den Diensten mehrerer Anbieter — von der DSGVO-Einwilligung über den digitalen Behandlungsvertrag bis zur Abrechnung. Dokumentenmanagement, Backoffice und Praxisorganisation.",
+        "Existenzgründungsberatung und Coaching (Praxis für Schmerztherapie & TCM, Baden-Baden): Existenzgründungsberatung und Coaching einer Privatpraxis für Schmerztherapie & TCM. Betreuung vom Konzept, Businessplan, Finanzierung, Terminverfolgung, Umbau und Einrichtung, Erstellen der Standardabläufe bis zur Implementierung einer Nachkalkulation."
       ]
     },
     {
@@ -225,6 +249,12 @@
   ],
   "certificates": [
     {
+      "name": "EU AI Act erklärt: Was DU ab August zur neuen KI-Verordnung wissen musst",
+      "issuer": "WBS.LEGAL (Prof. Christian Solmecke)",
+      "date": "2026-08",
+      "url": ""
+    },
+    {
       "name": "Agentic AI with LangChain and LangGraph",
       "issuer": "Coursera (IBM Skills Network)",
       "date": "2026-04",
@@ -237,6 +267,30 @@
       "url": ""
     },
     {
+      "name": "Google AI Essentials (Specialization, 5 Kurse)",
+      "issuer": "Google / Coursera",
+      "date": "2026-01",
+      "url": ""
+    },
+    {
+      "name": "Introduction to OpenAI Codex",
+      "issuer": "Scrimba / Coursera",
+      "date": "2026-01",
+      "url": ""
+    },
+    {
+      "name": "Google Prompting Essentials (Specialization, 4 Kurse)",
+      "issuer": "Google / Coursera",
+      "date": "2025-12",
+      "url": ""
+    },
+    {
+      "name": "Introduction to AI (Google)",
+      "issuer": "Google / Coursera",
+      "date": "2025-12",
+      "url": ""
+    },
+    {
       "name": "Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 Kurse)",
       "issuer": "Coursera",
       "date": "2025-11",
@@ -245,6 +299,12 @@
     {
       "name": "Vector Databases for RAG",
       "issuer": "IBM / Coursera",
+      "date": "2025-10",
+      "url": ""
+    },
+    {
+      "name": "Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way",
+      "issuer": "Toyota Boshoku",
       "date": "2025-10",
       "url": ""
     },
@@ -267,39 +327,15 @@
       "url": ""
     },
     {
-      "name": "Google AI Essentials (Specialization, 5 Kurse)",
-      "issuer": "Google / Coursera",
-      "date": "2026-01",
+      "name": "DSGVO Live-Webinar",
+      "issuer": "eRecht24",
+      "date": "2018-07",
       "url": ""
     },
     {
-      "name": "Google Prompting Essentials (Specialization, 4 Kurse)",
-      "issuer": "Google / Coursera",
-      "date": "2025-12",
-      "url": ""
-    },
-    {
-      "name": "Introduction to AI (Google)",
-      "issuer": "Google / Coursera",
-      "date": "2025-12",
-      "url": ""
-    },
-    {
-      "name": "Introduction to OpenAI Codex",
-      "issuer": "Scrimba / Coursera",
-      "date": "2026-01",
-      "url": ""
-    },
-    {
-      "name": "Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way",
-      "issuer": "Toyota Boshoku",
-      "date": "2025-10",
-      "url": ""
-    },
-    {
-      "name": "Wertstrom-Engineering (4 Tage)",
-      "issuer": "Fraunhofer IAO, Stuttgart",
-      "date": "2012-10",
+      "name": "Siemens NX Viewer / 3D Tool V12",
+      "issuer": "The Implementers GmbH (on-the-job)",
+      "date": "2017-11",
       "url": ""
     },
     {
@@ -315,87 +351,27 @@
       "url": ""
     },
     {
-      "name": "SixSigma Zertifizierter Black Belt",
-      "issuer": "Johnson Controls",
-      "date": "2001-01",
+      "name": "Wertstrom-Engineering (4 Tage)",
+      "issuer": "Fraunhofer IAO, Stuttgart",
+      "date": "2012-10",
       "url": ""
     },
     {
-      "name": "EOQ Quality Systems Manager",
-      "issuer": "EOQ / DGQ",
-      "date": "1996-01",
+      "name": "TPG Infotag Microsoft Project",
+      "issuer": "TPG The Project Group",
+      "date": "2012-10",
       "url": ""
     },
     {
-      "name": "DGQ-Qualitätsmanager",
-      "issuer": "DGQ Bonn",
-      "date": "1995-10",
+      "name": "Datenschutz 2012",
+      "issuer": "Luther Rechtsanwaltsgesellschaft mbH",
+      "date": "2012-09",
       "url": ""
     },
     {
-      "name": "Qualitätstechnik II",
-      "issuer": "DGQ Bonn",
-      "date": "1996-04",
-      "url": ""
-    },
-    {
-      "name": "DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2)",
-      "issuer": "DGQ Bonn",
-      "date": "1996-05",
-      "url": ""
-    },
-    {
-      "name": "Internal Auditor of Quality Systems",
-      "issuer": "DGQ",
-      "date": "1996-05",
-      "url": ""
-    },
-    {
-      "name": "Medizinproduktegesetz, EG-Richtlinien, CE-Kennzeichnung",
-      "issuer": "MUS Fortbildungsseminar, Köln",
-      "date": "1996-10",
-      "url": ""
-    },
-    {
-      "name": "EOQ Quality Auditor",
-      "issuer": "EOQ / DGQ",
-      "date": "1996-06",
-      "url": ""
-    },
-    {
-      "name": "VDA6.1 und QS9000 Anforderungen",
-      "issuer": "Technische Akademie Wuppertal (TAW)",
-      "date": "1997-05",
-      "url": ""
-    },
-    {
-      "name": "Interne Audits VDA6.1, QS9000, BOS",
-      "issuer": "GFQ Akademie GmbH (firmeninternes Seminar bei Johnson Controls)",
-      "date": "1998-01",
-      "url": ""
-    },
-    {
-      "name": "Prüfmittelstudien",
-      "issuer": "Johnson Controls (on-the-job)",
-      "date": "1998-01",
-      "url": ""
-    },
-    {
-      "name": "REFA-Grundschein / REFA-Sachbearbeiter",
-      "issuer": "REFA-Verband Köln",
-      "date": "1996-09",
-      "url": ""
-    },
-    {
-      "name": "Arbeitssystemgestaltung",
-      "issuer": "REFA-Verband",
-      "date": "1996-11",
-      "url": ""
-    },
-    {
-      "name": "Zertifizierter Program Manager (PMU / JCI)",
-      "issuer": "Johnson Controls",
-      "date": "2002-07",
+      "name": "Mit Strategie zu mehr Erfolg (EKS-Erfolgsstrategie)",
+      "issuer": "KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach",
+      "date": "2010-04",
       "url": ""
     },
     {
@@ -405,15 +381,33 @@
       "url": ""
     },
     {
-      "name": "Das Unternehmen mit wichtigen Kennzahlen steuern",
-      "issuer": "RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg",
-      "date": "1996-10",
+      "name": "Zertifizierter Program Manager (PMU / JCI)",
+      "issuer": "Johnson Controls",
+      "date": "2002-07",
       "url": ""
     },
     {
-      "name": "Mit Strategie zu mehr Erfolg (EKS-Erfolgsstrategie)",
-      "issuer": "KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach",
-      "date": "2010-04",
+      "name": "English in Management and International Business",
+      "issuer": null,
+      "date": "2001-02",
+      "url": ""
+    },
+    {
+      "name": "SixSigma Zertifizierter Black Belt",
+      "issuer": "Johnson Controls",
+      "date": "2001-01",
+      "url": ""
+    },
+    {
+      "name": "CANoe Praxis-Workshop (1 Tag)",
+      "issuer": "Vector Informatik GmbH, Stuttgart",
+      "date": "2000-09",
+      "url": ""
+    },
+    {
+      "name": "Interne Trainings Projektingenieure Sitze",
+      "issuer": "Johnson Controls",
+      "date": "2000-01",
       "url": ""
     },
     {
@@ -429,45 +423,27 @@
       "url": ""
     },
     {
-      "name": "CANoe Praxis-Workshop (1 Tag)",
-      "issuer": "Vector Informatik GmbH, Stuttgart",
-      "date": "2000-09",
+      "name": "Interne Audits VDA6.1, QS9000, BOS",
+      "issuer": "GFQ Akademie GmbH (firmeninternes Seminar bei Johnson Controls)",
+      "date": "1998-01",
       "url": ""
     },
     {
-      "name": "English in Management and International Business",
-      "issuer": null,
-      "date": "2001-02",
+      "name": "Prüfmittelstudien",
+      "issuer": "Johnson Controls (on-the-job)",
+      "date": "1998-01",
       "url": ""
     },
     {
-      "name": "Interne Trainings Projektingenieure Sitze",
-      "issuer": "Johnson Controls",
-      "date": "2000-01",
+      "name": "VDA6.1 und QS9000 Anforderungen",
+      "issuer": "Technische Akademie Wuppertal (TAW)",
+      "date": "1997-05",
       "url": ""
     },
     {
-      "name": "TPG Infotag Microsoft Project",
-      "issuer": "TPG The Project Group",
-      "date": "2012-10",
-      "url": ""
-    },
-    {
-      "name": "DVS-Lehrgänge Gasschweißen (G-Schw) und MAG-Dünnblechschweißen (MAG-St D)",
-      "issuer": "DVS / Handwerkszentrum Bonn",
-      "date": "1993-04",
-      "url": ""
-    },
-    {
-      "name": "Datenschutz 2012",
-      "issuer": "Luther Rechtsanwaltsgesellschaft mbH",
-      "date": "2012-09",
-      "url": ""
-    },
-    {
-      "name": "2x 3 Tage Teambuilding",
-      "issuer": null,
-      "date": "1996-01",
+      "name": "Arbeitssystemgestaltung",
+      "issuer": "REFA-Verband",
+      "date": "1996-11",
       "url": ""
     },
     {
@@ -477,15 +453,69 @@
       "url": ""
     },
     {
-      "name": "DSGVO Live-Webinar",
-      "issuer": "eRecht24",
-      "date": "2018-07",
+      "name": "Medizinproduktegesetz, EG-Richtlinien, CE-Kennzeichnung",
+      "issuer": "MUS Fortbildungsseminar, Köln",
+      "date": "1996-10",
       "url": ""
     },
     {
-      "name": "Siemens NX Viewer / 3D Tool V12",
-      "issuer": "The Implementers GmbH (on-the-job)",
-      "date": "2017-11",
+      "name": "Das Unternehmen mit wichtigen Kennzahlen steuern",
+      "issuer": "RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg",
+      "date": "1996-10",
+      "url": ""
+    },
+    {
+      "name": "REFA-Grundschein / REFA-Sachbearbeiter",
+      "issuer": "REFA-Verband Köln",
+      "date": "1996-09",
+      "url": ""
+    },
+    {
+      "name": "EOQ Quality Auditor",
+      "issuer": "EOQ / DGQ",
+      "date": "1996-06",
+      "url": ""
+    },
+    {
+      "name": "DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2)",
+      "issuer": "DGQ Bonn",
+      "date": "1996-05",
+      "url": ""
+    },
+    {
+      "name": "Internal Auditor of Quality Systems",
+      "issuer": "DGQ",
+      "date": "1996-05",
+      "url": ""
+    },
+    {
+      "name": "Qualitätstechnik II",
+      "issuer": "DGQ Bonn",
+      "date": "1996-04",
+      "url": ""
+    },
+    {
+      "name": "EOQ Quality Systems Manager",
+      "issuer": "EOQ / DGQ",
+      "date": "1996-01",
+      "url": ""
+    },
+    {
+      "name": "2x 3 Tage Teambuilding",
+      "issuer": null,
+      "date": "1996-01",
+      "url": ""
+    },
+    {
+      "name": "DGQ-Qualitätsmanager",
+      "issuer": "DGQ Bonn",
+      "date": "1995-10",
+      "url": ""
+    },
+    {
+      "name": "DVS-Lehrgänge Gasschweißen (G-Schw) und MAG-Dünnblechschweißen (MAG-St D)",
+      "issuer": "DVS / Handwerkszentrum Bonn",
+      "date": "1993-04",
       "url": ""
     }
   ],
@@ -501,7 +531,6 @@
       "name": "Office",
       "keywords": [
         "MS Excel (sehr gut)",
-        "MS Project (sehr gut)",
         "MS PowerPoint (gut)",
         "MS Word (gut)"
       ]
@@ -542,7 +571,6 @@
       "keywords": [
         "MySQL (Basis)",
         "PostgreSQL mit pgvector (sehr gut)",
-        "Postgres (sehr gut)",
         "Alembic / Schema-Migrationen (gut)",
         "Access (Basis)",
         "Lotus 1-2-3 (Basis)"
@@ -551,7 +579,7 @@
     {
       "name": "Programmierung",
       "keywords": [
-        "Python (sehr gut)",
+        "Python (gut)",
         "C# (Basis)",
         "Visual Basic (Basis)",
         "VB.NET (Basis)",
@@ -564,7 +592,7 @@
       "keywords": [
         "N8N (gut)",
         "Ollama & LM Studio (lokale KI) (gut)",
-        "Claude Code / Codex (gut)",
+        "Claude Code / Codex (sehr gut)",
         "GPT-OS:20B / Qwen etc. (gut)",
         "Lokale Telefonagenten / Local Phone Agents (gut)"
       ]
@@ -594,6 +622,15 @@
         "GitHub Actions CI / Container Registry (gut)",
         "Kubernetes (Deployment-Manifeste) (Basis)"
       ]
+    },
+    {
+      "name": "Medizintechnik",
+      "keywords": [
+        "qEEG-Messung und -Auswertung (19-Kanal / 2-Kanal, Normdatenbank-Abgleich) (gut)",
+        "Neurofeedback-Systeme (Messung und Protokolle) (gut)",
+        "Narkosemonitor-Anbindung GE / Mindray inkl. EKG-Daten (gut)",
+        "OpenEMR (Praxis- und Klinikinformationssystem) (gut)"
+      ]
     }
   ],
   "languages": [
@@ -620,7 +657,7 @@
   ],
   "meta": {
     "canonical": "https://schifferm.de/career/profile.json",
-    "version": "2026-07-21 09:14:43",
-    "lastModified": "2026-07-21 09:14:43"
+    "version": "2026-08-27 05:00:04",
+    "lastModified": "2026-08-27 05:00:04"
   }
 }

@@ -39,6 +39,7 @@ export const skillCategoryMeta = {
   ai_automation: { de: "KI & Automatisierung",     en: "AI & Automation" },
   backend:       { de: "Backend & DevOps",         en: "Backend & DevOps" },
   databases:     { de: "Datenbanken",              en: "Databases" },
+  medtech:       { de: "Medizintechnik",           en: "Medical Technology" },
   office:        { de: "Office",                   en: "Office" },
   cad:           { de: "CAD",                      en: "CAD" },
   pm_tools:      { de: "Projektmanagement-Tools",  en: "Project Management Tools" },
@@ -51,23 +52,26 @@ export const skillCategoryMeta = {
 // Data accessors
 // ---------------------------------------------------------------------------
 
+// Felder aus personal_info, die auf der öffentlichen Seite nicht gerendert werden
+// (fA-497, Punkt 4): street, zip_code, phone, birth_date, birth_place,
+// marital_status_de, marital_status_en. Sie bleiben absichtlich in
+// career_data.json — die Auswahl passiert hier beim Lesen, nicht in den Daten.
 export function getPersonalInfo(lang) {
   const raw = loadRaw().personal_info[0];
+  const summary = l(raw, "summary", lang) ?? "";
   return {
     name: l(raw, "title", lang),
-    summary: l(raw, "summary", lang),
+    summary,
+    summaryParagraphs: summary
+      .split("\n\n")
+      .map((p) => p.trim())
+      .filter(Boolean),
     email: raw.email,
-    phone: raw.phone,
     website: raw.website,
     linkedinUrl: raw.linkedin_url,
-    street: raw.street,
-    zip: raw.zip_code,
     city: raw.city,
     country: l(raw, "country", lang),
-    birthDate: raw.birth_date,
-    birthPlace: raw.birth_place,
     citizenship: l(raw, "citizenship", lang),
-    maritalStatus: l(raw, "marital_status", lang),
   };
 }
 
@@ -90,6 +94,33 @@ export function getWorkExperience(lang) {
       .filter((p) => p.work_experience_id === we.id)
       .map((p) => formatProject(p, lang)),
   }));
+}
+
+// Aufeinanderfolgende Stationen desselben Arbeitgebers zu einem Block bündeln
+// (fA-497, Punkt 2 — reine Darstellung, jede Station behält ihre eigene Zeile).
+export function getWorkExperienceGrouped(lang) {
+  const groups = [];
+  for (const job of getWorkExperience(lang)) {
+    const last = groups[groups.length - 1];
+    if (last && last.employer === job.employer) {
+      last.stations.push(job);
+    } else {
+      groups.push({ employer: job.employer, stations: [job] });
+    }
+  }
+  return groups.map((g) => {
+    const from = g.stations.map((s) => s.dateFrom).filter(Boolean).sort();
+    const to = g.stations.map((s) => s.dateTo).filter(Boolean).sort();
+    const isCurrent = g.stations.some((s) => s.isCurrent || !s.dateTo);
+    return {
+      ...g,
+      id: g.stations[0].id,
+      isGrouped: g.stations.length > 1,
+      dateFrom: from[0] ?? null,
+      dateTo: isCurrent ? null : to[to.length - 1] ?? null,
+      isCurrent,
+    };
+  });
 }
 
 function formatProject(p, lang) {
@@ -122,7 +153,7 @@ export function getSkills(lang) {
 
 export function getSkillsGrouped(lang) {
   const skills = getSkills(lang);
-  const order = ["llm_infrastructure", "programming", "ai_automation", "backend", "databases", "office", "cad", "pm_tools", "os", "pdm", "mrp"];
+  const order = ["llm_infrastructure", "programming", "ai_automation", "backend", "databases", "medtech", "office", "cad", "pm_tools", "os", "pdm", "mrp"];
   const grouped = {};
   for (const s of skills) {
     if (!grouped[s.category]) grouped[s.category] = [];
@@ -163,6 +194,21 @@ export function getCertificationsGrouped(lang) {
     color: certCategoryMeta[k]?.color ?? "slate",
     items: grouped[k],
   }));
+}
+
+// Zertifikate in „aktuell" und „Altbestand" trennen (fA-497, Punkt 3).
+// Der Altbestand — quality + misc, überwiegend 1993–2001 — bleibt vollständig
+// erhalten, wandert aber hinter einen Aufklapper.
+const ARCHIVED_CERT_CATEGORIES = ["quality", "misc"];
+
+export function getCertificationsSplit(lang) {
+  const groups = getCertificationsGrouped(lang);
+  const archived = groups.filter((g) => ARCHIVED_CERT_CATEGORIES.includes(g.category));
+  return {
+    current: groups.filter((g) => !ARCHIVED_CERT_CATEGORIES.includes(g.category)),
+    archived,
+    archivedCount: archived.reduce((n, g) => n + g.items.length, 0),
+  };
 }
 
 export function getEducation(lang) {

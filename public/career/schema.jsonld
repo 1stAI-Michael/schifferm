@@ -4,12 +4,12 @@
   "name": "Dipl.-Ing. Michael Schiffer MBA",
   "givenName": "Michael",
   "familyName": "Schiffer",
-  "email": "mailto:Schiffer@TIUB.de",
+  "email": "mailto:schiffer@1stAI.eu",
   "telephone": "+49 172 25 6 42 48",
   "url": "https://www.schifferm.de",
   "image": "https://schifferm.de/assets/michael-schiffer.jpg",
   "jobTitle": "Senior Program Manager & Process Optimizer",
-  "description": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. Operates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster: two production RAG systems with around 42,000 embedded chunks (COBOL legacy corpus and a document/mail knowledge base), 130,000+ routed requests and 463M processed input tokens in 14 days. Solid expertise in Python/FastAPI, PostgreSQL with pgvector, hybrid retrieval and reranking, GPU load management and document AI (OCR/vision LLM).",
+  "description": "Process optimizer & Program Manager with 20+ years in automotive industry, production launches and global plant structures. Since 2024 increasingly focused on Generative AI, Healthcare Automation, data analysis, AI-driven process optimization and telemedicine workflows. \n\nOperates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster: two production RAG systems with around 42,000 embedded chunks (COBOL legacy corpus and a document/mail knowledge base), 130,000+ routed requests and 463M processed input tokens in 14 days. \n\nSolid expertise in Python/FastAPI, PostgreSQL with pgvector, hybrid retrieval and reranking, GPU load management and document AI (OCR/vision LLM).",
   "birthDate": "1972-04-14",
   "birthPlace": {
     "@type": "Place",
@@ -21,10 +21,10 @@
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Weberweg 3",
-    "postalCode": "03130",
-    "addressLocality": "Spremberg",
-    "addressCountry": "DE"
+    "streetAddress": "Ul. Sportowa 9",
+    "postalCode": "55-311",
+    "addressLocality": "Kostomloty",
+    "addressCountry": "PL"
   },
   "sameAs": [
     "https://www.linkedin.com/in/michael-schiffer",
@@ -34,6 +34,17 @@
   "hasOccupation": [
     {
       "@type": "Role",
+      "roleName": "Founder",
+      "startDate": "2026-06",
+      "endDate": "",
+      "description": "Own consulting and engineering business for AI implementation, based in Poland, working remotely across the EU. Architecture, implementation and production operation from a single source.\n\nFocus areas: retrieval architectures (RAG) on proprietary data, running language models in the company's own data centre rather than in the cloud, agent and tool integration, and connecting existing systems through OpenAI-compatible interfaces.\n\nOperates a self-hosted on-premise LLM infrastructure on a heterogeneous multi-GPU cluster as development and reference environment; technical articles on the company blog.",
+      "memberOf": {
+        "@type": "Organization",
+        "name": "1stAI"
+      }
+    },
+    {
+      "@type": "Role",
       "roleName": "Principal Consultant / Managing Director",
       "startDate": "2010-01",
       "endDate": "",
@@ -41,6 +52,17 @@
       "memberOf": {
         "@type": "Organization",
         "name": "The Implementers GmbH"
+      }
+    },
+    {
+      "@type": "Role",
+      "roleName": "Practice IT, Digitalisation and Back Office",
+      "startDate": "2017-05",
+      "endDate": "2025-05",
+      "description": "Set up and maintained the IT of a private practice for naturopathy, TCM and pain therapy, in parallel with the role at The Implementers GmbH. Responsible for digitalising practice workflows, integrating medical devices, billing and document processes as well as website and back office.",
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Praxis für Schmerztherapie & TCM, Olga Schiffer MSc"
       }
     },
     {
@@ -190,6 +212,16 @@
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",
+      "name": "EU AI Act Explained: What You Need to Know About the New AI Regulation from August",
+      "credentialCategory": "ai_data",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "WBS.LEGAL (Prof. Christian Solmecke)"
+      },
+      "dateCreated": "2026-08"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
       "name": "Agentic AI with LangChain and LangGraph",
       "credentialCategory": "ai_data",
       "recognizedBy": {
@@ -210,6 +242,46 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
+      "name": "Google AI Essentials (Specialization, 5 courses)",
+      "credentialCategory": "ai_data",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Google / Coursera"
+      },
+      "dateCreated": "2026-01"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Introduction to OpenAI Codex",
+      "credentialCategory": "ai_data",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Scrimba / Coursera"
+      },
+      "dateCreated": "2026-01"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Google Prompting Essentials (Specialization, 4 courses)",
+      "credentialCategory": "ai_data",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Google / Coursera"
+      },
+      "dateCreated": "2025-12"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Introduction to AI (Google)",
+      "credentialCategory": "ai_data",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Google / Coursera"
+      },
+      "dateCreated": "2025-12"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
       "name": "Generative AI-Powered Solutions for Modern Healthcare (Specialization, 9 courses)",
       "credentialCategory": "ai_healthcare",
       "recognizedBy": {
@@ -225,6 +297,16 @@
       "recognizedBy": {
         "@type": "Organization",
         "name": "IBM / Coursera"
+      },
+      "dateCreated": "2025-10"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Toyota Boshoku"
       },
       "dateCreated": "2025-10"
     },
@@ -260,63 +342,23 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Google AI Essentials (Specialization, 5 courses)",
-      "credentialCategory": "ai_data",
+      "name": "GDPR Live Webinar",
+      "credentialCategory": "misc",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "Google / Coursera"
+        "name": "eRecht24"
       },
-      "dateCreated": "2026-01"
+      "dateCreated": "2018-07"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Google Prompting Essentials (Specialization, 4 courses)",
-      "credentialCategory": "ai_data",
+      "name": "Siemens NX Viewer / 3D Tool V12",
+      "credentialCategory": "misc",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "Google / Coursera"
+        "name": "The Implementers GmbH (on-the-job)"
       },
-      "dateCreated": "2025-12"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Introduction to AI (Google)",
-      "credentialCategory": "ai_data",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Google / Coursera"
-      },
-      "dateCreated": "2025-12"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Introduction to OpenAI Codex",
-      "credentialCategory": "ai_data",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Scrimba / Coursera"
-      },
-      "dateCreated": "2026-01"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Toyota Boshoku Business Practices (TBBP) - Solving Problems The TB Way",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Toyota Boshoku"
-      },
-      "dateCreated": "2025-10"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Value Stream Engineering (4 days)",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Fraunhofer IAO, Stuttgart"
-      },
-      "dateCreated": "2012-10"
+      "dateCreated": "2017-11"
     },
     {
       "@type": "EducationalOccupationalCredential",
@@ -340,143 +382,43 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "JCI SixSigma Certified Black Belt",
+      "name": "Value Stream Engineering (4 days)",
       "credentialCategory": "quality",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "Johnson Controls"
+        "name": "Fraunhofer IAO, Stuttgart"
       },
-      "dateCreated": "2001-01"
+      "dateCreated": "2012-10"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "EOQ Quality Systems Manager",
-      "credentialCategory": "quality",
+      "name": "TPG Microsoft Project Info Day",
+      "credentialCategory": "misc",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "EOQ / DGQ"
+        "name": "TPG The Project Group"
       },
-      "dateCreated": "1996-01"
+      "dateCreated": "2012-10"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "DGQ-Quality Manager",
-      "credentialCategory": "quality",
+      "name": "Data Protection 2012",
+      "credentialCategory": "misc",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "DGQ Bonn"
+        "name": "Luther Rechtsanwaltsgesellschaft mbH"
       },
-      "dateCreated": "1995-10"
+      "dateCreated": "2012-09"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Quality Techniques II",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "DGQ Bonn"
-      },
-      "dateCreated": "1996-04"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2)",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "DGQ Bonn"
-      },
-      "dateCreated": "1996-05"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Internal Auditor of Quality Systems",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "DGQ"
-      },
-      "dateCreated": "1996-05"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Medical Device Act, EU Directives, CE Marking",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "MUS Fortbildungsseminar, Köln"
-      },
-      "dateCreated": "1996-10"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "EOQ Quality Auditor",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "EOQ / DGQ"
-      },
-      "dateCreated": "1996-06"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "VDA6.1 and QS9000 new demands to the Automotive Industry",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Technische Akademie Wuppertal (TAW)"
-      },
-      "dateCreated": "1997-05"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Training for internal Audits according to VDA6.1 and QS9000 and BOS",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "GFQ Akademie GmbH (firmeninternes Seminar bei Johnson Controls)"
-      },
-      "dateCreated": "1998-01"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Measurement device studies",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Johnson Controls (on-the-job)"
-      },
-      "dateCreated": "1998-01"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "REFA Basic Certificate",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "REFA-Verband Köln"
-      },
-      "dateCreated": "1996-09"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Work System Design",
-      "credentialCategory": "quality",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "REFA-Verband"
-      },
-      "dateCreated": "1996-11"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Certified Program Manager (PMU / JCI)",
+      "name": "Strategy for Success (EKS Success Strategy)",
       "credentialCategory": "management",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "Johnson Controls"
+        "name": "KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach"
       },
-      "dateCreated": "2002-07"
+      "dateCreated": "2010-04"
     },
     {
       "@type": "EducationalOccupationalCredential",
@@ -490,23 +432,53 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Managing the company with key performance indicators",
+      "name": "Certified Program Manager (PMU / JCI)",
       "credentialCategory": "management",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg"
+        "name": "Johnson Controls"
       },
-      "dateCreated": "1996-10"
+      "dateCreated": "2002-07"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Strategy for Success (EKS Success Strategy)",
-      "credentialCategory": "management",
+      "name": "English in Management and International Business",
+      "credentialCategory": "misc",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "KMU-Akademie e.V. / Cord Tepelmann, UnternehmerCoach"
+        "name": null
       },
-      "dateCreated": "2010-04"
+      "dateCreated": "2001-02"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "JCI SixSigma Certified Black Belt",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Johnson Controls"
+      },
+      "dateCreated": "2001-01"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "CANoe Hands-on Workshop (1 day)",
+      "credentialCategory": "misc",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Vector Informatik GmbH, Stuttgart"
+      },
+      "dateCreated": "2000-09"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Internal trainings for project engineers - seats",
+      "credentialCategory": "misc",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Johnson Controls"
+      },
+      "dateCreated": "2000-01"
     },
     {
       "@type": "EducationalOccupationalCredential",
@@ -530,73 +502,43 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "CANoe Hands-on Workshop (1 day)",
-      "credentialCategory": "misc",
+      "name": "Training for internal Audits according to VDA6.1 and QS9000 and BOS",
+      "credentialCategory": "quality",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "Vector Informatik GmbH, Stuttgart"
+        "name": "GFQ Akademie GmbH (firmeninternes Seminar bei Johnson Controls)"
       },
-      "dateCreated": "2000-09"
+      "dateCreated": "1998-01"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "English in Management and International Business",
-      "credentialCategory": "misc",
+      "name": "Measurement device studies",
+      "credentialCategory": "quality",
       "recognizedBy": {
         "@type": "Organization",
-        "name": null
+        "name": "Johnson Controls (on-the-job)"
       },
-      "dateCreated": "2001-02"
+      "dateCreated": "1998-01"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Internal trainings for project engineers - seats",
-      "credentialCategory": "misc",
+      "name": "VDA6.1 and QS9000 new demands to the Automotive Industry",
+      "credentialCategory": "quality",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "Johnson Controls"
+        "name": "Technische Akademie Wuppertal (TAW)"
       },
-      "dateCreated": "2000-01"
+      "dateCreated": "1997-05"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "TPG Microsoft Project Info Day",
-      "credentialCategory": "misc",
+      "name": "Work System Design",
+      "credentialCategory": "quality",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "TPG The Project Group"
+        "name": "REFA-Verband"
       },
-      "dateCreated": "2012-10"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "DVS Welding Courses: Gas Welding (G-Schw) and MAG Thin Sheet Welding (MAG-St D)",
-      "credentialCategory": "misc",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "DVS / Handwerkszentrum Bonn"
-      },
-      "dateCreated": "1993-04"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Data Protection 2012",
-      "credentialCategory": "misc",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Luther Rechtsanwaltsgesellschaft mbH"
-      },
-      "dateCreated": "2012-09"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "2x 3 days courses for Teambuilding",
-      "credentialCategory": "misc",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": null
-      },
-      "dateCreated": "1996-01"
+      "dateCreated": "1996-11"
     },
     {
       "@type": "EducationalOccupationalCredential",
@@ -610,23 +552,113 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "GDPR Live Webinar",
-      "credentialCategory": "misc",
+      "name": "Medical Device Act, EU Directives, CE Marking",
+      "credentialCategory": "quality",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "eRecht24"
+        "name": "MUS Fortbildungsseminar, Köln"
       },
-      "dateCreated": "2018-07"
+      "dateCreated": "1996-10"
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Siemens NX Viewer / 3D Tool V12",
+      "name": "Managing the company with key performance indicators",
+      "credentialCategory": "management",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "RKW Rationalisierungs-Kuratorium der Deutschen Wirtschaft e.V., Bayern Büro Nürnberg"
+      },
+      "dateCreated": "1996-10"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "REFA Basic Certificate",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "REFA-Verband Köln"
+      },
+      "dateCreated": "1996-09"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "EOQ Quality Auditor",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "EOQ / DGQ"
+      },
+      "dateCreated": "1996-06"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DGQ-Auditor / Lead Auditor (DIN EN ISO 10011-2)",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "DGQ Bonn"
+      },
+      "dateCreated": "1996-05"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Internal Auditor of Quality Systems",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "DGQ"
+      },
+      "dateCreated": "1996-05"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Quality Techniques II",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "DGQ Bonn"
+      },
+      "dateCreated": "1996-04"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "EOQ Quality Systems Manager",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "EOQ / DGQ"
+      },
+      "dateCreated": "1996-01"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "2x 3 days courses for Teambuilding",
       "credentialCategory": "misc",
       "recognizedBy": {
         "@type": "Organization",
-        "name": "The Implementers GmbH (on-the-job)"
+        "name": null
       },
-      "dateCreated": "2017-11"
+      "dateCreated": "1996-01"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DGQ-Quality Manager",
+      "credentialCategory": "quality",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "DGQ Bonn"
+      },
+      "dateCreated": "1995-10"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DVS Welding Courses: Gas Welding (G-Schw) and MAG Thin Sheet Welding (MAG-St D)",
+      "credentialCategory": "misc",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "DVS / Handwerkszentrum Bonn"
+      },
+      "dateCreated": "1993-04"
     }
   ],
   "knowsAbout": [
@@ -661,12 +693,14 @@
     "Multi-GPU-Betrieb & GPU-Lastmanagement",
     "MySQL",
     "N8N",
+    "Narkosemonitor-Anbindung GE / Mindray inkl. EKG-Daten",
+    "Neurofeedback-Systeme (Messung und Protokolle)",
     "OCR & Vision-LLM (PaddleOCR, DeepSeek-OCR, Qwen-VL)",
     "Ollama & LM Studio (lokale KI)",
     "OnShape",
+    "OpenEMR (Praxis- und Klinikinformationssystem)",
     "Pascal",
     "PostgreSQL mit pgvector",
-    "Postgres",
     "Python",
     "Quantisierung & Modellauswahl (Qwen MoE, Gemma, MedGemma)",
     "RAG & Hybrid Retrieval (Vektor + BM25, RRF)",
@@ -678,7 +712,8 @@
     "Visual Basic",
     "Windows (bis 11)",
     "eGroup",
-    "eRoom"
+    "eRoom",
+    "qEEG-Messung und -Auswertung (19-Kanal / 2-Kanal, Normdatenbank-Abgleich)"
   ],
   "knowsLanguage": [
     {
