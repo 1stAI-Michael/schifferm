@@ -28,3 +28,11 @@ src/assets/__write_test.txt
 *.njsproj
 *.sln
 *.sw?
+
+# Arbeitsmaterial und Datenansicht — NIE ins oeffentliche Repo.
+# career_db_viewer.html traegt die Privatfelder (street, zip_code, phone,
+# birth_date, birth_place), die getPersonalInfo() absichtlich zurueckhaelt.
+# Am 19.10.2026 durch ein `git add -A` versehentlich veroeffentlicht.
+DATENMODELL.md
+NOTIZ-*.md
+career_db_viewer.html
