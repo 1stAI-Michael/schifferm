@@ -11,7 +11,18 @@ RewriteBase /
 ErrorDocument 410 /410-gone.html
 RewriteRule ^(ihht|de/ihht|en/ihht)(/.*)?$ - [G,L,NC]
 
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+# Echte 404 statt Auffangregel (Michael-Entscheid 19.10.2026).
+# Vorher lieferte JEDE nicht vorhandene Adresse die Startseite mit HTTP 200:
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule . /index.html [L]
+# Damit galt jede vertippte oder erfundene Adresse als gueltige Seite -
+# Suchmaschinen indizieren beliebig viele davon, und ein toter Link sieht aus
+# wie ein funktionierender. Die fertige 404.html lag im Bau und wurde nie
+# benutzt.
+#
+# Gemessen vor dem Entfernen: An der Auffangregel hing NICHTS. Alle echten
+# Routen laufen ueber Apaches eigene Verzeichnis-Behandlung (/de/career -> 301
+# auf /de/career/ -> 200). Der statische Export legt je Route ein Verzeichnis
+# mit index.html an, DirectoryIndex findet sie.
+ErrorDocument 404 /404.html
