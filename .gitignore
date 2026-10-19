@@ -29,10 +29,16 @@ src/assets/__write_test.txt
 *.sln
 *.sw?
 
-# Arbeitsmaterial und Datenansicht — NIE ins oeffentliche Repo.
-# career_db_viewer.html traegt die Privatfelder (street, zip_code, phone,
-# birth_date, birth_place), die getPersonalInfo() absichtlich zurueckhaelt.
-# Am 19.10.2026 durch ein `git add -A` versehentlich veroeffentlicht.
+# Arbeitsmaterial, gehoert nicht ins Repo — aber NICHT aus Geheimhaltung.
+# Michael-Entscheid 19.10.2026: Die Privatfelder (street, zip_code, phone,
+# birth_date, birth_place) sind kein Geheimnis; sie stehen in jedem Lebenslauf
+# bei LinkedIn und Xing. Dass getPersonalInfo() sie zurueckhaelt (fA-497), ist
+# eine Entscheidung ueber die DARSTELLUNG auf der Lebenslauf-Seite, nicht ueber
+# Vertraulichkeit. Wer das verwechselt, sucht ein Leck, wo keines ist.
+#
+# Draussen bleiben die drei trotzdem: career_db_viewer.html ist ein lokales
+# Ansichtswerkzeug, die beiden Notizdateien sind Arbeitsmaterial. Ein Repo, das
+# die halbe Werkbank mitfuehrt, wird unlesbar.
 DATENMODELL.md
 NOTIZ-*.md
 career_db_viewer.html
