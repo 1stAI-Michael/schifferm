@@ -2,9 +2,10 @@
 """
 Generate machine-readable career data formats from the career device API.
 
-Quelle ist seit 27.08.2026 die Device-API auf app.ti-ub-ki.ddns.net (Postgres,
-Schema `career`). Die frühere SQLite `career.db` auf Nextcloud ist abgeschaltet;
-der WebDAV-Weg ist deshalb entfallen.
+Quelle ist seit 27.08.2026 die Career-Device-API (Postgres, Schema `career`).
+Der Wirt steht NICHT hier, er kommt aus FLOWS_API_BASIS — siehe _api_basis().
+Die frühere SQLite `career.db` auf Nextcloud ist abgeschaltet; der WebDAV-Weg
+ist deshalb entfallen.
 
 Outputs (into public/):
   - llms.txt                   — LLM discovery file (root)
